@@ -1,0 +1,3 @@
+# The venv the Makefile builds; exact pins so a later rebuild gets the same tools.
+con-duct==0.23.0
+datalad==1.7.3
