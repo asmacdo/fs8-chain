@@ -6,7 +6,8 @@
 #   make run-full          fMRIPrep --level full, reusing outputs/fs8 and the resampling output
 # e.g. make run-fs8 DATASET=ds002345 SUBJECT=265
 # Every run and build is a `datalad run` record.
-# Host needs: python3, git, git-annex, singularity/apptainer, FS_LICENSE set.
+# Host needs: python3, git, git-annex, singularity/apptainer, FS_LICENSE set,
+# TMPDIR on scratch with room (image builds and fMRIPrep workdirs take tens of GB).
 
 # ds000030 sub-10159: T1w only, and c6 holds fMRIPrep's FS7 recon of it.
 # ds002345 sub-265: one T1w (sub-mm, so -hires) and one 1 mm T2w (exercises --refine_pial).
@@ -31,9 +32,16 @@ FMRIPREP_SIF := images/$(FMRIPREP_NAME).sif
 # Templates the fMRIPrep runs read (subdatasets of inputs/templateflow).
 TEMPLATES := $(addprefix -i inputs/templateflow/tpl-,MNI152NLin2009cAsym MNI152NLin6Asym OASIS30ANTs fsLR fsaverage)
 
-.PHONY: venv run-fs8 image-fmriprep run-resampling run-full
+.PHONY: venv preflight run-fs8 image-fmriprep run-resampling run-full
 
 venv: $(VENV)/.done
+
+# Before any `datalad run`: a failure after it starts leaves its outputs unlocked.
+MIN_TMP_GB ?= 50
+preflight:
+	@test -n "$$FS_LICENSE" && test -f "$$FS_LICENSE" || { echo "set FS_LICENSE to a FreeSurfer license file" >&2; exit 1; }
+	@free=$$(df -P -BG "$${TMPDIR:-/tmp}" | awk 'NR==2 {print $$4+0}'); \
+	  test "$$free" -ge $(MIN_TMP_GB) || { echo "TMPDIR ($${TMPDIR:-/tmp}) has $${free}G free, need $(MIN_TMP_GB)G; point TMPDIR at scratch" >&2; exit 1; }
 
 $(VENV)/.done: code/requirements.txt
 	python3 -m venv $(VENV)
@@ -41,7 +49,7 @@ $(VENV)/.done: code/requirements.txt
 	$(VENV)/bin/pip install -q -r code/requirements.txt
 	touch $@
 
-run-fs8: venv
+run-fs8: venv preflight
 	$(DL) run \
 	  -m "FreeSurfer 8 on $(DATASET) sub-$(SUBJECT)" \
 	  -i inputs/$(DATASET)/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
@@ -49,7 +57,7 @@ run-fs8: venv
 	  code/run-fs8.sh $(DATASET) $(SUBJECT)
 
 # Already recorded in this dataset: fetch it. Otherwise build it.
-image-fmriprep: venv
+image-fmriprep: venv preflight
 	if git ls-files --error-unmatch $(FMRIPREP_SIF) >/dev/null 2>&1; then \
 	  $(DL) get $(FMRIPREP_SIF); \
 	else \
@@ -58,7 +66,7 @@ image-fmriprep: venv
 	    code/build-fmriprep-image.sh $(FMRIPREP_DIGEST) $(FMRIPREP_NAME); \
 	fi
 
-run-resampling: image-fmriprep
+run-resampling: preflight image-fmriprep
 	$(DL) run \
 	  -m "fMRIPrep $(FMRIPREP_NAME) --level resampling on $(DATASET) sub-$(SUBJECT), reusing FS8" \
 	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i outputs/fs8/sub-$(SUBJECT) -i $(FMRIPREP_SIF) $(TEMPLATES) \
@@ -67,7 +75,7 @@ run-resampling: image-fmriprep
 
 # One upstream only (the resampling output, which carries the anat outputs too),
 # plus FS8 via --fs-subjects-dir: no multi-derivative clobber.
-run-full: image-fmriprep
+run-full: preflight image-fmriprep
 	$(DL) run \
 	  -m "fMRIPrep $(FMRIPREP_NAME) --level full on $(DATASET) sub-$(SUBJECT), reusing FS8 + resampling" \
 	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i outputs/fs8/sub-$(SUBJECT) -i outputs/fmriprep-resampling-$(DATASET) -i $(FMRIPREP_SIF) $(TEMPLATES) \
