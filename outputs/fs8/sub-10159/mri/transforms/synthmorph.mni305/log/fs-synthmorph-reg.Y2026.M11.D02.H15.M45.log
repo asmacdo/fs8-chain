@@ -1,0 +1,67 @@
+Log file for fs-synthmorph-reg
+Mon Nov  2 03:45:43 PM EST 2026
+
+setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/outputs/fs8
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159
+/usr/local/freesurfer/8.2.0/bin/fs-synthmorph-reg --i /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/synthstrip.mgz --t /usr/local/freesurfer/8.2.0/average/mni305.cor.stripped.mgz --affine-only --o /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305 --threads 2
+-rwxr-xr-x 1 root root 30896 Mar 14  2026 /usr/local/freesurfer/8.2.0/bin/fs-synthmorph-reg
+
+freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45
+$Id$
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+pid 519
+Mon Nov  2 03:45:43 PM EST 2026
+
+
+
+mri_synthmorph -m affine -t /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305/aff.lta /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/synthstrip.mgz /usr/local/freesurfer/8.2.0/average/mni305.cor.stripped.mgz -j 2
+#@# mri_synthmorph: affine, threads: 2, VmPeak: 10753832
+Thank you for choosing SynthMorph. Please cite us!
+
+SynthMorph: learning contrast-invariant registration without acquired images
+Hoffmann M, Billot B, Greve DN, Iglesias JE, Fischl B, Dalca AV
+IEEE Transactions on Medical Imaging, 41 (3), 543-558, 2022
+https://doi.org/10.1109/TMI.2021.3116879
+
+Anatomy-specific acquisition-agnostic affine registration learned from
+fictitious images
+Hoffmann M, Hoopes A, Fischl B*, Dalca AV* (*equal contribution)
+SPIE Medical Imaging: Image Processing, 12464, 1246402, 2023
+https://doi.org/10.1117/12.2653251
+https://synthmorph.io/#papers (PDF)
+
+Anatomy-aware and acquisition-agnostic joint registration with SynthMorph
+Hoffmann M, Hoopes A, Greve DN, Fischl B*, Dalca AV* (*equal contribution)
+Imaging Neuroscience, 2, 1-33, 2024
+https://doi.org/10.1162/imag_a_00197
+
+Website: https://synthmorph.io
+lta_convert --invert --inlta /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305/aff.lta --outlta /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305/reg.targ_to_invol.lta
+8.2.0
+
+--invert: will invert transform.
+--inlta: /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305/aff.lta input LTA transform.
+--outlta: /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305/reg.targ_to_invol.lta output LTA.
+ LTA read, type : 1
+ 1.04017   0.11909   0.00535   7.89840;
+-0.10866   1.01792   0.20299  -20.71431;
+ 0.01836  -0.18214   1.14743   9.53265;
+ 0.00000   0.00000   0.00000   1.00000;
+Writing  LTA to file /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305/reg.targ_to_invol.lta...
+lta_convert successful.
+
+
+
+
+To check affine registration
+tkregisterfv --mov /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/synthstrip.mgz --targ /usr/local/freesurfer/8.2.0/average/mni305.cor.stripped.mgz --reg /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/synthmorph.mni305/aff.lta
+
+AffineOnly specified, so exiting now
+ 
+Started at Mon Nov 2 03:45:43 PM EST 2026 
+Ended   at Mon Nov  2 03:46:04 PM EST 2026
+Fs-Synthmorph-Reg-Run-Time-Sec 21
+Fs-Synthmorph-Reg-Run-Time-Min 0.35
+Fs-Synthmorph-Reg-Run-Time-Hours 0.01
+ 
+fs-synthmorph-reg Done
