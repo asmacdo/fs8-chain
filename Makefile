@@ -3,6 +3,7 @@
 #   make run-fs8           FS8 on $(DATASET) $(SUBJECT)
 #   make image-fmriprep    fetch the fMRIPrep image named below, or build it if new
 #   make run-resampling    fMRIPrep --level resampling on $(DATASET) $(SUBJECT), reusing outputs/fs8
+#   make run-full          fMRIPrep --level full, reusing outputs/fs8 and the resampling output
 # e.g. make run-fs8 DATASET=ds002345 SUBJECT=265
 # Every run and build is a `datalad run` record.
 # Host needs: python3, git, git-annex, singularity/apptainer, FS_LICENSE set.
@@ -30,7 +31,7 @@ FMRIPREP_SIF := images/$(FMRIPREP_NAME).sif
 # Templates the fMRIPrep runs read (subdatasets of inputs/templateflow).
 TEMPLATES := $(addprefix -i inputs/templateflow/tpl-,MNI152NLin2009cAsym MNI152NLin6Asym OASIS30ANTs fsLR fsaverage)
 
-.PHONY: venv run-fs8 image-fmriprep run-resampling
+.PHONY: venv run-fs8 image-fmriprep run-resampling run-full
 
 venv: $(VENV)/.done
 
@@ -63,3 +64,12 @@ run-resampling: image-fmriprep
 	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i outputs/fs8/sub-$(SUBJECT) -i $(FMRIPREP_SIF) $(TEMPLATES) \
 	  -o outputs/fmriprep-resampling-$(DATASET) -o outputs/fs8 -o logs \
 	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) outputs/fmriprep-resampling-$(DATASET)
+
+# One upstream only (the resampling output, which carries the anat outputs too),
+# plus FS8 via --fs-subjects-dir: no multi-derivative clobber.
+run-full: image-fmriprep
+	$(DL) run \
+	  -m "fMRIPrep $(FMRIPREP_NAME) --level full on $(DATASET) sub-$(SUBJECT), reusing FS8 + resampling" \
+	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i outputs/fs8/sub-$(SUBJECT) -i outputs/fmriprep-resampling-$(DATASET) -i $(FMRIPREP_SIF) $(TEMPLATES) \
+	  -o outputs/fmriprep-full-$(DATASET) -o outputs/fs8 -o logs \
+	  code/run-fmriprep.sh $(FMRIPREP_SIF) full $(DATASET) $(SUBJECT) outputs/fmriprep-full-$(DATASET) outputs/fmriprep-resampling-$(DATASET)
