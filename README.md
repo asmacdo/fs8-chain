@@ -6,11 +6,11 @@ Tracked in the hub as `fs8-chain`; the babs app configs live in `unity-campaign`
 A datalad dataset, so a later reader can check what actually ran rather than trusting notes:
 
 - `containers/` — ReproNim/containers, pinned by commit; the image used is its `bids-freesurfer` (8.2.0-unstable).
-- `inputs/ds000030/` — OpenNeuroDatasets/ds000030, pinned (tag 1.0.0).
+- `inputs/ds000030/`, `inputs/ds002345/` — OpenNeuroDatasets, pinned (tags 1.0.0, 1.1.4); pick with `DATASET=`/`SUBJECT=`.
 - `inputs/templateflow/` — templateflow, pinned; bound read-only, so an undeclared template fails instead of being fetched unpinned.
 - `images/` — fMRIPrep images built here from a Docker Hub digest (`make image-fmriprep`), named `fmriprep-<tag>-<push date>-<digest prefix>.sif`; each build is a `datalad run` record. Drop old ones with `datalad drop`.
 - `code/` — the run scripts and the pinned tool list (`requirements.txt`).
-- `outputs/` — results, each written by a `datalad run` whose record (command, inputs, outputs) is in `git log`.
+- `outputs/` — results (`fs8/` one FreeSurfer subjects dir shared across datasets, `fmriprep-<level>-<dataset>/`), each written by a `datalad run` whose record (command, inputs, outputs) is in `git log`.
 - `logs/` — con-duct records of each run: resource usage, stdout/stderr, host.
 
 ```bash

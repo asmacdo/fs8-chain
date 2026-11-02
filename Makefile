@@ -1,11 +1,15 @@
 # Dev loop for FreeSurfer 8 -> fMRIPrep resampling -> full, run straight (no babs).
 #   make venv              pinned tools (code/requirements.txt) in .venv
-#   make run-fs8           FS8 on $(SUBJECT)
+#   make run-fs8           FS8 on $(DATASET) $(SUBJECT)
 #   make image-fmriprep    fetch the fMRIPrep image named below, or build it if new
-#   make run-resampling    fMRIPrep --level resampling on $(SUBJECT), reusing outputs/fs8
+#   make run-resampling    fMRIPrep --level resampling on $(DATASET) $(SUBJECT), reusing outputs/fs8
+# e.g. make run-fs8 DATASET=ds002345 SUBJECT=265
 # Every run and build is a `datalad run` record.
 # Host needs: python3, git, git-annex, singularity/apptainer, FS_LICENSE set.
 
+# ds000030 sub-10159: T1w only, and c6 holds fMRIPrep's FS7 recon of it.
+# ds002345 sub-265: one T1w (sub-mm, so -hires) and one 1 mm T2w (exercises --refine_pial).
+DATASET ?= ds000030
 SUBJECT ?= 10159
 VENV := .venv
 DL := PATH=$(CURDIR)/$(VENV)/bin:$$PATH datalad
@@ -38,10 +42,10 @@ $(VENV)/.done: code/requirements.txt
 
 run-fs8: venv
 	$(DL) run \
-	  -m "FreeSurfer 8 on sub-$(SUBJECT)" \
-	  -i inputs/ds000030/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
+	  -m "FreeSurfer 8 on $(DATASET) sub-$(SUBJECT)" \
+	  -i inputs/$(DATASET)/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
 	  -o outputs/fs8 -o logs \
-	  code/run-fs8.sh $(SUBJECT)
+	  code/run-fs8.sh $(DATASET) $(SUBJECT)
 
 # Already recorded in this dataset: fetch it. Otherwise build it.
 image-fmriprep: venv
@@ -55,7 +59,7 @@ image-fmriprep: venv
 
 run-resampling: image-fmriprep
 	$(DL) run \
-	  -m "fMRIPrep $(FMRIPREP_NAME) --level resampling on sub-$(SUBJECT), reusing FS8" \
-	  -i inputs/ds000030/sub-$(SUBJECT) -i outputs/fs8 -i $(FMRIPREP_SIF) $(TEMPLATES) \
-	  -o outputs/fmriprep-resampling -o outputs/fs8 -o logs \
-	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(SUBJECT) outputs/fmriprep-resampling
+	  -m "fMRIPrep $(FMRIPREP_NAME) --level resampling on $(DATASET) sub-$(SUBJECT), reusing FS8" \
+	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i outputs/fs8/sub-$(SUBJECT) -i $(FMRIPREP_SIF) $(TEMPLATES) \
+	  -o outputs/fmriprep-resampling-$(DATASET) -o outputs/fs8 -o logs \
+	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) outputs/fmriprep-resampling-$(DATASET)

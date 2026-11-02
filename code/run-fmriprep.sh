@@ -4,7 +4,7 @@
 # Flags follow unity-campaign bids-app-configs/fMRIPrep-25.2.5+full.yaml,
 # except --level, the scheduler-sized resources, and the FreeSurfer reuse.
 #
-# usage: code/run-fmriprep.sh <image path> <level> <subject label> <output dir>
+# usage: code/run-fmriprep.sh <image path> <level> <dataset> <subject label> <output dir>
 # host needs: singularity/apptainer, FS_LICENSE=<FreeSurfer license file>
 export PS4='> '
 set -x
@@ -12,9 +12,10 @@ set -eu
 
 SIF="$1"
 LEVEL="$2"
-SUB="$3"
-OUT="$4"
-RAW=inputs/ds000030
+DATASET="$3"
+SUB="$4"
+OUT="$5"
+RAW=inputs/$DATASET
 : "${FS_LICENSE:?set FS_LICENSE to a FreeSurfer license file}"
 
 # Scratch for the container's /tmp (the nipype workdir goes there; a short path,
@@ -28,7 +29,7 @@ mkdir -p "$OUT" logs
 # fails loudly instead of being fetched unpinned from S3.
 # outputs/fs8 is the --fs-subjects-dir and is declared an output of the run, so
 # anything fMRIPrep writes there shows up in the run's commit.
-con-duct run -p "logs/fmriprep-${LEVEL}_sub-${SUB}_{datetime}_" \
+con-duct run -p "logs/fmriprep-${LEVEL}_${DATASET}_sub-${SUB}_{datetime}_" \
   singularity run --containall \
     -B "$PWD:$PWD" --pwd "$PWD" -B "$TMP:/tmp" \
     -B "$PWD/inputs/templateflow:$PWD/inputs/templateflow:ro" \
@@ -36,7 +37,7 @@ con-duct run -p "logs/fmriprep-${LEVEL}_sub-${SUB}_{datetime}_" \
     -B "$FS_LICENSE:/fs-license.txt:ro" \
     "$SIF" "$PWD/$RAW" "$PWD/$OUT" participant \
     --participant-label "$SUB" \
-    --bids-filter-file "$PWD/code/bids-filter-bart.json" \
+    --bids-filter-file "$PWD/code/bids-filter-$DATASET.json" \
     --fs-subjects-dir "$PWD/outputs/fs8" \
     --fs-license-file /fs-license.txt \
     -w /tmp/wkdir \
