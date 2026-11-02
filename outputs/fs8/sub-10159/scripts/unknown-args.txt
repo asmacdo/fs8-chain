@@ -1,0 +1,9 @@
+-subjid
+sub-10159
+-sd
+/data/asmacdo/fs8-chain/outputs/fs8
+-i
+/data/asmacdo/fs8-chain/inputs/ds000030/sub-10159/anat/sub-10159_T1w.nii.gz
+-autorecon-all
+-openmp
+2
