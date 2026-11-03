@@ -1,0 +1,1936 @@
+261102-21:38:29,799 nipype.workflow IMPORTANT:
+	 Running fMRIPrep version 26.0.0.dev119+g1728db2fd
+
+         License NOTICE ##################################################
+         fMRIPrep 26.0.0.dev119+g1728db2fd
+         Copyright The NiPreps Developers.
+         
+         This product includes software developed by
+         the NiPreps Community (https://nipreps.org/).
+         
+         Portions of this software were developed at the Department of
+         Psychology at Stanford University, Stanford, CA, US.
+         
+         This software is also distributed as a Docker container image.
+         The bootstrapping file for the image ("Dockerfile") is licensed
+         under the MIT License.
+         
+         This software may be distributed through an add-on package called
+         "Docker Wrapper" that is under the BSD 3-clause License.
+         #################################################################
+261102-21:38:29,799 nipype.workflow IMPORTANT:
+	 Building fMRIPrep's workflow:
+           * BIDS dataset path: /data/asmacdo/fs8-chain/inputs/ds000030.
+           * Participants and sessions: sub-10159.
+           * Run identifier: 20261102-213758_445567ab-2638-4a36-9e6c-345a9fd26e05.
+           * Output spaces: MNI152NLin2009cAsym:res-2 MNI152NLin2009cAsym:res-native MNI152NLin6Asym:res-2 MNI152NLin6Asym:res-native fsaverage:den-164k.
+           * Searching for derivatives: [PosixPath('/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030')].
+           * Pre-run FreeSurfer's SUBJECTS_DIR: /data/asmacdo/fs8-chain/outputs/fs8.
+261102-21:38:31,845 nipype.workflow INFO:
+	 ANAT Found precomputed derivatives:
+	t1w_preproc: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_desc-preproc_T1w.nii.gz
+	mask: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_desc-brain_mask.nii.gz
+	dseg: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_dseg.nii.gz
+	tpms: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_label-GM_probseg.nii.gz
+	    : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_label-WM_probseg.nii.gz
+	    : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_label-CSF_probseg.nii.gz
+	ribbon: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_desc-ribbon_mask.nii.gz
+	white: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_white.surf.gii
+	     : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_white.surf.gii
+	pial: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_pial.surf.gii
+	    : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_pial.surf.gii
+	midthickness: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_midthickness.surf.gii
+	            : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_midthickness.surf.gii
+	sphere: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_sphere.surf.gii
+	      : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_sphere.surf.gii
+	sphere_reg: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_space-fsaverage_desc-reg_sphere.surf.gii
+	          : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_space-fsaverage_desc-reg_sphere.surf.gii
+	sphere_reg_fsLR: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_space-fsLR_desc-reg_sphere.surf.gii
+	               : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_space-fsLR_desc-reg_sphere.surf.gii
+	sphere_reg_msm: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_space-fsLR_desc-msmsulc_sphere.surf.gii
+	              : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_space-fsLR_desc-msmsulc_sphere.surf.gii
+	thickness: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_thickness.shape.gii
+	         : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_thickness.shape.gii
+	sulc: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_sulc.shape.gii
+	    : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_sulc.shape.gii
+	cortex: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-L_desc-cortex_mask.label.gii
+	      : /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_desc-cortex_mask.label.gii
+	forward transform for MNI152NLin2009cAsym: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+	reverse transform for MNI152NLin2009cAsym: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+	forward transform for MNI152NLin6Asym: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5
+	reverse transform for MNI152NLin6Asym: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-MNI152NLin6Asym_to-T1w_mode-image_xfm.h5
+	forward transform for fsnative: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-T1w_to-fsnative_mode-image_xfm.txt
+	reverse transform for fsnative: /data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-fsnative_to-T1w_mode-image_xfm.txt
+261102-21:38:32,146 nipype.workflow INFO:
+	 ANAT Found preprocessed T1w - skipping Stage 1
+261102-21:38:32,147 nipype.workflow INFO:
+	 ANAT Found brain mask
+261102-21:38:32,147 nipype.workflow INFO:
+	 ANAT Skipping Stage 2
+261102-21:38:32,147 nipype.workflow INFO:
+	 ANAT Skipping Stage 3
+261102-21:38:32,147 nipype.workflow INFO:
+	 ANAT Found discrete segmentation
+261102-21:38:32,147 nipype.workflow INFO:
+	 ANAT Found tissue probability maps
+261102-21:38:32,147 nipype.workflow INFO:
+	 ANAT Stage 4: Found pre-computed registrations for {'MNI152NLin2009cAsym': {'forward': '/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5', 'reverse': '/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5'}, 'MNI152NLin6Asym': {'forward': '/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5', 'reverse': '/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_from-MNI152NLin6Asym_to-T1w_mode-image_xfm.h5'}}
+261102-21:38:32,148 nipype.workflow INFO:
+	 ANAT Stage 5: Preparing surface reconstruction workflow
+261102-21:38:32,164 nipype.workflow INFO:
+	 ANAT Found fsnative-T1w transform - skipping registration
+261102-21:38:32,164 nipype.workflow INFO:
+	 ANAT Found brain mask - skipping Stage 6
+261102-21:38:32,164 nipype.workflow INFO:
+	 ANAT No T2w images provided - skipping Stage 7
+261102-21:38:32,164 nipype.workflow INFO:
+	 ANAT Stage 8: Found pre-converted surfaces for ['white', 'pial', 'midthickness', 'thickness', 'sulc', 'sphere_reg', 'sphere']
+261102-21:38:32,164 nipype.workflow INFO:
+	 ANAT Stage 8a: Found pre-computed cortical ribbon mask
+261102-21:38:32,164 nipype.workflow INFO:
+	 ANAT Stage 9: Found pre-computed fsLR registration sphere
+261102-21:38:32,164 nipype.workflow INFO:
+	 ANAT Stage 10: Found pre-computed MSM-Sulc registration sphere
+261102-21:38:32,165 nipype.workflow INFO:
+	 ANAT Stage 11: Found pre-computed cortical surface mask
+261102-21:38:34,602 nipype.workflow INFO:
+	 Precomputed B0 field inhomogeneity maps found for the following 1 estimator(s): ['auto_00000'].
+261102-21:38:34,763 nipype.workflow INFO:
+	 No single-band-reference found for sub-10159_task-bart_bold.nii.gz.
+261102-21:38:34,814 nipype.workflow INFO:
+	 Found HMC boldref - skipping Stage 1
+261102-21:38:34,819 nipype.workflow INFO:
+	 Found motion correction transforms - skipping Stage 2
+261102-21:38:34,819 nipype.workflow INFO:
+	 Stage 3: Adding fieldmap reconstruction workflow
+261102-21:38:34,819 nipype.workflow INFO:
+	 Stage 3: Found fieldmap transform - skipping registration
+261102-21:38:34,819 nipype.workflow INFO:
+	 Found coregistration reference - skipping Stage 4
+261102-21:38:34,913 nipype.workflow IMPORTANT:
+	 BOLD series will be slice-timing corrected to an offset of 0.974s.
+261102-21:38:43,214 nipype.workflow INFO:
+	 fMRIPrep workflow graph with 344 nodes built successfully.
+261102-21:39:05,127 nipype.workflow IMPORTANT:
+	 fMRIPrep started!
+261102-21:39:05,998 nipype.interface WARNING:
+	 /data/asmacdo/fs8-chain/outputs/fs8/fsaverage exists; if multiple jobs are running in parallel, this can be safely ignored
+261102-21:39:12,222 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bidssrc" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bidssrc".
+261102-21:39:12,226 nipype.workflow INFO:
+	 [Node] Executing "bidssrc" <niworkflows.interfaces.bids.BIDSDataGrabber>
+261102-21:39:12,230 nipype.interface INFO:
+	 No "pet" images found for sub-10159
+261102-21:39:12,230 nipype.interface INFO:
+	 No "dwi" images found for sub-10159
+261102-21:39:12,230 nipype.interface INFO:
+	 No "t2w" images found for sub-10159
+261102-21:39:12,231 nipype.interface INFO:
+	 No "asl" images found for sub-10159
+261102-21:39:12,231 nipype.interface INFO:
+	 No "roi" images found for sub-10159
+261102-21:39:12,231 nipype.interface INFO:
+	 No "sbref" images found for sub-10159
+261102-21:39:12,231 nipype.interface INFO:
+	 No "flair" images found for sub-10159
+261102-21:39:12,231 nipype.interface INFO:
+	 No "fmap" images found for sub-10159
+261102-21:39:12,232 nipype.workflow INFO:
+	 [Node] Finished "bidssrc", elapsed time 0.001515s.
+261102-21:39:12,246 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.select_MNI6_tpl" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/select_MNI6_tpl".
+261102-21:39:12,249 nipype.workflow INFO:
+	 [Node] Executing "select_MNI6_tpl" <smriprep.interfaces.templateflow.TemplateFlowSelect>
+261102-21:39:12,388 nipype.workflow INFO:
+	 [Node] Finished "select_MNI6_tpl", elapsed time 0.13795s.
+261102-21:39:12,390 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat2std_buffer" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat2std_buffer".
+261102-21:39:12,393 nipype.workflow INFO:
+	 [Node] Executing "anat2std_buffer" <nipype.interfaces.utility.base.Merge>
+261102-21:39:12,394 nipype.workflow INFO:
+	 [Node] Finished "anat2std_buffer", elapsed time 0.000341s.
+261102-21:39:12,397 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.std2anat_buffer" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/std2anat_buffer".
+261102-21:39:12,399 nipype.workflow INFO:
+	 [Node] Executing "std2anat_buffer" <nipype.interfaces.utility.base.Merge>
+261102-21:39:12,400 nipype.workflow INFO:
+	 [Node] Finished "std2anat_buffer", elapsed time 0.000246s.
+261102-21:39:12,402 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.template_buffer" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/template_buffer".
+261102-21:39:12,403 nipype.workflow INFO:
+	 [Node] Executing "template_buffer" <nipype.interfaces.utility.base.Merge>
+261102-21:39:12,404 nipype.workflow INFO:
+	 [Node] Finished "template_buffer", elapsed time 0.0002s.
+261102-21:39:12,406 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.fmapref_buffer" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/fmapref_buffer".
+261102-21:39:12,408 nipype.workflow INFO:
+	 [Node] Executing "fmapref_buffer" <nipype.interfaces.utility.wrappers.Function>
+261102-21:39:12,411 nipype.workflow INFO:
+	 [Node] Finished "fmapref_buffer", elapsed time 0.001204s.
+261102-21:39:12,437 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.validation_and_dummies_wf.val_bold" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/validation_and_dummies_wf/val_bold".
+261102-21:39:12,439 nipype.workflow INFO:
+	 [Node] Executing "val_bold" <niworkflows.interfaces.header.ValidateImage>
+261102-21:39:12,504 nipype.workflow INFO:
+	 [Node] Finished "val_bold", elapsed time 0.064601s.
+261102-21:39:12,508 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.validation_and_dummies_wf.get_dummy" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/validation_and_dummies_wf/get_dummy".
+261102-21:39:12,510 nipype.workflow INFO:
+	 [Node] Executing "get_dummy" <niworkflows.interfaces.bold.NonsteadyStatesDetector>
+261102-21:39:13,200 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.t1w_wm" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/t1w_wm".
+261102-21:39:13,203 nipype.workflow INFO:
+	 [Node] Executing "t1w_wm" <nipype.interfaces.utility.wrappers.Function>
+261102-21:39:13,280 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_native_wf.bold_source" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_native_wf/bold_source".
+261102-21:39:13,283 nipype.workflow INFO:
+	 [Node] Executing "bold_source" <nipype.interfaces.utility.base.Select>
+261102-21:39:13,286 nipype.workflow INFO:
+	 [Node] Finished "get_dummy", elapsed time 0.775532s.
+261102-21:39:13,287 nipype.workflow INFO:
+	 [Node] Finished "bold_source", elapsed time 0.000442s.
+261102-21:39:13,323 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.skullstrip_precomp_ref_wf.skullstrip_first_pass" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/skullstrip_precomp_ref_wf/skullstrip_first_pass".
+261102-21:39:13,325 nipype.workflow INFO:
+	 [Node] Executing "skullstrip_first_pass" <nipype.interfaces.fsl.preprocess.BET>
+261102-21:39:13,371 nipype.workflow INFO:
+	 [Node] Finished "t1w_wm", elapsed time 0.16484s.
+261102-21:39:15,214 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.rmsd" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/rmsd".
+261102-21:39:15,238 nipype.workflow INFO:
+	 [Node] Executing "rmsd" <niworkflows.interfaces.confounds.FSLRMSDeviation>
+261102-21:39:15,396 nipype.workflow INFO:
+	 [Node] Finished "rmsd", elapsed time 0.156295s.
+261102-21:39:15,436 nipype.workflow INFO:
+	 [Node] Finished "skullstrip_first_pass", elapsed time 2.107547s.
+261102-21:39:15,782 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.motion_params" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/motion_params".
+261102-21:39:15,784 nipype.workflow INFO:
+	 [Node] Executing "motion_params" <niworkflows.interfaces.confounds.FSLMotionParams>
+261102-21:39:15,914 nipype.workflow INFO:
+	 [Node] Finished "motion_params", elapsed time 0.129126s.
+261102-21:39:15,988 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_MNI6_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_MNI6_wf/gen_ref".
+261102-21:39:16,382 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.fov_check" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/fov_check".
+261102-21:39:16,517 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:16,518 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.mask_anat" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/mask_anat".
+261102-21:39:16,518 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 0.000147s.
+261102-21:39:16,534 nipype.workflow INFO:
+	 [Node] Executing "mask_anat" <niworkflows.interfaces.nibabel.ApplyMask>
+261102-21:39:16,571 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.apply_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/apply_mask".
+261102-21:39:16,575 nipype.workflow INFO:
+	 [Node] Executing "fov_check" <nipype.interfaces.utility.wrappers.Function>
+261102-21:39:16,590 nipype.workflow INFO:
+	 [Node] Executing "apply_mask" <niworkflows.interfaces.nibabel.ApplyMask>
+261102-21:39:16,757 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.source_anatomical" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/source_anatomical".
+261102-21:39:16,764 nipype.workflow INFO:
+	 [Node] Executing "source_anatomical" <fmriprep.interfaces.bids.BIDSSourceFile>
+261102-21:39:16,766 nipype.workflow INFO:
+	 [Node] Finished "source_anatomical", elapsed time 0.000237s.
+261102-21:39:16,784 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.seg_rpt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/seg_rpt".
+261102-21:39:16,786 nipype.workflow INFO:
+	 [Node] Executing "seg_rpt" <niworkflows.interfaces.reportlets.masks.ROIsPlot>
+261102-21:39:16,938 nipype.workflow INFO:
+	 [Node] Finished "fov_check", elapsed time 0.361435s.
+261102-21:39:17,175 nipype.workflow INFO:
+	 [Node] Finished "mask_anat", elapsed time 0.64046s.
+261102-21:39:17,229 nipype.workflow INFO:
+	 [Node] Finished "apply_mask", elapsed time 0.636266s.
+261102-21:39:17,988 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_anat_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/gen_ref".
+261102-21:39:18,9 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:18,41 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.recon_config" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/recon_config".
+261102-21:39:18,552 nipype.workflow INFO:
+	 [Node] Executing "recon_config" <niworkflows.interfaces.freesurfer.FSDetectInputs>
+261102-21:39:18,590 nipype.workflow INFO:
+	 [Node] Finished "recon_config", elapsed time 0.036579s.
+261102-21:39:19,2 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_native_wf.validate_bold" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_native_wf/validate_bold".
+261102-21:39:19,4 nipype.workflow INFO:
+	 [Node] Executing "validate_bold" <niworkflows.interfaces.header.ValidateImage>
+261102-21:39:19,43 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.skullstrip_precomp_ref_wf.skullstrip_second_pass" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/skullstrip_precomp_ref_wf/skullstrip_second_pass".
+261102-21:39:19,57 nipype.workflow INFO:
+	 [Node] Finished "validate_bold", elapsed time 0.052131s.
+261102-21:39:19,142 nipype.workflow INFO:
+	 [Node] Executing "skullstrip_second_pass" <nipype.interfaces.afni.preprocess.Automask>
+261102-21:39:19,382 nipype.workflow INFO:
+	 [Node] Finished "skullstrip_second_pass", elapsed time 0.239586s.
+261102-21:39:20,331 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 2.321136s.
+261102-21:39:20,431 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.fdisp" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/fdisp".
+261102-21:39:20,433 nipype.workflow INFO:
+	 [Node] Executing "fdisp" <niworkflows.interfaces.confounds.FramewiseDisplacement>
+261102-21:39:20,450 nipype.workflow INFO:
+	 [Node] Finished "fdisp", elapsed time 0.016347s.
+261102-21:39:24,504 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.fmapref_boldref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/fmapref_boldref".
+261102-21:39:24,508 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_native_wf.boldref_fmap" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_native_wf/boldref_fmap".
+261102-21:39:24,520 nipype.workflow INFO:
+	 [Node] Executing "fmapref_boldref" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:24,527 nipype.workflow INFO:
+	 [Node] Executing "boldref_fmap" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:39:24,841 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bids_info" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bids_info".
+261102-21:39:25,26 nipype.workflow INFO:
+	 [Node] Finished "boldref_fmap", elapsed time 0.497668s.
+261102-21:39:25,306 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.carpetplot_wf.mrg_xfms" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/carpetplot_wf/mrg_xfms".
+261102-21:39:25,327 nipype.workflow INFO:
+	 [Node] Executing "mrg_xfms" <nipype.interfaces.utility.base.Merge>
+261102-21:39:25,328 nipype.workflow INFO:
+	 [Node] Finished "mrg_xfms", elapsed time 0.000234s.
+261102-21:39:25,637 nipype.workflow INFO:
+	 [Node] Executing "bids_info" <niworkflows.interfaces.bids.BIDSInfo>
+261102-21:39:25,652 nipype.workflow INFO:
+	 [Node] Finished "bids_info", elapsed time 0.013737s.
+261102-21:39:25,668 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.skullstrip_precomp_ref_wf.combine_masks" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/skullstrip_precomp_ref_wf/combine_masks".
+261102-21:39:25,778 nipype.workflow INFO:
+	 [Node] Executing "combine_masks" <nipype.interfaces.fsl.maths.BinaryMaths>
+261102-21:39:25,908 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.boldref_fmap" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/boldref_fmap".
+261102-21:39:25,926 nipype.workflow INFO:
+	 [Node] Executing "boldref_fmap" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:39:26,71 nipype.workflow INFO:
+	 [Node] Finished "combine_masks", elapsed time 0.292036s.
+261102-21:39:26,129 nipype.workflow INFO:
+	 [Node] Finished "fmapref_boldref", elapsed time 1.11506s.
+261102-21:39:26,301 nipype.workflow INFO:
+	 [Node] Finished "boldref_fmap", elapsed time 0.374585s.
+261102-21:39:26,781 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/gen_ref".
+261102-21:39:26,788 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:26,789 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 0.000257s.
+261102-21:39:26,792 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/gen_ref".
+261102-21:39:26,801 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:26,803 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 0.000213s.
+261102-21:39:27,40 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/gen_ref".
+261102-21:39:27,41 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/gen_ref".
+261102-21:39:27,48 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:27,269 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/gen_ref".
+261102-21:39:27,277 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:27,278 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 0.000165s.
+261102-21:39:27,287 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/gen_ref".
+261102-21:39:27,303 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:27,305 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 0.000371s.
+261102-21:39:27,615 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:28,151 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 0.534883s.
+261102-21:39:28,791 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/gen_ref".
+261102-21:39:28,797 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.gen_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/gen_ref".
+261102-21:39:28,802 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:28,812 nipype.workflow INFO:
+	 [Node] Executing "gen_ref" <niworkflows.interfaces.nibabel.GenerateSamplingReference>
+261102-21:39:29,698 nipype.workflow INFO:
+	 [Node] Finished "seg_rpt", elapsed time 12.911507s.
+261102-21:39:29,704 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.create_fs_id" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/create_fs_id".
+261102-21:39:29,707 nipype.workflow INFO:
+	 [Node] Executing "create_fs_id" <fmriprep.interfaces.bids.CreateFreeSurferID>
+261102-21:39:29,708 nipype.workflow INFO:
+	 [Node] Finished "create_fs_id", elapsed time 0.000184s.
+261102-21:39:30,786 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_surf_wf.surfs_sources" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/surfs_sources".
+261102-21:39:30,789 nipype.workflow INFO:
+	 [Node] Executing "surfs_sources" <fmriprep.interfaces.bids.BIDSURI>
+261102-21:39:30,791 nipype.workflow INFO:
+	 [Node] Finished "surfs_sources", elapsed time 0.001438s.
+261102-21:39:31,346 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.skullstrip_precomp_ref_wf.apply_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/skullstrip_precomp_ref_wf/apply_mask".
+261102-21:39:31,351 nipype.workflow INFO:
+	 [Node] Executing "apply_mask" <niworkflows.interfaces.nibabel.ApplyMask>
+261102-21:39:31,389 nipype.workflow INFO:
+	 [Node] Finished "apply_mask", elapsed time 0.037294s.
+261102-21:39:31,544 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_native_wf.bold_stc_wf.slice_timing_correction" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_native_wf/bold_stc_wf/slice_timing_correction".
+261102-21:39:31,548 nipype.workflow INFO:
+	 [Node] Executing "slice_timing_correction" <fmriprep.workflows.bold.stc.TShift>
+261102-21:39:31,805 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_fit_task_bart_wf.skullstrip_precomp_ref_wf.mask_reportlet" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_fit_task_bart_wf/skullstrip_precomp_ref_wf/mask_reportlet".
+261102-21:39:31,807 nipype.workflow INFO:
+	 [Node] Executing "mask_reportlet" <niworkflows.interfaces.reportlets.masks.SimpleShowMaskRPT>
+261102-21:39:31,807 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.t1w_mask_tfm" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/t1w_mask_tfm".
+261102-21:39:31,813 nipype.workflow INFO:
+	 [Node] Executing "t1w_mask_tfm" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:31,959 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 4.910719s.
+261102-21:39:32,882 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 4.078885s.
+261102-21:39:33,213 nipype.workflow INFO:
+	 [Node] Finished "t1w_mask_tfm", elapsed time 1.399409s.
+261102-21:39:33,594 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.carpetplot_wf.resample_parc" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/carpetplot_wf/resample_parc".
+261102-21:39:33,597 nipype.workflow INFO:
+	 [Node] Executing "resample_parc" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:33,732 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.sources" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/sources".
+261102-21:39:33,732 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.run2target" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/run2target".
+261102-21:39:33,733 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_t1w" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_t1w".
+261102-21:39:33,737 nipype.workflow INFO:
+	 [Node] Executing "run2target" <nipype.interfaces.utility.base.Merge>
+261102-21:39:33,738 nipype.workflow INFO:
+	 [Node] Finished "run2target", elapsed time 0.000195s.
+261102-21:39:33,740 nipype.workflow INFO:
+	 [Node] Executing "anat2std_t1w" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:33,755 nipype.workflow INFO:
+	 [Node] Executing "sources" <fmriprep.interfaces.bids.BIDSURI>
+261102-21:39:33,760 nipype.workflow INFO:
+	 [Node] Finished "sources", elapsed time 0.003409s.
+261102-21:39:34,58 nipype.workflow INFO:
+	 [Node] Finished "gen_ref", elapsed time 5.245605s.
+261102-21:39:34,959 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.sdcreg_report" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/sdcreg_report".
+261102-21:39:35,206 nipype.workflow INFO:
+	 [Node] Executing "sdcreg_report" <sdcflows.interfaces.reportlets.FieldmapReportlet>
+261102-21:39:35,612 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_dseg" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_dseg".
+261102-21:39:35,615 nipype.workflow INFO:
+	 [Node] Executing "anat2std_dseg" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:35,625 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_mask".
+261102-21:39:35,629 nipype.workflow INFO:
+	 [Node] Executing "anat2std_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:35,921 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.sources" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/sources".
+261102-21:39:35,928 nipype.workflow INFO:
+	 [Node] Executing "sources" <fmriprep.interfaces.bids.BIDSURI>
+261102-21:39:35,932 nipype.workflow INFO:
+	 [Node] Finished "sources", elapsed time 0.002294s.
+261102-21:39:36,559 nipype.workflow INFO:
+	 [Node] Finished "resample_parc", elapsed time 2.676821s.
+261102-21:39:37,532 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.run2target" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/run2target".
+261102-21:39:37,533 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_t1w" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_t1w".
+261102-21:39:37,536 nipype.workflow INFO:
+	 [Node] Executing "run2target" <nipype.interfaces.utility.base.Merge>
+261102-21:39:37,537 nipype.workflow INFO:
+	 [Node] Finished "run2target", elapsed time 0.00023s.
+261102-21:39:37,546 nipype.workflow INFO:
+	 [Node] Executing "anat2std_t1w" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:38,117 nipype.workflow INFO:
+	 [Node] Finished "mask_reportlet", elapsed time 6.309567s.
+261102-21:39:39,559 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_dseg" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_dseg".
+261102-21:39:39,589 nipype.workflow INFO:
+	 [Node] Executing "anat2std_dseg" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:39,613 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_mask".
+261102-21:39:39,618 nipype.workflow INFO:
+	 [Node] Executing "anat2std_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:39,850 nipype.workflow INFO:
+	 [Node] Finished "anat2std_t1w", elapsed time 6.108888s.
+261102-21:39:41,764 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.sources" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/sources".
+261102-21:39:41,773 nipype.workflow INFO:
+	 [Node] Executing "sources" <fmriprep.interfaces.bids.BIDSURI>
+261102-21:39:41,778 nipype.workflow INFO:
+	 [Node] Finished "sources", elapsed time 0.003286s.
+261102-21:39:43,596 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.run2target" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/run2target".
+261102-21:39:43,602 nipype.workflow INFO:
+	 [Node] Executing "run2target" <nipype.interfaces.utility.base.Merge>
+261102-21:39:43,603 nipype.workflow INFO:
+	 [Node] Finished "run2target", elapsed time 0.000242s.
+261102-21:39:44,53 nipype.workflow INFO:
+	 [Node] Finished "slice_timing_correction", elapsed time 12.504523s.
+261102-21:39:44,411 nipype.workflow INFO:
+	 [Node] Finished "anat2std_mask", elapsed time 8.513973s.
+261102-21:39:45,521 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_native_wf.bold_stc_wf.copy_xform" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_native_wf/bold_stc_wf/copy_xform".
+261102-21:39:45,521 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_t1w" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_t1w".
+261102-21:39:45,522 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_mask".
+261102-21:39:45,526 nipype.workflow INFO:
+	 [Node] Executing "anat2std_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:45,543 nipype.workflow INFO:
+	 [Node] Executing "anat2std_t1w" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:45,857 nipype.workflow INFO:
+	 [Node] Finished "anat2std_dseg", elapsed time 9.981883s.
+261102-21:39:47,518 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_dseg" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_dseg".
+261102-21:39:47,522 nipype.workflow INFO:
+	 [Node] Executing "anat2std_dseg" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:47,927 nipype.workflow INFO:
+	 [Node] Executing "copy_xform" <niworkflows.interfaces.header.CopyXForm>
+261102-21:39:49,389 nipype.workflow INFO:
+	 [Node] Finished "anat2std_t1w", elapsed time 3.633105s.
+261102-21:39:49,737 nipype.workflow INFO:
+	 [Node] Finished "sdcreg_report", elapsed time 14.530299s.
+261102-21:39:49,886 nipype.workflow INFO:
+	 [Node] Finished "copy_xform", elapsed time 1.9580419999999998s.
+261102-21:39:51,681 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.sources" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/sources".
+261102-21:39:51,681 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.run2target" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/run2target".
+261102-21:39:51,682 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_t1w" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_t1w".
+261102-21:39:51,684 nipype.workflow INFO:
+	 [Node] Executing "run2target" <nipype.interfaces.utility.base.Merge>
+261102-21:39:51,685 nipype.workflow INFO:
+	 [Node] Finished "run2target", elapsed time 0.000215s.
+261102-21:39:51,685 nipype.workflow INFO:
+	 [Node] Executing "anat2std_t1w" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:51,699 nipype.workflow INFO:
+	 [Node] Executing "sources" <fmriprep.interfaces.bids.BIDSURI>
+261102-21:39:51,702 nipype.workflow INFO:
+	 [Node] Finished "sources", elapsed time 0.0022s.
+261102-21:39:53,33 nipype.workflow INFO:
+	 [Node] Finished "anat2std_mask", elapsed time 7.506442s.
+261102-21:39:53,529 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_mask".
+261102-21:39:53,529 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.t1w_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.res2/t1w_std".
+261102-21:39:53,529 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.ds_std_volumes_wf.anat2std_dseg" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_dseg".
+261102-21:39:53,531 nipype.workflow INFO:
+	 [Node] Executing "anat2std_dseg" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:53,531 nipype.workflow INFO:
+	 [Node] Executing "t1w_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:53,532 nipype.workflow INFO:
+	 [Node] Executing "anat2std_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:55,267 nipype.workflow INFO:
+	 [Node] Finished "anat2std_dseg", elapsed time 7.74415s.
+261102-21:39:55,572 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.mask_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.res2/mask_std".
+261102-21:39:55,574 nipype.workflow INFO:
+	 [Node] Executing "mask_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:39:59,850 nipype.workflow INFO:
+	 [Node] Finished "t1w_std", elapsed time 6.31792s.
+261102-21:40:01,607 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.t1w_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.resnative/t1w_std".
+261102-21:40:01,611 nipype.workflow INFO:
+	 [Node] Executing "t1w_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:04,88 nipype.workflow INFO:
+	 [Node] Finished "mask_std", elapsed time 8.513089s.
+261102-21:40:05,586 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.mask_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.resnative/mask_std".
+261102-21:40:05,590 nipype.workflow INFO:
+	 [Node] Executing "mask_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:09,237 nipype.workflow INFO:
+	 [Node] Finished "anat2std_t1w", elapsed time 31.690635s.
+261102-21:40:09,538 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.t1w_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.res2/t1w_std".
+261102-21:40:09,541 nipype.workflow INFO:
+	 [Node] Executing "t1w_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:15,368 nipype.workflow INFO:
+	 [Node] Finished "t1w_std", elapsed time 5.825384s.
+261102-21:40:15,522 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.mask_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.res2/mask_std".
+261102-21:40:15,524 nipype.workflow INFO:
+	 [Node] Executing "mask_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:22,991 nipype.workflow INFO:
+	 [Node] Finished "mask_std", elapsed time 7.46581s.
+261102-21:40:23,272 nipype.workflow INFO:
+	 [Node] Finished "anat2std_t1w", elapsed time 31.585501s.
+261102-21:40:23,518 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.t1w_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.resnative/t1w_std".
+261102-21:40:23,518 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.mask_std" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.resnative/mask_std".
+261102-21:40:23,520 nipype.workflow INFO:
+	 [Node] Executing "t1w_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:23,521 nipype.workflow INFO:
+	 [Node] Executing "mask_std" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:30,760 nipype.workflow INFO:
+	 [Node] Finished "t1w_std", elapsed time 29.148334s.
+261102-21:40:31,616 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.fs_isrunning" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/fs_isrunning".
+261102-21:40:31,621 nipype.workflow INFO:
+	 [Node] Executing "fs_isrunning" <nipype.interfaces.utility.wrappers.Function>
+261102-21:40:31,624 nipype.workflow INFO:
+	 [Node] Finished "fs_isrunning", elapsed time 0.0021s.
+261102-21:40:33,836 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.t1w_boldref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/t1w_boldref".
+261102-21:40:33,839 nipype.workflow INFO:
+	 [Node] Executing "t1w_boldref" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:35,4 nipype.workflow INFO:
+	 [Node] Finished "t1w_boldref", elapsed time 1.164446s.
+261102-21:40:35,594 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.boldref_wm" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/boldref_wm".
+261102-21:40:35,598 nipype.workflow INFO:
+	 [Node] Executing "boldref_wm" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:36,21 nipype.workflow INFO:
+	 [Node] Finished "boldref_wm", elapsed time 0.422254s.
+261102-21:40:37,586 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_anat_wf.fmap_recon" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/fmap_recon".
+261102-21:40:37,590 nipype.workflow INFO:
+	 [Node] Executing "fmap_recon" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:40:37,902 nipype.workflow INFO:
+	 [Node] Finished "fmap_recon", elapsed time 0.31157s.
+261102-21:40:39,602 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_MNI6_wf.fmap_recon" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_MNI6_wf/fmap_recon".
+261102-21:40:39,608 nipype.workflow INFO:
+	 [Node] Executing "fmap_recon" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:40:41,787 nipype.workflow INFO:
+	 [Node] Finished "anat2std_mask", elapsed time 48.040905s.
+261102-21:40:42,386 nipype.workflow INFO:
+	 [Node] Finished "fmap_recon", elapsed time 2.777392s.
+261102-21:40:42,811 nipype.workflow INFO:
+	 [Node] Finished "anat2std_mask", elapsed time 62.936971s.
+261102-21:40:43,542 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.ds_sdcreg_report" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/ds_sdcreg_report".
+261102-21:40:43,543 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.union_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/union_mask".
+261102-21:40:43,546 nipype.workflow INFO:
+	 [Node] Executing "ds_sdcreg_report" <fmriprep.interfaces.DerivativesDataSink>
+261102-21:40:43,568 nipype.workflow INFO:
+	 [Node] Finished "ds_sdcreg_report", elapsed time 0.020324s.
+261102-21:40:43,713 nipype.workflow INFO:
+	 [Node] Executing "union_mask" <nipype.interfaces.utility.wrappers.Function>
+261102-21:40:43,739 nipype.workflow INFO:
+	 [Node] Finished "union_mask", elapsed time 0.024751s.
+261102-21:40:44,898 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/resample_ref".
+261102-21:40:44,902 nipype.workflow INFO:
+	 [Node] Executing "resample_ref" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:45,604 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/resample_mask".
+261102-21:40:45,607 nipype.workflow INFO:
+	 [Node] Executing "resample_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:46,112 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:40:46,446 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin2009cAsym_res-2_desc-preproc_dseg.nii.gz dtype from float64 to float64
+261102-21:40:46,758 nipype.workflow INFO:
+	 [Node] Finished "anat2std_dseg", elapsed time 66.844053s.
+261102-21:40:47,680 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/resample_ref".
+261102-21:40:47,683 nipype.workflow INFO:
+	 [Node] Executing "resample_ref" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:47,863 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/resample_mask".
+261102-21:40:47,867 nipype.workflow INFO:
+	 [Node] Executing "resample_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:49,467 nipype.workflow INFO:
+	 [Node] Finished "resample_ref", elapsed time 1.7823980000000001s.
+261102-21:40:50,247 nipype.workflow INFO:
+	 [Node] Finished "resample_mask", elapsed time 2.378585s.
+261102-21:40:50,523 nipype.workflow INFO:
+	 [Node] Finished "resample_ref", elapsed time 5.619082s.
+261102-21:40:51,165 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:40:51,921 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin2009cAsym_desc-preproc_dseg.nii.gz dtype from float64 to float64
+261102-21:40:52,449 nipype.workflow INFO:
+	 [Node] Finished "t1w_std", elapsed time 28.928179s.
+261102-21:40:52,636 nipype.workflow INFO:
+	 [Node] Finished "resample_mask", elapsed time 7.028285s.
+261102-21:40:54,230 nipype.workflow INFO:
+	 [Node] Finished "anat2std_dseg", elapsed time 60.698375s.
+261102-21:40:54,280 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/resample_ref".
+261102-21:40:54,284 nipype.workflow INFO:
+	 [Node] Executing "resample_ref" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:54,442 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/resample_mask".
+261102-21:40:54,446 nipype.workflow INFO:
+	 [Node] Executing "resample_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:54,817 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin6Asym_res-2_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:40:55,100 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin6Asym_res-2_desc-preproc_dseg.nii.gz dtype from float64 to float64
+261102-21:40:56,77 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_ref" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/resample_ref".
+261102-21:40:56,79 nipype.workflow INFO:
+	 [Node] Executing "resample_ref" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:56,79 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.resample_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/resample_mask".
+261102-21:40:56,81 nipype.workflow INFO:
+	 [Node] Executing "resample_mask" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:40:57,127 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin6Asym_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:40:57,219 nipype.workflow INFO:
+	 [Node] Finished "resample_ref", elapsed time 1.139224s.
+261102-21:40:57,656 nipype.workflow INFO:
+	 [Node] Finished "resample_mask", elapsed time 1.574183s.
+261102-21:40:57,659 nipype.workflow INFO:
+	 [Node] Finished "resample_ref", elapsed time 3.374048s.
+261102-21:40:57,770 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_space-MNI152NLin6Asym_desc-preproc_dseg.nii.gz dtype from float64 to float64
+261102-21:40:59,315 nipype.workflow INFO:
+	 [Node] Finished "mask_std", elapsed time 53.724535s.
+261102-21:40:59,414 nipype.workflow INFO:
+	 [Node] Finished "resample_mask", elapsed time 4.967454s.
+261102-21:40:59,529 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_msk" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.res2/norm_msk".
+261102-21:40:59,529 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_msk" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.res2/norm_msk".
+261102-21:40:59,531 nipype.workflow INFO:
+	 [Node] Executing "norm_msk" <nipype.interfaces.utility.wrappers.Function>
+261102-21:40:59,532 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.dilated_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/dilated_mask".
+261102-21:40:59,532 nipype.workflow INFO:
+	 [Node] Executing "norm_msk" <nipype.interfaces.utility.wrappers.Function>
+261102-21:40:59,533 nipype.workflow INFO:
+	 [Node] Executing "dilated_mask" <niworkflows.interfaces.morphology.BinaryDilation>
+261102-21:40:59,644 nipype.workflow INFO:
+	 [Node] Finished "dilated_mask", elapsed time 0.11046s.
+261102-21:40:59,768 nipype.workflow INFO:
+	 [Node] Finished "norm_msk", elapsed time 0.235963s.
+261102-21:40:59,777 nipype.workflow INFO:
+	 [Node] Finished "norm_msk", elapsed time 0.244173s.
+261102-21:41:00,919 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.sdc_report" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/sdc_report".
+261102-21:41:00,921 nipype.workflow INFO:
+	 [Node] Executing "sdc_report" <nireports.interfaces.reporting.base.SimpleBeforeAfterRPT>
+261102-21:41:00,922 nipype.interface INFO:
+	 Report - setting before (/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/func/sub-10159_task-bart_space-run_boldref.nii.gz) and after (/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/func/sub-10159_task-bart_space-orig_desc-hmc_boldref.nii.gz) images
+261102-21:41:00,922 nipype.interface INFO:
+	 Generating visual report
+261102-21:41:00,931 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.epi_t1_report" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/epi_t1_report".
+261102-21:41:00,933 nipype.workflow INFO:
+	 [Node] Executing "epi_t1_report" <nireports.interfaces.reporting.base.SimpleBeforeAfterRPT>
+261102-21:41:00,934 nipype.interface INFO:
+	 Report - setting before (/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/func/sub-10159_task-bart_space-run_boldref.nii.gz) and after (/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/t1w_boldref/sub-10159_desc-preproc_T1w_trans.nii.gz) images
+261102-21:41:00,934 nipype.interface INFO:
+	 Generating visual report
+261102-21:41:01,628 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_msk" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.resnative/norm_msk".
+261102-21:41:01,633 nipype.workflow INFO:
+	 [Node] Executing "norm_msk" <nipype.interfaces.utility.wrappers.Function>
+261102-21:41:01,647 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.fmap_recon" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/fmap_recon".
+261102-21:41:01,652 nipype.workflow INFO:
+	 [Node] Executing "fmap_recon" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:41:02,228 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/func/sub-10159_task-bart_space-MNI152NLin2009cAsym_res-2_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:41:02,477 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.fmap_recon" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/fmap_recon".
+261102-21:41:02,481 nipype.workflow INFO:
+	 [Node] Executing "fmap_recon" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:41:02,755 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/func/sub-10159_task-bart_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:41:02,997 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.fmap_recon" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/fmap_recon".
+261102-21:41:03,4 nipype.workflow INFO:
+	 [Node] Executing "fmap_recon" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:41:03,198 nipype.workflow INFO:
+	 [Node] Finished "norm_msk", elapsed time 1.56387s.
+261102-21:41:03,583 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/func/sub-10159_task-bart_space-MNI152NLin6Asym_res-2_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:41:04,86 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.fmap_recon" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/fmap_recon".
+261102-21:41:04,93 nipype.workflow INFO:
+	 [Node] Executing "fmap_recon" <fmriprep.interfaces.resampling.ReconstructFieldmap>
+261102-21:41:04,351 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/func/sub-10159_task-bart_space-MNI152NLin6Asym_desc-brain_mask.nii.gz dtype from float64 to float64
+261102-21:41:05,144 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_rpt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.res2/norm_rpt".
+261102-21:41:05,147 nipype.workflow INFO:
+	 [Node] Executing "norm_rpt" <niworkflows.interfaces.reportlets.registration.SimpleBeforeAfterRPT>
+261102-21:41:05,462 nipype.workflow INFO:
+	 [Node] Finished "fmap_recon", elapsed time 2.9804s.
+261102-21:41:06,284 nipype.workflow INFO:
+	 [Node] Finished "fmap_recon", elapsed time 3.279883s.
+261102-21:41:06,631 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_rpt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin2009cAsym.resnative/norm_rpt".
+261102-21:41:06,633 nipype.workflow INFO:
+	 [Node] Executing "norm_rpt" <niworkflows.interfaces.reportlets.registration.SimpleBeforeAfterRPT>
+261102-21:41:06,783 nipype.workflow INFO:
+	 [Node] Finished "fmap_recon", elapsed time 2.688663s.
+261102-21:41:08,115 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.subtract_mask" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/subtract_mask".
+261102-21:41:08,159 nipype.workflow INFO:
+	 [Node] Executing "subtract_mask" <niworkflows.interfaces.morphology.BinarySubtraction>
+261102-21:41:08,183 nipype.workflow INFO:
+	 [Node] Finished "subtract_mask", elapsed time 0.022915s.
+261102-21:41:08,294 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_rpt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.res2/norm_rpt".
+261102-21:41:08,296 nipype.workflow INFO:
+	 [Node] Executing "norm_rpt" <niworkflows.interfaces.reportlets.registration.SimpleBeforeAfterRPT>
+261102-21:41:08,391 nipype.workflow INFO:
+	 [Node] Finished "fmap_recon", elapsed time 6.737739s.
+261102-21:41:10,96 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler0".
+261102-21:41:10,99 nipype.workflow INFO:
+	 [Node] Executing "_resampler0" <smriprep.interfaces.workbench.SurfaceResample>
+261102-21:41:10,104 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler1".
+261102-21:41:10,107 nipype.workflow INFO:
+	 [Node] Executing "_resampler1" <smriprep.interfaces.workbench.SurfaceResample>
+261102-21:41:12,962 nipype.workflow INFO:
+	 [Node] Finished "_resampler1", elapsed time 1.7392370000000001s.
+261102-21:41:13,214 nipype.workflow INFO:
+	 [Node] Finished "_resampler0", elapsed time 1.974378s.
+261102-21:41:13,267 nipype.workflow INFO:
+	 [Node] Finished "sdc_report", elapsed time 12.344507s.
+261102-21:41:13,434 nipype.workflow INFO:
+	 [Node] Finished "epi_t1_report", elapsed time 12.499771s.
+261102-21:41:14,107 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.ds_sdc_report" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/ds_sdc_report".
+261102-21:41:14,109 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.func_fit_reports_task_bart_wf.ds_epi_t1_report" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/func_fit_reports_task_bart_wf/ds_epi_t1_report".
+261102-21:41:14,116 nipype.workflow INFO:
+	 [Node] Executing "ds_epi_t1_report" <fmriprep.interfaces.DerivativesDataSink>
+261102-21:41:14,133 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler2".
+261102-21:41:14,137 nipype.workflow INFO:
+	 [Node] Executing "_resampler2" <smriprep.interfaces.workbench.SurfaceResample>
+261102-21:41:14,139 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler3" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler3".
+261102-21:41:14,143 nipype.workflow INFO:
+	 [Node] Executing "_resampler3" <smriprep.interfaces.workbench.SurfaceResample>
+261102-21:41:14,147 nipype.workflow INFO:
+	 [Node] Finished "ds_epi_t1_report", elapsed time 0.029782s.
+261102-21:41:14,309 nipype.workflow INFO:
+	 [Node] Executing "ds_sdc_report" <fmriprep.interfaces.DerivativesDataSink>
+261102-21:41:14,324 nipype.workflow INFO:
+	 [Node] Finished "ds_sdc_report", elapsed time 0.013763s.
+261102-21:41:15,119 nipype.workflow INFO:
+	 [Node] Finished "mask_std", elapsed time 51.597934s.
+261102-21:41:15,799 nipype.workflow INFO:
+	 [Node] Finished "_resampler2", elapsed time 1.3868960000000001s.
+261102-21:41:15,904 nipype.workflow INFO:
+	 [Node] Finished "norm_rpt", elapsed time 10.756628s.
+261102-21:41:16,86 nipype.workflow INFO:
+	 [Node] Finished "_resampler3", elapsed time 1.669994s.
+261102-21:41:16,131 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_msk" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.resnative/norm_msk".
+261102-21:41:16,131 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler4" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler4".
+261102-21:41:16,134 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:16,134 nipype.workflow INFO:
+	 [Node] Executing "_resampler4" <smriprep.interfaces.workbench.SurfaceResample>
+261102-21:41:16,137 nipype.workflow INFO:
+	 [Node] Executing "norm_msk" <nipype.interfaces.utility.wrappers.Function>
+261102-21:41:16,138 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms0" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:16,143 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler5" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler5".
+261102-21:41:16,144 nipype.workflow INFO:
+	 [Node] Executing "_resampler5" <smriprep.interfaces.workbench.SurfaceResample>
+261102-21:41:17,694 nipype.workflow INFO:
+	 [Node] Finished "norm_msk", elapsed time 1.554767s.
+261102-21:41:17,729 nipype.workflow INFO:
+	 [Node] Finished "_resampler5", elapsed time 1.345288s.
+261102-21:41:17,982 nipype.workflow INFO:
+	 [Node] Finished "_resampler4", elapsed time 1.6034549999999999s.
+261102-21:41:18,91 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.norm_rpt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/_in_tuple_MNI152NLin6Asym.resnative/norm_rpt".
+261102-21:41:18,93 nipype.workflow INFO:
+	 [Node] Executing "norm_rpt" <niworkflows.interfaces.reportlets.registration.SimpleBeforeAfterRPT>
+261102-21:41:18,294 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:18,295 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:18,295 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:18,298 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms0" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:18,298 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms1" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:18,299 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms2" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:18,407 nipype.workflow INFO:
+	 [Node] Finished "norm_rpt", elapsed time 10.110043s.
+261102-21:41:19,251 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms0", elapsed time 3.11144s.
+261102-21:41:20,72 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler0".
+261102-21:41:20,74 nipype.workflow INFO:
+	 [Node] Cached "_resampler0" - collecting precomputed outputs
+261102-21:41:20,74 nipype.workflow INFO:
+	 [Node] "_resampler0" found cached.
+261102-21:41:20,76 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler1".
+261102-21:41:20,77 nipype.workflow INFO:
+	 [Node] Cached "_resampler1" - collecting precomputed outputs
+261102-21:41:20,77 nipype.workflow INFO:
+	 [Node] "_resampler1" found cached.
+261102-21:41:20,78 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler2".
+261102-21:41:20,80 nipype.workflow INFO:
+	 [Node] Cached "_resampler2" - collecting precomputed outputs
+261102-21:41:20,80 nipype.workflow INFO:
+	 [Node] "_resampler2" found cached.
+261102-21:41:20,81 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler3" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler3".
+261102-21:41:20,83 nipype.workflow INFO:
+	 [Node] Cached "_resampler3" - collecting precomputed outputs
+261102-21:41:20,83 nipype.workflow INFO:
+	 [Node] "_resampler3" found cached.
+261102-21:41:20,84 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler4" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler4".
+261102-21:41:20,85 nipype.workflow INFO:
+	 [Node] Cached "_resampler4" - collecting precomputed outputs
+261102-21:41:20,85 nipype.workflow INFO:
+	 [Node] "_resampler4" found cached.
+261102-21:41:20,87 nipype.workflow INFO:
+	 [Node] Setting-up "_resampler5" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/resample_surfaces_wf/resampler/mapflow/_resampler5".
+261102-21:41:20,88 nipype.workflow INFO:
+	 [Node] Cached "_resampler5" - collecting precomputed outputs
+261102-21:41:20,88 nipype.workflow INFO:
+	 [Node] "_resampler5" found cached.
+261102-21:41:20,243 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:20,244 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:20,246 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms1" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:20,246 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms2" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:20,336 nipype.workflow INFO:
+	 [Node] Finished "norm_rpt", elapsed time 13.702132s.
+261102-21:41:21,166 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms0", elapsed time 2.867103s.
+261102-21:41:21,447 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms1", elapsed time 3.146128s.
+261102-21:41:21,551 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms2", elapsed time 3.250035s.
+261102-21:41:22,335 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:22,337 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms0" - collecting precomputed outputs
+261102-21:41:22,337 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms0" found cached.
+261102-21:41:22,339 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:22,340 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms1" - collecting precomputed outputs
+261102-21:41:22,341 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms1" found cached.
+261102-21:41:22,342 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.res2/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:22,343 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms2" - collecting precomputed outputs
+261102-21:41:22,343 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms2" found cached.
+261102-21:41:22,534 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:22,535 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:22,537 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms0" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:22,537 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:22,537 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms1" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:22,539 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms2" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:22,540 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:22,542 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms0" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:22,684 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms1", elapsed time 2.437102s.
+261102-21:41:22,685 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms2", elapsed time 2.437617s.
+261102-21:41:24,454 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:24,455 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms0" - collecting precomputed outputs
+261102-21:41:24,455 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms0" found cached.
+261102-21:41:24,456 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:24,457 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms1" - collecting precomputed outputs
+261102-21:41:24,457 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms1" found cached.
+261102-21:41:24,457 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.res2/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:24,458 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms2" - collecting precomputed outputs
+261102-21:41:24,458 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms2" found cached.
+261102-21:41:25,354 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:25,355 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:25,356 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms1" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:25,357 nipype.workflow INFO:
+	 [Node] Executing "_anat2std_tpms2" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:41:29,31 nipype.workflow INFO:
+	 [Node] Finished "norm_rpt", elapsed time 10.937206s.
+261102-21:41:34,328 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms0", elapsed time 11.785081s.
+261102-21:41:34,354 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms1", elapsed time 11.816393s.
+261102-21:41:34,357 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms2", elapsed time 11.816842s.
+261102-21:41:35,653 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms1", elapsed time 10.295482s.
+261102-21:41:36,325 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms0", elapsed time 13.788046s.
+261102-21:41:37,93 nipype.workflow INFO:
+	 [Node] Finished "_anat2std_tpms2", elapsed time 11.735516s.
+261102-21:41:38,241 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:38,242 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms0" - collecting precomputed outputs
+261102-21:41:38,242 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms0" found cached.
+261102-21:41:38,242 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_tpms/mapflow/_anat2std_tpms0".
+261102-21:41:38,243 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:38,244 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms0" - collecting precomputed outputs
+261102-21:41:38,244 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms0" found cached.
+261102-21:41:38,245 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms1" - collecting precomputed outputs
+261102-21:41:38,245 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms1" found cached.
+261102-21:41:38,246 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_tpms/mapflow/_anat2std_tpms1".
+261102-21:41:38,247 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin2009cAsym.resnative/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:38,247 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms1" - collecting precomputed outputs
+261102-21:41:38,247 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms1" found cached.
+261102-21:41:38,248 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms2" - collecting precomputed outputs
+261102-21:41:38,248 nipype.workflow INFO:
+	 [Node] Setting-up "_anat2std_tpms2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/ds_std_volumes_wf/_in_tuple_MNI152NLin6Asym.resnative/anat2std_tpms/mapflow/_anat2std_tpms2".
+261102-21:41:38,248 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms2" found cached.
+261102-21:41:38,250 nipype.workflow INFO:
+	 [Node] Cached "_anat2std_tpms2" - collecting precomputed outputs
+261102-21:41:38,250 nipype.workflow INFO:
+	 [Node] "_anat2std_tpms2" found cached.
+261102-21:41:40,217 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_native_wf.boldref_bold" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_native_wf/boldref_bold".
+261102-21:41:40,220 nipype.workflow INFO:
+	 [Node] Executing "boldref_bold" <fmriprep.interfaces.resampling.ResampleSeries>
+261102-21:41:51,245 nipype.workflow INFO:
+	 [Node] Finished "boldref_bold", elapsed time 11.02474s.
+261102-21:41:59,233 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.autorecon1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon1".
+261102-21:41:59,239 nipype.workflow INFO:
+	 [Node] Executing "autorecon1" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:41:59,240 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:41:59,240 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:41:59,462 nipype.workflow INFO:
+	 [Node] Finished "autorecon1", elapsed time 0.222343s.
+261102-21:42:01,395 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.crown_clip" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/crown_clip".
+261102-21:42:01,403 nipype.workflow INFO:
+	 [Node] Executing "crown_clip" <nipype.interfaces.utility.wrappers.Function>
+261102-21:42:01,404 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.skull_strip_extern" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/skull_strip_extern".
+261102-21:42:01,407 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.acc_masks" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_masks".
+261102-21:42:01,408 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.dvars" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/dvars".
+261102-21:42:01,416 nipype.workflow INFO:
+	 [Node] Executing "skull_strip_extern" <niworkflows.interfaces.freesurfer.FSInjectBrainExtracted>
+261102-21:42:01,417 nipype.workflow INFO:
+	 [Node] Finished "skull_strip_extern", elapsed time 0.000281s.
+261102-21:42:01,417 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.tcompcor" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/tcompcor".
+261102-21:42:01,423 nipype.workflow INFO:
+	 [Node] Executing "tcompcor" <niworkflows.interfaces.patches.RobustTCompCor>
+261102-21:42:01,428 nipype.workflow INFO:
+	 [Node] Executing "dvars" <nipype.algorithms.confounds.ComputeDVARS>
+261102-21:42:01,473 nipype.workflow INFO:
+	 [Node] Executing "acc_masks" <fmriprep.interfaces.confounds.aCompCorMasks>
+261102-21:42:02,933 nipype.workflow INFO:
+	 [Node] Finished "crown_clip", elapsed time 1.528534s.
+261102-21:42:03,442 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.crowncompcor" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/crowncompcor".
+261102-21:42:03,451 nipype.workflow INFO:
+	 [Node] Executing "crowncompcor" <niworkflows.interfaces.patches.RobustACompCor>
+261102-21:42:03,686 nipype.workflow INFO:
+	 [Node] Finished "tcompcor", elapsed time 2.262288s.
+261102-21:42:05,418 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.tcc_metadata_filter" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/tcc_metadata_filter".
+261102-21:42:05,425 nipype.workflow INFO:
+	 [Node] Executing "tcc_metadata_filter" <fmriprep.interfaces.confounds.FilterDropped>
+261102-21:42:05,439 nipype.workflow INFO:
+	 [Node] Finished "tcc_metadata_filter", elapsed time 0.012475s.
+261102-21:42:05,616 nipype.workflow INFO:
+	 [Node] Finished "acc_masks", elapsed time 4.141962s.
+261102-21:42:06,31 nipype.workflow INFO:
+	 [Node] Finished "crowncompcor", elapsed time 2.579098s.
+261102-21:42:07,419 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.crowncc_metadata_fmt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/crowncc_metadata_fmt".
+261102-21:42:07,419 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.tcc_metadata_fmt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/tcc_metadata_fmt".
+261102-21:42:07,423 nipype.workflow INFO:
+	 [Node] Executing "tcc_metadata_fmt" <niworkflows.interfaces.utility.TSV2JSON>
+261102-21:42:07,432 nipype.workflow INFO:
+	 [Node] Finished "tcc_metadata_fmt", elapsed time 0.007823s.
+261102-21:42:07,442 nipype.workflow INFO:
+	 [Node] Executing "crowncc_metadata_fmt" <niworkflows.interfaces.utility.TSV2JSON>
+261102-21:42:07,450 nipype.workflow INFO:
+	 [Node] Finished "crowncc_metadata_fmt", elapsed time 0.006998s.
+261102-21:42:09,416 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_tfm0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_tfm/mapflow/_acc_msk_tfm0".
+261102-21:42:09,417 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_tfm1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_tfm/mapflow/_acc_msk_tfm1".
+261102-21:42:09,418 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_tfm0" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:42:09,418 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_tfm2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_tfm/mapflow/_acc_msk_tfm2".
+261102-21:42:09,418 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_tfm1" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:42:09,420 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_tfm2" <niworkflows.interfaces.fixes.FixHeaderApplyTransforms>
+261102-21:42:10,1 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_tfm1", elapsed time 0.582076s.
+261102-21:42:10,25 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_tfm2", elapsed time 0.604358s.
+261102-21:42:10,152 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_tfm0", elapsed time 0.733724s.
+261102-21:42:10,818 nipype.workflow INFO:
+	 [Node] Finished "dvars", elapsed time 9.387581s.
+261102-21:42:11,433 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_anat_wf.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/resample".
+261102-21:42:11,438 nipype.workflow INFO:
+	 [Node] Executing "resample" <fmriprep.interfaces.resampling.ResampleSeries>
+261102-21:42:22,400 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 10.960482s.
+261102-21:42:23,383 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_MNI6_wf.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_MNI6_wf/resample".
+261102-21:42:23,386 nipype.workflow INFO:
+	 [Node] Executing "resample" <fmriprep.interfaces.resampling.ResampleSeries>
+261102-21:43:26,496 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 63.108975s.
+261102-21:43:27,751 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_tfm0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_tfm/mapflow/_acc_msk_tfm0".
+261102-21:43:27,752 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_tfm0" - collecting precomputed outputs
+261102-21:43:27,752 nipype.workflow INFO:
+	 [Node] "_acc_msk_tfm0" found cached.
+261102-21:43:27,753 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_tfm1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_tfm/mapflow/_acc_msk_tfm1".
+261102-21:43:27,755 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_tfm1" - collecting precomputed outputs
+261102-21:43:27,755 nipype.workflow INFO:
+	 [Node] "_acc_msk_tfm1" found cached.
+261102-21:43:27,756 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_tfm2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_tfm/mapflow/_acc_msk_tfm2".
+261102-21:43:27,757 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_tfm2" - collecting precomputed outputs
+261102-21:43:27,757 nipype.workflow INFO:
+	 [Node] "_acc_msk_tfm2" found cached.
+261102-21:43:29,426 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.volume_to_surface" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_L/volume_to_surface".
+261102-21:43:29,429 nipype.workflow INFO:
+	 [Node] Executing "volume_to_surface" <fmriprep.interfaces.workbench.VolumeToSurfaceMapping>
+261102-21:43:41,433 nipype.workflow INFO:
+	 [Node] Finished "volume_to_surface", elapsed time 11.814539s.
+261102-21:43:43,435 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.volume_to_surface" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_R/volume_to_surface".
+261102-21:43:43,438 nipype.workflow INFO:
+	 [Node] Executing "volume_to_surface" <fmriprep.interfaces.workbench.VolumeToSurfaceMapping>
+261102-21:43:55,698 nipype.workflow INFO:
+	 [Node] Finished "volume_to_surface", elapsed time 12.058122s.
+261102-21:43:57,417 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/resample".
+261102-21:43:57,474 nipype.workflow INFO:
+	 [Node] Executing "resample" <fmriprep.interfaces.resampling.ResampleSeries>
+261102-21:44:58,558 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 61.082901s.
+261102-21:44:59,450 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/resample".
+261102-21:44:59,455 nipype.workflow INFO:
+	 [Node] Executing "resample" <fmriprep.interfaces.resampling.ResampleSeries>
+261102-21:45:09,798 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 10.34197s.
+261102-21:45:11,396 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/resample".
+261102-21:45:11,399 nipype.workflow INFO:
+	 [Node] Executing "resample" <fmriprep.interfaces.resampling.ResampleSeries>
+261102-21:46:01,813 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 50.412322s.
+261102-21:46:03,431 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_std_wf.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/resample".
+261102-21:46:03,434 nipype.workflow INFO:
+	 [Node] Executing "resample" <fmriprep.interfaces.resampling.ResampleSeries>
+261102-21:46:12,833 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 9.397999s.
+261102-21:46:13,420 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.autorecon_resume_wf.gcareg" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/gcareg".
+261102-21:46:13,423 nipype.workflow INFO:
+	 [Node] Executing "gcareg" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:46:13,424 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:46:13,424 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:46:13,571 nipype.workflow INFO:
+	 [Node] Finished "gcareg", elapsed time 0.147265s.
+261102-21:46:15,388 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.metric_dilate" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_L/metric_dilate".
+261102-21:46:15,394 nipype.workflow INFO:
+	 [Node] Executing "metric_dilate" <fmriprep.interfaces.workbench.MetricDilate>
+261102-21:46:36,889 nipype.workflow INFO:
+	 [Node] Finished "metric_dilate", elapsed time 21.299159s.
+261102-21:46:37,426 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.metric_dilate" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_R/metric_dilate".
+261102-21:46:37,429 nipype.workflow INFO:
+	 [Node] Executing "metric_dilate" <fmriprep.interfaces.workbench.MetricDilate>
+261102-21:46:57,874 nipype.workflow INFO:
+	 [Node] Finished "metric_dilate", elapsed time 20.256428s.
+261102-21:46:59,448 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.ds_bold" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.res2/ds_bold".
+261102-21:46:59,449 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.ds_bold" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin2009cAsym.resnative/ds_bold".
+261102-21:46:59,450 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.ds_bold" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.res2/ds_bold".
+261102-21:46:59,452 nipype.workflow INFO:
+	 [Node] Executing "ds_bold" <fmriprep.interfaces.DerivativesDataSink>
+261102-21:46:59,454 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_brain1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_brain/mapflow/_acc_msk_brain1".
+261102-21:46:59,454 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_brain0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_brain/mapflow/_acc_msk_brain0".
+261102-21:46:59,453 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.ds_bold_std_wf.ds_bold" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/ds_bold_std_wf/_in_tuple_MNI152NLin6Asym.resnative/ds_bold".
+261102-21:46:59,454 nipype.workflow INFO:
+	 [Node] Executing "ds_bold" <fmriprep.interfaces.DerivativesDataSink>
+261102-21:46:59,455 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_brain0" <niworkflows.interfaces.nibabel.ApplyMask>
+261102-21:46:59,456 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_brain1" <niworkflows.interfaces.nibabel.ApplyMask>
+261102-21:46:59,460 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.mask_native" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_L/mask_native".
+261102-21:46:59,460 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.mask_native" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_R/mask_native".
+261102-21:46:59,462 nipype.workflow INFO:
+	 [Node] Executing "mask_native" <fmriprep.interfaces.workbench.MetricMask>
+261102-21:46:59,462 nipype.workflow INFO:
+	 [Node] Executing "mask_native" <fmriprep.interfaces.workbench.MetricMask>
+261102-21:46:59,476 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_brain1", elapsed time 0.019458s.
+261102-21:46:59,483 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_brain0", elapsed time 0.027388s.
+261102-21:46:59,485 nipype.workflow INFO:
+	 [Node] Executing "ds_bold" <fmriprep.interfaces.DerivativesDataSink>
+261102-21:46:59,489 nipype.workflow INFO:
+	 [Node] Executing "ds_bold" <fmriprep.interfaces.DerivativesDataSink>
+261102-21:47:01,412 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_brain2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_brain/mapflow/_acc_msk_brain2".
+261102-21:47:01,414 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_brain2" <niworkflows.interfaces.nibabel.ApplyMask>
+261102-21:47:01,435 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_brain2", elapsed time 0.0204s.
+261102-21:47:03,396 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_brain0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_brain/mapflow/_acc_msk_brain0".
+261102-21:47:03,397 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_brain0" - collecting precomputed outputs
+261102-21:47:03,397 nipype.workflow INFO:
+	 [Node] "_acc_msk_brain0" found cached.
+261102-21:47:03,397 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_brain1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_brain/mapflow/_acc_msk_brain1".
+261102-21:47:03,398 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_brain1" - collecting precomputed outputs
+261102-21:47:03,398 nipype.workflow INFO:
+	 [Node] "_acc_msk_brain1" found cached.
+261102-21:47:03,398 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_brain2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_brain/mapflow/_acc_msk_brain2".
+261102-21:47:03,398 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_brain2" - collecting precomputed outputs
+261102-21:47:03,398 nipype.workflow INFO:
+	 [Node] "_acc_msk_brain2" found cached.
+261102-21:47:05,932 nipype.workflow INFO:
+	 [Node] Finished "ds_bold", elapsed time 6.445814s.
+261102-21:47:06,33 nipype.workflow INFO:
+	 [Node] Finished "mask_native", elapsed time 6.398064s.
+261102-21:47:06,358 nipype.workflow INFO:
+	 [Node] Finished "mask_native", elapsed time 6.670003s.
+261102-21:47:06,386 nipype.workflow INFO:
+	 [Node] Finished "ds_bold", elapsed time 6.930686s.
+261102-21:47:07,392 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_bin0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_bin/mapflow/_acc_msk_bin0".
+261102-21:47:07,393 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_bin1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_bin/mapflow/_acc_msk_bin1".
+261102-21:47:07,394 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_bin2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_bin/mapflow/_acc_msk_bin2".
+261102-21:47:07,394 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_bin0" <niworkflows.interfaces.nibabel.Binarize>
+261102-21:47:07,395 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_bin2" <niworkflows.interfaces.nibabel.Binarize>
+261102-21:47:07,395 nipype.workflow INFO:
+	 [Node] Executing "_acc_msk_bin1" <niworkflows.interfaces.nibabel.Binarize>
+261102-21:47:07,408 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_bin2", elapsed time 0.01266s.
+261102-21:47:07,423 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_bin0", elapsed time 0.028562s.
+261102-21:47:07,425 nipype.workflow INFO:
+	 [Node] Finished "_acc_msk_bin1", elapsed time 0.028061s.
+261102-21:47:09,394 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_bin0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_bin/mapflow/_acc_msk_bin0".
+261102-21:47:09,395 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_bin0" - collecting precomputed outputs
+261102-21:47:09,395 nipype.workflow INFO:
+	 [Node] "_acc_msk_bin0" found cached.
+261102-21:47:09,395 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_bin1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_bin/mapflow/_acc_msk_bin1".
+261102-21:47:09,396 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_bin1" - collecting precomputed outputs
+261102-21:47:09,396 nipype.workflow INFO:
+	 [Node] "_acc_msk_bin1" found cached.
+261102-21:47:09,396 nipype.workflow INFO:
+	 [Node] Setting-up "_acc_msk_bin2" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_msk_bin/mapflow/_acc_msk_bin2".
+261102-21:47:09,397 nipype.workflow INFO:
+	 [Node] Cached "_acc_msk_bin2" - collecting precomputed outputs
+261102-21:47:09,397 nipype.workflow INFO:
+	 [Node] "_acc_msk_bin2" found cached.
+261102-21:47:11,409 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.acompcor" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acompcor".
+261102-21:47:11,412 nipype.workflow INFO:
+	 [Node] Executing "acompcor" <niworkflows.interfaces.patches.RobustACompCor>
+261102-21:47:11,659 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.carpetplot_wf.parcels" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/carpetplot_wf/parcels".
+261102-21:47:11,661 nipype.workflow INFO:
+	 [Node] Executing "parcels" <nipype.interfaces.utility.wrappers.Function>
+261102-21:47:11,679 nipype.workflow INFO:
+	 [Node] Finished "parcels", elapsed time 0.017141s.
+261102-21:47:13,36 nipype.workflow INFO:
+	 [Node] Finished "acompcor", elapsed time 1.623193s.
+261102-21:47:13,400 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.rename_acompcor" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/rename_acompcor".
+261102-21:47:13,404 nipype.workflow INFO:
+	 [Node] Executing "rename_acompcor" <fmriprep.interfaces.confounds.RenameACompCor>
+261102-21:47:13,439 nipype.workflow INFO:
+	 [Node] Finished "rename_acompcor", elapsed time 0.034314s.
+261102-21:47:13,531 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.rois_plot" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/rois_plot".
+261102-21:47:13,538 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.signals" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/signals".
+261102-21:47:13,544 nipype.workflow INFO:
+	 [Node] Executing "signals" <niworkflows.interfaces.images.SignalExtraction>
+261102-21:47:13,553 nipype.workflow INFO:
+	 [Node] Executing "rois_plot" <niworkflows.interfaces.reportlets.masks.ROIsPlot>
+261102-21:47:14,603 nipype.workflow INFO:
+	 [Node] Finished "signals", elapsed time 1.057582s.
+261102-21:47:15,403 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.compcor_plot" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/compcor_plot".
+261102-21:47:15,405 nipype.workflow INFO:
+	 [Node] Executing "compcor_plot" <nireports.interfaces.nuisance.CompCorVariancePlot>
+261102-21:47:15,638 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.acc_metadata_filter" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_metadata_filter".
+261102-21:47:15,640 nipype.workflow INFO:
+	 [Node] Executing "acc_metadata_filter" <fmriprep.interfaces.confounds.FilterDropped>
+261102-21:47:15,646 nipype.workflow INFO:
+	 [Node] Finished "acc_metadata_filter", elapsed time 0.005539s.
+261102-21:47:15,693 nipype.workflow INFO:
+	 [Node] Finished "compcor_plot", elapsed time 0.286922s.
+261102-21:47:17,392 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.acc_metadata_fmt" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/acc_metadata_fmt".
+261102-21:47:17,402 nipype.workflow INFO:
+	 [Node] Executing "acc_metadata_fmt" <niworkflows.interfaces.utility.TSV2JSON>
+261102-21:47:17,417 nipype.workflow INFO:
+	 [Node] Finished "acc_metadata_fmt", elapsed time 0.01328s.
+261102-21:47:17,526 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.model_expansion" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/model_expansion".
+261102-21:47:17,528 nipype.workflow INFO:
+	 [Node] Executing "model_expansion" <niworkflows.interfaces.confounds.ExpandModel>
+261102-21:47:17,620 nipype.workflow INFO:
+	 [Node] Finished "model_expansion", elapsed time 0.091256s.
+261102-21:47:17,752 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.conf_corr_plot" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/conf_corr_plot".
+261102-21:47:17,760 nipype.workflow INFO:
+	 [Node] Executing "conf_corr_plot" <nireports.interfaces.nuisance.ConfoundsCorrelationPlot>
+261102-21:47:18,240 nipype.workflow INFO:
+	 [Node] Finished "conf_corr_plot", elapsed time 0.479263s.
+261102-21:47:19,565 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_confounds_wf.spike_regressors" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_confounds_wf/spike_regressors".
+261102-21:47:19,567 nipype.workflow INFO:
+	 [Node] Executing "spike_regressors" <niworkflows.interfaces.confounds.SpikeRegressors>
+261102-21:47:19,629 nipype.workflow INFO:
+	 [Node] Finished "spike_regressors", elapsed time 0.061801s.
+261102-21:47:20,38 nipype.workflow INFO:
+	 [Node] Finished "rois_plot", elapsed time 6.484677s.
+261102-21:47:38,911 nipype.workflow INFO:
+	 [Node] Finished "ds_bold", elapsed time 39.420839s.
+261102-21:47:46,73 nipype.workflow INFO:
+	 [Node] Finished "ds_bold", elapsed time 46.620722s.
+261102-21:47:47,403 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
+261102-21:47:47,406 nipype.workflow INFO:
+	 [Node] Executing "autorecon2_vol" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:47:47,407 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:47:47,407 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:47:47,548 nipype.workflow INFO:
+	 [Node] Finished "autorecon2_vol", elapsed time 0.141511s.
+261102-21:47:49,421 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.resample_to_fsLR" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_L/resample_to_fsLR".
+261102-21:47:49,424 nipype.workflow INFO:
+	 [Node] Executing "resample_to_fsLR" <fmriprep.interfaces.workbench.MetricResample>
+261102-21:47:54,332 nipype.workflow INFO:
+	 [Node] Finished "resample_to_fsLR", elapsed time 4.659088s.
+261102-21:47:55,412 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.resample_to_fsLR" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_R/resample_to_fsLR".
+261102-21:47:55,415 nipype.workflow INFO:
+	 [Node] Executing "resample_to_fsLR" <fmriprep.interfaces.workbench.MetricResample>
+261102-21:48:00,53 nipype.workflow INFO:
+	 [Node] Finished "resample_to_fsLR", elapsed time 4.416104s.
+261102-21:48:01,406 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.mask_fsLR" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_L/mask_fsLR".
+261102-21:48:01,406 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.mask_fsLR" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/_hemi_R/mask_fsLR".
+261102-21:48:01,408 nipype.workflow INFO:
+	 [Node] Executing "mask_fsLR" <fmriprep.interfaces.workbench.MetricMask>
+261102-21:48:01,408 nipype.workflow INFO:
+	 [Node] Executing "mask_fsLR" <fmriprep.interfaces.workbench.MetricMask>
+261102-21:48:03,646 nipype.workflow INFO:
+	 [Node] Finished "mask_fsLR", elapsed time 2.044378s.
+261102-21:48:03,648 nipype.workflow INFO:
+	 [Node] Finished "mask_fsLR", elapsed time 2.041637s.
+261102-21:48:05,404 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_fsLR_resampling_wf.joinnode" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_fsLR_resampling_wf/joinnode".
+261102-21:48:05,407 nipype.workflow INFO:
+	 [Node] Executing "joinnode" <nipype.interfaces.utility.base.IdentityInterface>
+261102-21:48:05,407 nipype.workflow INFO:
+	 [Node] Finished "joinnode", elapsed time 0.000163s.
+261102-21:48:07,415 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.bold_grayords_wf.gen_cifti" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_grayords_wf/gen_cifti".
+261102-21:48:07,417 nipype.workflow INFO:
+	 [Node] Executing "gen_cifti" <niworkflows.interfaces.cifti.GenerateCifti>
+261102-21:48:13,795 nipype.workflow INFO:
+	 [Node] Finished "gen_cifti", elapsed time 6.377217s.
+261102-21:48:16,21 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.bold_apply_task_bart_wf.carpetplot_wf.conf_plot" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/carpetplot_wf/conf_plot".
+261102-21:48:16,30 nipype.workflow INFO:
+	 [Node] Executing "conf_plot" <fmriprep.interfaces.confounds.FMRISummary>
+261102-21:48:18,923 nipype.workflow INFO:
+	 [Node] Finished "conf_plot", elapsed time 2.893087s.
+261102-21:48:19,529 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0".
+261102-21:48:19,530 nipype.workflow INFO:
+	 [Node] Executing "_autorecon_surfs0" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:19,532 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:19,532 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:19,643 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs0", elapsed time 0.111298s.
+261102-21:48:21,511 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1".
+261102-21:48:21,512 nipype.workflow INFO:
+	 [Node] Executing "_autorecon_surfs1" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:21,513 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:21,514 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:21,637 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs1", elapsed time 0.123648s.
+261102-21:48:23,517 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0".
+261102-21:48:23,518 nipype.workflow INFO:
+	 [Node] Executing "_autorecon_surfs0" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:23,519 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:23,520 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:23,632 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs0", elapsed time 0.112918s.
+261102-21:48:23,635 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1".
+261102-21:48:23,637 nipype.workflow INFO:
+	 [Node] Executing "_autorecon_surfs1" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:23,638 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:23,638 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:23,746 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs1", elapsed time 0.108286s.
+261102-21:48:25,401 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.autorecon_resume_wf.cortribbon" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/cortribbon".
+261102-21:48:25,403 nipype.workflow INFO:
+	 [Node] Executing "cortribbon" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:25,404 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:25,405 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:25,518 nipype.workflow INFO:
+	 [Node] Finished "cortribbon", elapsed time 0.114178s.
+261102-21:48:29,400 nipype.workflow INFO:
+	 [Node] Setting-up "_parcstats0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/parcstats/mapflow/_parcstats0".
+261102-21:48:29,402 nipype.workflow INFO:
+	 [Node] Executing "_parcstats0" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:29,403 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:29,403 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:29,514 nipype.workflow INFO:
+	 [Node] Finished "_parcstats0", elapsed time 0.111373s.
+261102-21:48:31,401 nipype.workflow INFO:
+	 [Node] Setting-up "_parcstats1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/parcstats/mapflow/_parcstats1".
+261102-21:48:31,405 nipype.workflow INFO:
+	 [Node] Executing "_parcstats1" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:31,407 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:31,408 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:31,550 nipype.workflow INFO:
+	 [Node] Finished "_parcstats1", elapsed time 0.143238s.
+261102-21:48:33,632 nipype.workflow INFO:
+	 [Node] Setting-up "_parcstats0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/parcstats/mapflow/_parcstats0".
+261102-21:48:33,634 nipype.workflow INFO:
+	 [Node] Executing "_parcstats0" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:33,635 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:33,635 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:33,751 nipype.workflow INFO:
+	 [Node] Finished "_parcstats0", elapsed time 0.116449s.
+261102-21:48:33,754 nipype.workflow INFO:
+	 [Node] Setting-up "_parcstats1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/parcstats/mapflow/_parcstats1".
+261102-21:48:33,755 nipype.workflow INFO:
+	 [Node] Executing "_parcstats1" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:33,756 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:33,757 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:33,872 nipype.workflow INFO:
+	 [Node] Finished "_parcstats1", elapsed time 0.115994s.
+261102-21:48:35,411 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.autorecon_resume_wf.autorecon3" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/autorecon_resume_wf/autorecon3".
+261102-21:48:35,413 nipype.workflow INFO:
+	 [Node] Executing "autorecon3" <smriprep.interfaces.freesurfer.ReconAll>
+261102-21:48:35,414 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:35,415 nipype.interface INFO:
+	 recon-all complete : Not running
+261102-21:48:35,540 nipype.workflow INFO:
+	 [Node] Finished "autorecon3", elapsed time 0.126376s.
+261102-21:48:37,420 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.get_surfaces" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/get_surfaces".
+261102-21:48:37,422 nipype.workflow INFO:
+	 [Node] Executing "get_surfaces" <niworkflows.interfaces.patches.FreeSurferSource>
+261102-21:48:37,428 nipype.workflow INFO:
+	 [Node] Finished "get_surfaces", elapsed time 0.005653s.
+261102-21:48:41,420 nipype.workflow INFO:
+	 [Node] Setting-up "_midthickness0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/midthickness/mapflow/_midthickness0".
+261102-21:48:41,422 nipype.workflow INFO:
+	 [Node] Executing "_midthickness0" <smriprep.interfaces.freesurfer.MakeMidthickness>
+261102-21:48:41,587 nipype.workflow INFO:
+	 [Node] Finished "_midthickness0", elapsed time 0.164377s.
+261102-21:48:43,420 nipype.workflow INFO:
+	 [Node] Setting-up "_midthickness1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/midthickness/mapflow/_midthickness1".
+261102-21:48:43,427 nipype.workflow INFO:
+	 [Node] Executing "_midthickness1" <smriprep.interfaces.freesurfer.MakeMidthickness>
+261102-21:48:43,550 nipype.workflow INFO:
+	 [Node] Finished "_midthickness1", elapsed time 0.122599s.
+261102-21:48:45,425 nipype.workflow INFO:
+	 [Node] Setting-up "_midthickness0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/midthickness/mapflow/_midthickness0".
+261102-21:48:45,426 nipype.workflow INFO:
+	 [Node] Cached "_midthickness0" - collecting precomputed outputs
+261102-21:48:45,426 nipype.workflow INFO:
+	 [Node] "_midthickness0" found cached.
+261102-21:48:45,427 nipype.workflow INFO:
+	 [Node] Setting-up "_midthickness1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/midthickness/mapflow/_midthickness1".
+261102-21:48:45,427 nipype.workflow INFO:
+	 [Node] Cached "_midthickness1" - collecting precomputed outputs
+261102-21:48:45,427 nipype.workflow INFO:
+	 [Node] "_midthickness1" found cached.
+261102-21:48:47,404 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.save_midthickness" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/save_midthickness".
+261102-21:48:47,407 nipype.workflow INFO:
+	 [Node] Executing "save_midthickness" <nipype.interfaces.io.DataSink>
+261102-21:48:47,465 nipype.workflow INFO:
+	 [Node] Finished "save_midthickness", elapsed time 0.057966s.
+261102-21:48:49,402 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.surface_recon_wf.sync" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/surface_recon_wf/sync".
+261102-21:48:49,404 nipype.workflow INFO:
+	 [Node] Executing "sync" <nipype.interfaces.utility.wrappers.Function>
+261102-21:48:49,405 nipype.workflow INFO:
+	 [Node] Finished "sync", elapsed time 0.000493s.
+261102-21:48:51,405 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.curv_wf.get_surfaces" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/curv_wf/get_surfaces".
+261102-21:48:51,405 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.gifti_surface_wf.get_surfaces" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_surface_wf/get_surfaces".
+261102-21:48:51,405 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.gifti_morphometrics_wf.get_surfaces" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_morphometrics_wf/get_surfaces".
+261102-21:48:51,406 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.segs_to_native_wf_aseg.fs_datasource" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/segs_to_native_wf_aseg/fs_datasource".
+261102-21:48:51,406 nipype.workflow INFO:
+	 [Node] Executing "get_surfaces" <niworkflows.interfaces.patches.FreeSurferSource>
+261102-21:48:51,406 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.segs_to_native_wf_aparc_aseg.fs_datasource" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/segs_to_native_wf_aparc_aseg/fs_datasource".
+261102-21:48:51,406 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.anat_fit_wf.anat_reports_wf.recon_report" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/anat_fit_wf/anat_reports_wf/recon_report".
+261102-21:48:51,408 nipype.workflow INFO:
+	 [Node] Executing "get_surfaces" <niworkflows.interfaces.patches.FreeSurferSource>
+261102-21:48:51,408 nipype.workflow INFO:
+	 [Node] Executing "recon_report" <smriprep.interfaces.reports.FSSurfaceReport>
+261102-21:48:51,408 nipype.workflow INFO:
+	 [Node] Executing "fs_datasource" <niworkflows.interfaces.patches.FreeSurferSource>
+261102-21:48:51,409 nipype.workflow INFO:
+	 [Node] Executing "get_surfaces" <nipype.interfaces.utility.wrappers.Function>
+261102-21:48:51,409 nipype.workflow INFO:
+	 [Node] Executing "fs_datasource" <niworkflows.interfaces.patches.FreeSurferSource>
+261102-21:48:51,411 nipype.workflow INFO:
+	 [Node] Finished "get_surfaces", elapsed time 0.004992s.
+261102-21:48:51,411 nipype.workflow INFO:
+	 [Node] Finished "get_surfaces", elapsed time 0.001741s.
+261102-21:48:51,417 nipype.workflow INFO:
+	 [Node] Finished "fs_datasource", elapsed time 0.008388s.
+261102-21:48:51,421 nipype.workflow INFO:
+	 [Node] Finished "fs_datasource", elapsed time 0.010893s.
+261102-21:48:51,425 nipype.workflow INFO:
+	 [Node] Finished "get_surfaces", elapsed time 0.015749s.
+261102-21:48:53,992 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.segs_to_native_wf_aseg.select_seg" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/segs_to_native_wf_aseg/select_seg".
+261102-21:48:54,32 nipype.workflow INFO:
+	 [Node] Executing "select_seg" <nipype.interfaces.utility.wrappers.Function>
+261102-21:48:54,33 nipype.workflow INFO:
+	 [Node] Finished "select_seg", elapsed time 0.000576s.
+261102-21:48:54,210 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.segs_to_native_wf_aparc_aseg.select_seg" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/segs_to_native_wf_aparc_aseg/select_seg".
+261102-21:48:54,216 nipype.workflow INFO:
+	 [Node] Executing "select_seg" <nipype.interfaces.utility.wrappers.Function>
+261102-21:48:54,218 nipype.workflow INFO:
+	 [Node] Finished "select_seg", elapsed time 0.000657s.
+261102-21:48:55,417 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.segs_to_native_wf_aseg.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/segs_to_native_wf_aseg/resample".
+261102-21:48:55,418 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_26_0_wf.sub_10159_wf.surface_derivatives_wf.segs_to_native_wf_aparc_aseg.resample" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/segs_to_native_wf_aparc_aseg/resample".
+261102-21:48:55,424 nipype.workflow INFO:
+	 [Node] Executing "resample" <nipype.interfaces.freesurfer.preprocess.ApplyVolTransform>
+261102-21:48:55,432 nipype.workflow INFO:
+	 [Node] Executing "resample" <nipype.interfaces.freesurfer.preprocess.ApplyVolTransform>
+261102-21:48:57,207 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 1.782831s.
+261102-21:48:57,228 nipype.workflow INFO:
+	 [Node] Finished "resample", elapsed time 1.794729s.
+261102-21:48:57,441 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_desc-aseg_dseg.nii.gz dtype from float32 to float32
+261102-21:48:58,815 nipype.interface WARNING:
+	 Changing /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/anat/sub-10159_desc-aparcaseg_dseg.nii.gz dtype from float32 to float32
+261102-21:48:59,922 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/curv_wf/morphs2gii/mapflow/_morphs2gii0".
+261102-21:48:59,923 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/curv_wf/morphs2gii/mapflow/_morphs2gii1".
+261102-21:48:59,923 nipype.workflow INFO:
+	 [Node] Setting-up "_fs2gii0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_surface_wf/fs2gii/mapflow/_fs2gii0".
+261102-21:48:59,924 nipype.workflow INFO:
+	 [Node] Setting-up "_fs2gii1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_surface_wf/fs2gii/mapflow/_fs2gii1".
+261102-21:48:59,925 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_morphometrics_wf/morphs2gii/mapflow/_morphs2gii0".
+261102-21:48:59,926 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_morphometrics_wf/morphs2gii/mapflow/_morphs2gii1".
+261102-21:48:59,926 nipype.workflow INFO:
+	 [Node] Executing "_morphs2gii0" <smriprep.interfaces.freesurfer.MRIsConvertData>
+261102-21:48:59,927 nipype.workflow INFO:
+	 [Node] Executing "_morphs2gii1" <smriprep.interfaces.freesurfer.MRIsConvertData>
+261102-21:48:59,927 nipype.workflow INFO:
+	 [Node] Executing "_morphs2gii1" <smriprep.interfaces.freesurfer.MRIsConvertData>
+261102-21:48:59,928 nipype.workflow INFO:
+	 [Node] Executing "_fs2gii1" <nipype.interfaces.freesurfer.utils.MRIsConvert>
+261102-21:48:59,928 nipype.workflow INFO:
+	 [Node] Executing "_fs2gii0" <nipype.interfaces.freesurfer.utils.MRIsConvert>
+261102-21:48:59,928 nipype.workflow INFO:
+	 [Node] Setting-up "_sampler0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0".
+261102-21:48:59,930 nipype.workflow INFO:
+	 [Node] Executing "_morphs2gii0" <smriprep.interfaces.freesurfer.MRIsConvertData>
+261102-21:48:59,932 nipype.workflow INFO:
+	 [Node] Executing "_sampler0" <nipype.interfaces.freesurfer.utils.SampleToSurface>
+261102-21:49:00,592 nipype.workflow INFO:
+	 [Node] Finished "_morphs2gii0", elapsed time 0.664666s.
+261102-21:49:00,606 nipype.workflow INFO:
+	 [Node] Finished "_morphs2gii1", elapsed time 0.67764s.
+261102-21:49:00,616 nipype.workflow INFO:
+	 [Node] Finished "_morphs2gii1", elapsed time 0.687112s.
+261102-21:49:00,682 nipype.workflow INFO:
+	 [Node] Finished "_morphs2gii0", elapsed time 0.751154s.
+261102-21:49:00,964 nipype.workflow INFO:
+	 [Node] Finished "_fs2gii1", elapsed time 1.034793s.
+261102-21:49:01,27 nipype.workflow INFO:
+	 [Node] Finished "_fs2gii0", elapsed time 1.096458s.
+261102-21:49:01,774 nipype.workflow INFO:
+	 [Node] Finished "recon_report", elapsed time 10.36495s.
+261102-21:49:02,225 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/curv_wf/morphs2gii/mapflow/_morphs2gii0".
+261102-21:49:02,226 nipype.workflow INFO:
+	 [Node] Cached "_morphs2gii0" - collecting precomputed outputs
+261102-21:49:02,226 nipype.workflow INFO:
+	 [Node] "_morphs2gii0" found cached.
+261102-21:49:02,226 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/curv_wf/morphs2gii/mapflow/_morphs2gii1".
+261102-21:49:02,227 nipype.workflow INFO:
+	 [Node] Cached "_morphs2gii1" - collecting precomputed outputs
+261102-21:49:02,227 nipype.workflow INFO:
+	 [Node] "_morphs2gii1" found cached.
+261102-21:49:02,228 nipype.workflow INFO:
+	 [Node] Setting-up "_sampler1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler1".
+261102-21:49:02,228 nipype.workflow INFO:
+	 [Node] Setting-up "_fs2gii0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_surface_wf/fs2gii/mapflow/_fs2gii0".
+261102-21:49:02,229 nipype.workflow INFO:
+	 [Node] Cached "_fs2gii0" - collecting precomputed outputs
+261102-21:49:02,229 nipype.workflow INFO:
+	 [Node] "_fs2gii0" found cached.
+261102-21:49:02,230 nipype.workflow INFO:
+	 [Node] Setting-up "_fs2gii1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_surface_wf/fs2gii/mapflow/_fs2gii1".
+261102-21:49:02,230 nipype.workflow INFO:
+	 [Node] Executing "_sampler1" <nipype.interfaces.freesurfer.utils.SampleToSurface>
+261102-21:49:02,230 nipype.workflow INFO:
+	 [Node] Cached "_fs2gii1" - collecting precomputed outputs
+261102-21:49:02,230 nipype.workflow INFO:
+	 [Node] "_fs2gii1" found cached.
+261102-21:49:02,230 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_morphometrics_wf/morphs2gii/mapflow/_morphs2gii0".
+261102-21:49:02,231 nipype.workflow INFO:
+	 [Node] Cached "_morphs2gii0" - collecting precomputed outputs
+261102-21:49:02,231 nipype.workflow INFO:
+	 [Node] "_morphs2gii0" found cached.
+261102-21:49:02,232 nipype.workflow INFO:
+	 [Node] Setting-up "_morphs2gii1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_morphometrics_wf/morphs2gii/mapflow/_morphs2gii1".
+261102-21:49:02,233 nipype.workflow INFO:
+	 [Node] Cached "_morphs2gii1" - collecting precomputed outputs
+261102-21:49:02,233 nipype.workflow INFO:
+	 [Node] "_morphs2gii1" found cached.
+261102-21:49:06,335 nipype.workflow INFO:
+	 [Node] Setting-up "_fix_surfs0" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_surface_wf/fix_surfs/mapflow/_fix_surfs0".
+261102-21:49:06,336 nipype.workflow INFO:
+	 [Node] Executing "_fix_surfs0" <smriprep.interfaces.surf.NormalizeSurf>
+261102-21:49:06,337 nipype.workflow INFO:
+	 [Node] Setting-up "_fix_surfs1" in "/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/surface_derivatives_wf/gifti_surface_wf/fix_surfs/mapflow/_fix_surfs1".
+261102-21:49:06,338 nipype.workflow INFO:
+	 [Node] Executing "_fix_surfs1" <smriprep.interfaces.surf.NormalizeSurf>
+261102-21:49:06,473 nipype.workflow INFO:
+	 [Node] Finished "_sampler0", elapsed time 6.539113s.
+261102-21:49:06,473 nipype.workflow WARNING:
+	 Storing result file without outputs
+261102-21:49:06,474 nipype.workflow WARNING:
+	 [Node] Error on "_sampler0" (/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0)
+261102-21:49:06,724 nipype.workflow INFO:
+	 [Node] Finished "_fix_surfs0", elapsed time 0.387463s.
+261102-21:49:06,729 nipype.workflow INFO:
+	 [Node] Finished "_fix_surfs1", elapsed time 0.390017s.
+261102-21:49:07,928 nipype.workflow ERROR:
+	 Node _sampler0 failed to run on host typhon.
+261102-21:49:07,928 nipype.workflow ERROR:
+	 Saving crash info to /data/asmacdo/fs8-chain/outputs/fmriprep-full-ds000030/sub-10159/log/20261102-213758_445567ab-2638-4a36-9e6c-345a9fd26e05/crash-20261102-214907-asmacdo-_sampler0-b3fb1457-a6cf-407d-a5f0-f48b265dd277.txt
+Traceback (most recent call last):
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/engine/nodes.py", line 546, in run
+    result = self._run_interface(execute=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/engine/nodes.py", line 661, in _run_interface
+    return self._run_command(execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/engine/nodes.py", line 787, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _sampler0.
+
+Cmdline:
+	mri_vol2surf --hemi lh --interp trilinear --o /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0/lh.sub-10159_task-bart_bold_tshift_xformresampled.gii  --srcsubject sub-10159 --reg /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/itk2lta/out_inv.lta --projfrac-avg 0.000 1.000 0.200 --mov /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/resample/sub-10159_task-bart_bold_tshift_xformresampled.nii.gz --trgsubject fsaverage
+Stdout:
+	srcvol = /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/resample/sub-10159_task-bart_bold_tshift_xformresampled.nii.gz
+	srcreg = /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/itk2lta/out_inv.lta
+	srcregold = 0
+	srcwarp unspecified
+	surf = white
+	hemi = lh
+	trgsubject = fsaverage
+	surfreg = sphere.reg
+	ProjFrac = 0.5
+	thickness = thickness
+	reshape = 0
+	interp = trilinear
+	float2int = round
+	GetProjMax = 0
+	INFO: float2int code = 0
+	WARNING: niiRead(): unknown time units 0 in /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/resample/sub-10159_task-bart_bold_tshift_xformresampled.nii.gz
+	Done loading volume
+	INFO: overriding regsubject  with sub-10159
+	Input reg is LTA
+	-------- original matrix -----------
+	-1.00000   0.00029   0.00008   0.46558;
+	 0.00008  -0.00055   1.00000   0.00247;
+	-0.00029  -1.00000  -0.00055   11.44902;
+	 0.00000   0.00000   0.00000   1.00000;
+	-------- original matrix -----------
+	Reading surface /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/surf/lh.white
+	Done reading source surface
+	Reading thickness /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/surf/lh.thickness
+	Done
+	Mapping Source Volume onto Source Subject Surface
+	Projecting 0 1 0.2
+	 1 0 0 1
+	using old
+	 2 0.2 0 1
+	using old
+	 3 0.4 0 1
+	using old
+	 4 0.6 0 1
+	using old
+	 5 0.8 0 1
+	using old
+	 6 1 0 1
+	using old
+	Done mapping volume to surface
+	Number of source voxels hit = 10402
+	Reading source surface registration 
+	  /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/surf/lh.sphere.reg
+	Done loading source registration surface
+	Reading target registration 
+	   /data/asmacdo/fs8-chain/outputs/fs8/fsaverage/surf/lh.sphere.reg
+	ERROR: could not read /data/asmacdo/fs8-chain/outputs/fs8/fsaverage/surf/lh.sphere.reg
+Stderr:
+	error: No such file or directory
+	error: MRISread(/data/asmacdo/fs8-chain/outputs/fs8/fsaverage/surf/lh.sphere.reg): could not open file 
+Traceback:
+	Traceback (most recent call last):
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/core.py", line 455, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/traits_extension.py", line 326, in validate
+	    value = super().validate(objekt, name, value, return_pathlike=True)
+	            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/traits_extension.py", line 136, in validate
+	    self.error(objekt, name, str(value))
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of a SampleToSurfaceOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0/lh.sub-10159_task-bart_bold_tshift_xformresampled.gii' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/core.py", line 405, in run
+	    outputs = self.aggregate_outputs(runtime)
+	              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/core.py", line 462, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0/lh.sub-10159_task-bart_bold_tshift_xformresampled.gii' for output 'out_file' of a SampleToSurface interface
+
+
+261102-21:49:07,928 nipype.workflow CRITICAL:
+	 fMRIPrep failed: Traceback (most recent call last):
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/engine/nodes.py", line 546, in run
+    result = self._run_interface(execute=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/engine/nodes.py", line 661, in _run_interface
+    return self._run_command(execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/pipeline/engine/nodes.py", line 787, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node _sampler0.
+
+Cmdline:
+	mri_vol2surf --hemi lh --interp trilinear --o /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0/lh.sub-10159_task-bart_bold_tshift_xformresampled.gii  --srcsubject sub-10159 --reg /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/itk2lta/out_inv.lta --projfrac-avg 0.000 1.000 0.200 --mov /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/resample/sub-10159_task-bart_bold_tshift_xformresampled.nii.gz --trgsubject fsaverage
+Stdout:
+	srcvol = /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/resample/sub-10159_task-bart_bold_tshift_xformresampled.nii.gz
+	srcreg = /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/itk2lta/out_inv.lta
+	srcregold = 0
+	srcwarp unspecified
+	surf = white
+	hemi = lh
+	trgsubject = fsaverage
+	surfreg = sphere.reg
+	ProjFrac = 0.5
+	thickness = thickness
+	reshape = 0
+	interp = trilinear
+	float2int = round
+	GetProjMax = 0
+	INFO: float2int code = 0
+	WARNING: niiRead(): unknown time units 0 in /tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_anat_wf/resample/sub-10159_task-bart_bold_tshift_xformresampled.nii.gz
+	Done loading volume
+	INFO: overriding regsubject  with sub-10159
+	Input reg is LTA
+	-------- original matrix -----------
+	-1.00000   0.00029   0.00008   0.46558;
+	 0.00008  -0.00055   1.00000   0.00247;
+	-0.00029  -1.00000  -0.00055   11.44902;
+	 0.00000   0.00000   0.00000   1.00000;
+	-------- original matrix -----------
+	Reading surface /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/surf/lh.white
+	Done reading source surface
+	Reading thickness /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/surf/lh.thickness
+	Done
+	Mapping Source Volume onto Source Subject Surface
+	Projecting 0 1 0.2
+	 1 0 0 1
+	using old
+	 2 0.2 0 1
+	using old
+	 3 0.4 0 1
+	using old
+	 4 0.6 0 1
+	using old
+	 5 0.8 0 1
+	using old
+	 6 1 0 1
+	using old
+	Done mapping volume to surface
+	Number of source voxels hit = 10402
+	Reading source surface registration 
+	  /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/surf/lh.sphere.reg
+	Done loading source registration surface
+	Reading target registration 
+	   /data/asmacdo/fs8-chain/outputs/fs8/fsaverage/surf/lh.sphere.reg
+	ERROR: could not read /data/asmacdo/fs8-chain/outputs/fs8/fsaverage/surf/lh.sphere.reg
+Stderr:
+	error: No such file or directory
+	error: MRISread(/data/asmacdo/fs8-chain/outputs/fs8/fsaverage/surf/lh.sphere.reg): could not open file 
+Traceback:
+	Traceback (most recent call last):
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/core.py", line 455, in aggregate_outputs
+	    setattr(outputs, key, val)
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/traits_extension.py", line 326, in validate
+	    value = super().validate(objekt, name, value, return_pathlike=True)
+	            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/traits_extension.py", line 136, in validate
+	    self.error(objekt, name, str(value))
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/traits/base_trait_handler.py", line 74, in error
+	    raise TraitError(
+	traits.trait_errors.TraitError: The 'out_file' trait of a SampleToSurfaceOutputSpec instance must be a pathlike object or string representing an existing file, but a value of '/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0/lh.sub-10159_task-bart_bold_tshift_xformresampled.gii' <class 'str'> was specified.
+
+	During handling of the above exception, another exception occurred:
+
+	Traceback (most recent call last):
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/core.py", line 405, in run
+	    outputs = self.aggregate_outputs(runtime)
+	              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	  File "/app/.pixi/envs/fmriprep/lib/python3.12/site-packages/nipype/interfaces/base/core.py", line 462, in aggregate_outputs
+	    raise FileNotFoundError(msg)
+	FileNotFoundError: No such file or directory '/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler0/lh.sub-10159_task-bart_bold_tshift_xformresampled.gii' for output 'out_file' of a SampleToSurface interface
+
+
+261102-21:49:08,480 nipype.workflow INFO:
+	 [Node] Finished "_sampler1", elapsed time 6.2483s.
+261102-21:49:08,480 nipype.workflow WARNING:
+	 Storing result file without outputs
+261102-21:49:08,480 nipype.workflow WARNING:
+	 [Node] Error on "_sampler1" (/tmp/wkdir/fmriprep_26_0_wf/sub_10159_wf/bold_apply_task_bart_wf/bold_surf_wf/_target_fsaverage/sampler/mapflow/_sampler1)
