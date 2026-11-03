@@ -1,0 +1,14 @@
+{
+  "AnatomicalReference": "sub-265_fmapid-auto00001_desc-magnitude_fieldmap.nii.gz",
+  "AssociatedCoefficients": [
+    "sub-265_fmapid-auto00001_desc-coeff_fieldmap.nii.gz"
+  ],
+  "B0FieldIdentifier": "auto_00001",
+  "IntendedFor": [
+    "func/sub-265_task-black_bold.nii.gz"
+  ],
+  "RawSources": [
+    "/data/asmacdo/fs8-chain/inputs/ds002345/sub-265/func/sub-265_task-black_bold.nii.gz"
+  ],
+  "Units": "Hz"
+}

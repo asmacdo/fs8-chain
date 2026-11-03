@@ -1,0 +1,7 @@
+{
+  "Sources": [
+    "bids::sub-265/func/sub-265_task-black_space-orig_desc-hmc_boldref.nii.gz",
+    "bids::sub-265/func/sub-265_task-black_from-run_to-auto00001_mode-image_desc-fmap_xfm.txt",
+    "bids::sub-265/fmap/sub-265_fmapid-auto00001_desc-coeff_fieldmap.nii.gz"
+  ]
+}
