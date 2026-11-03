@@ -1,0 +1,83 @@
+status file for recon-all
+Tue Nov  3 09:23:32 AM EST 2026
+#@# T2/FLAIR Input Tue Nov  3 09:23:36 AM EST 2026
+#@# MotionCor Tue Nov  3 09:23:38 AM EST 2026
+#@# Nu Intensity Correction Tue Nov  3 09:33:40 AM EST 2026
+#@# Intensity Normalization Tue Nov  3 09:37:10 AM EST 2026
+
+#@# MCADura Segmentation Tue Nov  3 09:38:38 AM EST 2026
+
+#@# VSinus Segmentation Tue Nov  3 09:38:57 AM EST 2026
+#@# EM Registration Tue Nov  3 09:39:20 AM EST 2026
+#@# CA Normalize Tue Nov  3 09:43:32 AM EST 2026
+
+#@# EntoWM Segmentation Tue Nov  3 09:44:21 AM EST 2026
+#@# CC Seg Tue Nov  3 09:44:32 AM EST 2026
+#@# Merge ASeg Tue Nov  3 09:45:09 AM EST 2026
+#@# Intensity Normalization2 Tue Nov  3 09:45:09 AM EST 2026
+#@# Mask BFS Tue Nov  3 09:47:03 AM EST 2026
+#@# WM Segmentation Tue Nov  3 09:47:11 AM EST 2026
+#@# Fill Tue Nov  3 09:49:37 AM EST 2026
+#@# Tessellate lh Tue Nov  3 09:50:27 AM EST 2026
+#@# Tessellate rh Tue Nov  3 09:50:43 AM EST 2026
+#@# Smooth1 lh Tue Nov  3 09:50:59 AM EST 2026
+#@# Smooth1 rh Tue Nov  3 09:51:01 AM EST 2026
+#@# Inflation1 lh Tue Nov  3 09:51:04 AM EST 2026
+#@# Inflation1 rh Tue Nov  3 09:51:15 AM EST 2026
+#@# QSphere lh Tue Nov  3 09:51:28 AM EST 2026
+#@# QSphere rh Tue Nov  3 09:52:49 AM EST 2026
+#@# Fix Topology lh Tue Nov  3 09:54:16 AM EST 2026
+#@# Fix Topology rh Tue Nov  3 09:56:22 AM EST 2026
+#@# Smooth2 lh Tue Nov  3 10:06:39 AM EST 2026
+#@# Smooth2 rh Tue Nov  3 10:06:41 AM EST 2026
+#@# Inflation2 lh Tue Nov  3 10:06:44 AM EST 2026
+#@# Inflation2 rh Tue Nov  3 10:06:58 AM EST 2026
+#@# Curv .H and .K lh Tue Nov  3 10:07:12 AM EST 2026
+#@# Curv .H and .K rh Tue Nov  3 10:07:59 AM EST 2026
+#@# Sphere lh Tue Nov  3 10:08:46 AM EST 2026
+#@# Sphere rh Tue Nov  3 10:15:13 AM EST 2026
+#@# Surf Reg  Tue Nov  3 10:21:15 AM EST 2026
+#@# Jacobian white lh Tue Nov  3 10:31:35 AM EST 2026
+#@# Jacobian white rh Tue Nov  3 10:31:35 AM EST 2026
+#@# AvgCurv lh Tue Nov  3 10:31:36 AM EST 2026
+#@# AvgCurv rh Tue Nov  3 10:31:37 AM EST 2026
+#@# Cortical Parc lh Tue Nov  3 10:31:38 AM EST 2026
+#@# Cortical Parc rh Tue Nov  3 10:31:47 AM EST 2026
+#@# Refine Pial Surfs w/ T2/FLAIR Tue Nov  3 10:42:36 AM EST 2026
+#@# white curv lh Tue Nov  3 12:19:12 PM EST 2026
+#@# white area lh Tue Nov  3 12:19:14 PM EST 2026
+#@# pial curv lh Tue Nov  3 12:19:14 PM EST 2026
+#@# pial area lh Tue Nov  3 12:19:16 PM EST 2026
+#@# thickness lh Tue Nov  3 12:19:17 PM EST 2026
+#@# area and vertex vol lh Tue Nov  3 12:19:44 PM EST 2026
+#@# white curv rh Tue Nov  3 12:19:46 PM EST 2026
+#@# white area rh Tue Nov  3 12:19:48 PM EST 2026
+#@# pial curv rh Tue Nov  3 12:19:49 PM EST 2026
+#@# pial area rh Tue Nov  3 12:19:50 PM EST 2026
+#@# thickness rh Tue Nov  3 12:19:51 PM EST 2026
+#@# area and vertex vol rh Tue Nov  3 12:20:19 PM EST 2026
+#@# Curvature Stats lh Tue Nov  3 12:20:21 PM EST 2026
+#@# Curvature Stats rh Tue Nov  3 12:20:23 PM EST 2026
+#@# Cortical ribbon mask Tue Nov  3 12:20:25 PM EST 2026
+#@# Cortical Parc 2 lh Tue Nov  3 12:22:03 PM EST 2026
+#@# Cortical Parc 2 rh Tue Nov  3 12:22:15 PM EST 2026
+#@# Cortical Parc 3 lh Tue Nov  3 12:22:28 PM EST 2026
+#@# Cortical Parc 3 rh Tue Nov  3 12:22:37 PM EST 2026
+#@# WM/GM Contrast lh Tue Nov  3 12:22:46 PM EST 2026
+#@# WM/GM Contrast rh Tue Nov  3 12:22:49 PM EST 2026
+#@# Relabel Hypointensities Tue Nov  3 12:22:52 PM EST 2026
+#@# APas-to-ASeg Tue Nov  3 12:23:10 PM EST 2026
+#@# AParc-to-ASeg aparc Tue Nov  3 12:23:18 PM EST 2026
+#@# AParc-to-ASeg aparc.a2009s Tue Nov  3 12:25:00 PM EST 2026
+#@# AParc-to-ASeg aparc.DKTatlas Tue Nov  3 12:26:43 PM EST 2026
+#@# WMParc Tue Nov  3 12:28:30 PM EST 2026
+#@# Parcellation Stats lh Tue Nov  3 12:31:35 PM EST 2026
+#@# Parcellation Stats rh Tue Nov  3 12:31:40 PM EST 2026
+#@# Parcellation Stats 2 lh Tue Nov  3 12:31:45 PM EST 2026
+#@# Parcellation Stats 2 rh Tue Nov  3 12:31:48 PM EST 2026
+#@# Parcellation Stats 3 lh Tue Nov  3 12:31:51 PM EST 2026
+#@# Parcellation Stats 3 rh Tue Nov  3 12:31:54 PM EST 2026
+#@# ASeg Stats Tue Nov  3 12:31:56 PM EST 2026
+#@# BA_exvivo Labels lh Tue Nov  3 12:32:57 PM EST 2026
+#@# BA_exvivo Labels rh Tue Nov  3 12:35:35 PM EST 2026
+recon-all -s sub-265 finished without error at Tue Nov  3 12:38:14 PM EST 2026

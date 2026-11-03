@@ -1,0 +1,269 @@
+Log file for fs-synthmorph-reg
+Tue Nov  3 09:25:59 AM EST 2026
+
+setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/outputs/fs8
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-265
+/usr/local/freesurfer/8.2.0/bin/fs-synthmorph-reg --s sub-265 --threads 2 --i /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz --test
+-rwxr-xr-x 1 root root 30896 Mar 14  2026 /usr/local/freesurfer/8.2.0/bin/fs-synthmorph-reg
+
+freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45
+$Id$
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+pid 726
+mri_mask -bb 3 /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz
+cropping npad = 3
+DoAbs = 0
+Computing bounding box, npad = 3, 3, 3, 3, 3, 3
+9 0 0  240 256 256
+maskval=0, outval=0
+Writing masked volume to /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz...done.
+lta_convert --inlta identity.nofile --src /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz --trg /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz --outlta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.crop-to-invol.lta
+8.2.0
+
+--inlta: identity.nofile input LTA transform.
+--src: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz src image (geometry).
+--trg: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz trg image (geometry).
+--outlta: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.crop-to-invol.lta output LTA.
+INFO: using NIfTI-1 sform (sform_code=1)
+ LTA read, type : 1
+ 1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+Writing  LTA to file /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.crop-to-invol.lta...
+lta_convert successful.
+Tue Nov  3 09:26:01 AM EST 2026
+
+
+
+mri_synthmorph -m affine -t /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/aff.lta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/mni152.1.0mm.cropped.nii.gz -j 2
+#@# mri_synthmorph: affine, threads: 2, VmPeak: 10747428
+Thank you for choosing SynthMorph. Please cite us!
+
+SynthMorph: learning contrast-invariant registration without acquired images
+Hoffmann M, Billot B, Greve DN, Iglesias JE, Fischl B, Dalca AV
+IEEE Transactions on Medical Imaging, 41 (3), 543-558, 2022
+https://doi.org/10.1109/TMI.2021.3116879
+
+Anatomy-specific acquisition-agnostic affine registration learned from
+fictitious images
+Hoffmann M, Hoopes A, Fischl B*, Dalca AV* (*equal contribution)
+SPIE Medical Imaging: Image Processing, 12464, 1246402, 2023
+https://doi.org/10.1117/12.2653251
+https://synthmorph.io/#papers (PDF)
+
+Anatomy-aware and acquisition-agnostic joint registration with SynthMorph
+Hoffmann M, Hoopes A, Greve DN, Fischl B*, Dalca AV* (*equal contribution)
+Imaging Neuroscience, 2, 1-33, 2024
+https://doi.org/10.1162/imag_a_00197
+
+Website: https://synthmorph.io
+Tue Nov  3 09:26:20 AM EST 2026
+
+
+
+mri_concatenate_lta -invert1 -invertout /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/aff.lta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.crop-to-invol.lta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.invol_to_croptarg.lta
+invert the first LTA before applying it 
+invert the output LTA
+Read individual LTAs
+Warning: dst volume of lta1 doesn't match src volume of lta2
+Volume geometry for lta1-dst: 
+volume geometry:
+extent  : (240, 256, 256)
+voxel   : ( 0.8594,  0.8594,  0.8594)
+x_(ras) : (-1.0000, -0.0000, -0.0000)
+y_(ras) : ( 0.0000,  0.0000, -1.0000)
+z_(ras) : (-0.0000,  1.0000,  0.0000)
+c_(ras) : ( 1.0096,  8.2445, -5.3831)
+shears  : ( 0.0000,  0.0000,  0.0000)
+file    : none
+Volume geometry for lta2-src:
+volume geometry:
+extent  : (240, 256, 256)
+voxel   : ( 0.8594,  0.8594,  0.8594)
+x_(ras) : (-1.0000, -0.0000, -0.0000)
+y_(ras) : ( 0.0000,  0.0000, -1.0000)
+z_(ras) : ( 0.0000,  1.0000,  0.0000)
+c_(ras) : ( 1.0096,  8.2445, -5.3831)
+shears  : ( 0.0000,  0.0000,  0.0000)
+file    : /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz
+Combining the two LTAs to get a RAS-to-RAS from src of LTA1 to dst of LTA2...
+Inverting output LTA
+Writing combined LTA to file /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.invol_to_croptarg.lta...
+mri_concatenate_lta successful.
+
+
+
+mri_concatenate_lta -invert2 /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/reg.1.0mm.to.1.0mm.cropped.lta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.invol_to_croptarg.lta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.targ_to_invol.lta
+invert the second LTA before applying it 
+Read individual LTAs
+Combining the two LTAs to get a RAS-to-RAS from src of LTA1 to dst of LTA2...
+Writing combined LTA to file /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.targ_to_invol.lta...
+mri_concatenate_lta successful.
+
+
+
+lta_convert --invert --inlta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.targ_to_invol.lta --outlta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.lta
+8.2.0
+
+--invert: will invert transform.
+--inlta: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.targ_to_invol.lta input LTA transform.
+--outlta: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.lta output LTA.
+ LTA read, type : 1
+ 0.92903  -0.05481  -0.04526   0.80313;
+ 0.06544   0.98118  -0.00604   6.37978;
+ 0.03083  -0.02426   0.83685   7.78822;
+ 0.00000   0.00000   0.00000   1.00000;
+Writing  LTA to file /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.lta...
+lta_convert successful.
+
+
+
+lta_convert --inlta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.lta --outmni /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.xfm
+8.2.0
+
+--inlta: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.lta input LTA transform.
+--outmni: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.xfm output MNI/XFM matrix.
+ LTA read, type : 1
+ 1.07014   0.06122   0.05833  -1.70427;
+-0.07163   1.01527   0.00345  -6.44651;
+-0.04150   0.02718   1.19291  -9.43071;
+ 0.00000   0.00000   0.00000   1.00000;
+lta_convert successful.
+
+
+
+
+To check affine registration
+tkregisterfv --mov /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz --targ /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/mni152.1.0mm.nii.gz --reg /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/reg.invol_to_targ.lta
+
+
+
+
+mri_synthmorph -m deform -t /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/deform.mgz -i /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/aff.lta /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/mni152.1.0mm.cropped.nii.gz -j 2 -o /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/synthmorph.out.mgz
+#@# mri_synthmorph: deform, threads: 2, VmPeak: 19906380
+Thank you for choosing SynthMorph. Please cite us!
+
+SynthMorph: learning contrast-invariant registration without acquired images
+Hoffmann M, Billot B, Greve DN, Iglesias JE, Fischl B, Dalca AV
+IEEE Transactions on Medical Imaging, 41 (3), 543-558, 2022
+https://doi.org/10.1109/TMI.2021.3116879
+
+Anatomy-specific acquisition-agnostic affine registration learned from
+fictitious images
+Hoffmann M, Hoopes A, Fischl B*, Dalca AV* (*equal contribution)
+SPIE Medical Imaging: Image Processing, 12464, 1246402, 2023
+https://doi.org/10.1117/12.2653251
+https://synthmorph.io/#papers (PDF)
+
+Anatomy-aware and acquisition-agnostic joint registration with SynthMorph
+Hoffmann M, Hoopes A, Greve DN, Fischl B*, Dalca AV* (*equal contribution)
+Imaging Neuroscience, 2, 1-33, 2024
+https://doi.org/10.1162/imag_a_00197
+
+Website: https://synthmorph.io
+
+
+mri_warp_convert --inras /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/deform.mgz --insrcgeom /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz --outfswarp /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz --vg-thresh 1e-4 --lta1-inv /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/reg.crop-to-invol.lta --lta2 /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/reg.1.0mm.cropped.to.1.0mm.lta
+8.2.0
+
+--inras: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/deform.mgz input RAS warp.
+--insrcgeom: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/invol.crop.nii.gz atlas/source image (used for geometry).
+--outfswarp: /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz output Freesurfer 3D morph.
+Setting vg_isEqual_Threshold to 0.000100
+INFO: using NIfTI-1 sform (sform_code=1)
+Applying LTAs to the GCAM
+GCAMwrite(/data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz)
+[INFO] Warpfield::convert(): converting GCAM ...
+[INFO] Warpfield::convert(): gcam       [193 x 229 x 193]
+[INFO] Warpfield::convert(): gcam image [256 x 256 x 256]
+[INFO] Warpfield::convert(): gcam atlas [193 x 229 x 193]
+[INFO] Warpfield::convert(): total out of range voxel count: 0
+[INFO] niiWrite(): MGZ_INTENT_WARPMAP => NIFTI_INTENT_DISPVECT, intent_code = 1006, dimensions = {5, 193, 229, 193, 1, 3, 1, 1}
+[INFO] niiWrite(): convert displacement from 0 to 3
+mri_warp_convert successful.
+
+
+mri_ca_register -invert-and-save /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.inv.nii.gz
+INFO: using NIfTI-1 sform (sform_code=1)
+Loading gcam
+[INFO] niiRead(): intent_code = 1006, dimensions = {5, 193, 229, 193, 1, 3, 1, 1}
+[DEBUG] Warpfield::read() gcam->status = GCAM_LABELED
+setting orig areas to linear transform determinant scaled 1.00
+Computing inverse of GCAM
+Filling inverse of GCAM
+Allocating inv_gcam...(256, 256, 256)
+Saving inverse to /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.inv.nii.gz
+GCAMwrite(/data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.inv.nii.gz)
+[INFO] Warpfield::convert(): converting GCAM ...
+[INFO] Warpfield::convert(): gcam       [256 x 256 x 256]
+[INFO] Warpfield::convert(): gcam image [193 x 229 x 193]
+[INFO] Warpfield::convert(): gcam atlas [256 x 256 x 256]
+[INFO] Warpfield::convert(): total out of range voxel count: 0
+[INFO] niiWrite(): MGZ_INTENT_WARPMAP => NIFTI_INTENT_DISPVECT, intent_code = 1006, dimensions = {5, 256, 256, 256, 1, 3, 1, 1}
+[INFO] niiWrite(): convert displacement from 0 to 3
+mri_vol2vol --regheader --mov /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/synthmorph.out.mgz --targ /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/mni152.1.0mm.nii.gz --o /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/morph.out.nii.gz
+INFO: using NIfTI-1 sform (sform_code=1)
+movvol /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/synthmorph.out.mgz
+targvol /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/mni152.1.0mm.nii.gz
+outvol /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/morph.out.nii.gz
+invert 0
+tal    0
+talres 2
+regheader 1
+noresample 0
+interp  trilinear (1)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1794267269
+
+Computing registration based on scanner-to-scanner
+
+Final tkRAS-to-tkRAS Matrix is:
+ 1.00000   0.00000   0.00000  -0.50000;
+ 0.00000   1.00000   0.00000   13.50000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 1.00000   0.00000   0.00000  -20.00000;
+ 0.00000   1.00000   0.00000  -20.00000;
+ 0.00000   0.00000   1.00000  -2.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_convert -rt nearest /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz -at /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/test.nii.gz
+mri_convert -rt nearest /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz -at /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/test.nii.gz 
+INFO: using NIfTI-1 sform (sform_code=1)
+reading from /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/orig.mgz...
+TR=2300.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -6.50232e-09, -8.66977e-09)
+j_ras = (0, 1.73395e-08, -1)
+k_ras = (6.50232e-09, 1, 0)
+INFO: Reading transformation from file /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz...
+INFO: Applying transformation from file /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/warp.to.mni152.1.0mm.1.0mm.nii.gz...
+Applying morph_3d ...
+[INFO] niiRead(): intent_code = 1006, dimensions = {5, 193, 229, 193, 1, 3, 1, 1}
+[DEBUG] Warpfield::read() gcam->status = GCAM_LABELED
+setting orig areas to linear transform determinant scaled 1.00
+morphing to atlas with resample type 0
+writing to /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/test.nii.gz...
+mri_diff --po /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/test.nii.gz /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/morph.out.nii.gz
+mri_diff --po /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/test.nii.gz /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/tmp/morph.out.nii.gz 
+diffcount 4239645
+Volumes differ in pixel data
+maxdiff 106.88592529 at 136 29 96 0
+tkmeditfv -f /usr/local/freesurfer/8.2.0/average/mni_icbm152_nlin_asym_09c/reg-targets/mni152.1.0mm.nii.gz -aux /data/asmacdo/fs8-chain/outputs/fs8/sub-265/mri/transforms/synthmorph.1.0mm.1.0mm/test.nii.gz
+ 
+Started at Tue Nov 3 09:25:59 AM EST 2026 
+Ended   at Tue Nov  3 09:33:40 AM EST 2026
+Fs-Synthmorph-Reg-Run-Time-Sec 461
+Fs-Synthmorph-Reg-Run-Time-Min 7.68
+Fs-Synthmorph-Reg-Run-Time-Hours 0.13
+ 
+fs-synthmorph-reg Done
