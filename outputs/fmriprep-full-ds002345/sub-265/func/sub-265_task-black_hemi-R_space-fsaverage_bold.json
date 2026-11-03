@@ -1,0 +1,13 @@
+{
+  "DelayTime": 0.11250000000000004,
+  "RepetitionTime": 1.5,
+  "SliceTimingCorrected": true,
+  "Sources": [
+    "bids:raw:sub-265/func/sub-265_task-black_bold.nii.gz",
+    "bids:resampling:sub-265/func/sub-265_task-black_from-orig_to-run_mode-image_desc-hmc_xfm.txt",
+    "bids:resampling:sub-265/func/sub-265_task-black_from-run_to-T1w_mode-image_desc-coreg_xfm.txt",
+    "bids:resampling:sub-265/anat/sub-265_from-fsnative_to-T1w_mode-image_xfm.txt"
+  ],
+  "StartTime": 0.694,
+  "TaskName": "black"
+}
