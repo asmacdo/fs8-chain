@@ -38,7 +38,9 @@ mkdir -p "$OUT" logs
 # subdataset, bound read-only: a template the run needs but did not declare
 # fails loudly instead of being fetched unpinned from S3.
 # outputs/fs8 is the --fs-subjects-dir and is declared an output of the run, so
-# anything fMRIPrep writes there shows up in the run's commit.
+# anything fMRIPrep writes there shows up in the run's commit. --fs-no-resume:
+# import the FS8 recon as is; without it fMRIPrep's bundled FreeSurfer 7 resumes
+# Talairach + CA Reg, whose FS7 output files an FS8 recon lacks.
 con-duct run -p "logs/fmriprep-${LEVEL}_${DATASET}_sub-${SUB}_{datetime}_" \
   singularity run --containall \
     -B "$PWD:$PWD" --pwd "$PWD" -B "$TMP:/tmp" \
@@ -48,7 +50,7 @@ con-duct run -p "logs/fmriprep-${LEVEL}_${DATASET}_sub-${SUB}_{datetime}_" \
     "$SIF" "$PWD/$RAW" "$PWD/$OUT" participant \
     --participant-label "$SUB" \
     --bids-filter-file "$PWD/code/bids-filter-$DATASET.json" \
-    --fs-subjects-dir "$PWD/outputs/fs8" \
+    --fs-subjects-dir "$PWD/outputs/fs8" --fs-no-resume \
     ${DERIV_ARGS[@]+"${DERIV_ARGS[@]}"} \
     --fs-license-file /fs-license.txt \
     -w /tmp/wkdir \
