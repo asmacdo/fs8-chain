@@ -4,7 +4,9 @@
 # Flags follow unity-campaign bids-app-configs/fMRIPrep-25.2.5+full.yaml,
 # except --level, the scheduler-sized resources, and the FreeSurfer reuse.
 #
-# usage: code/run-fmriprep.sh <image path> <level> <dataset> <subject label> <output dir>
+# usage: code/run-fmriprep.sh <image path> <level> <dataset> <subject label> <output dir> [<derivatives dir>]
+# The optional derivatives dir (an earlier stage's output) is passed as
+# --derivatives <stage>=<dir>, its name taken from the dir's level.
 # host needs: singularity/apptainer, FS_LICENSE=<FreeSurfer license file>
 export PS4='> '
 set -x
@@ -15,6 +17,7 @@ LEVEL="$2"
 DATASET="$3"
 SUB="$4"
 OUT="$5"
+DERIVS="${6:-}"
 RAW=inputs/$DATASET
 : "${FS_LICENSE:?set FS_LICENSE to a FreeSurfer license file}"
 
@@ -22,6 +25,13 @@ RAW=inputs/$DATASET
 # con/mechababs#150), outside the dataset.
 TMP="$(mktemp -d "${TMPDIR:-/tmp}/fmriprep-XXXXXXX")"
 trap 'case "$TMP" in */fmriprep-???????) /usr/bin/rm -rf "$TMP" ;; esac' EXIT
+
+DERIV_ARGS=()
+if [ -n "$DERIVS" ]; then
+  # outputs/fmriprep-resampling-ds000030 -> resampling
+  name="${DERIVS#outputs/fmriprep-}"; name="${name%%-*}"
+  DERIV_ARGS=(--derivatives "$name=$PWD/$DERIVS")
+fi
 
 mkdir -p "$OUT" logs
 # The whole dataset is bound so annex symlinks resolve. templateflow is a pinned
@@ -39,6 +49,7 @@ con-duct run -p "logs/fmriprep-${LEVEL}_${DATASET}_sub-${SUB}_{datetime}_" \
     --participant-label "$SUB" \
     --bids-filter-file "$PWD/code/bids-filter-$DATASET.json" \
     --fs-subjects-dir "$PWD/outputs/fs8" \
+    ${DERIV_ARGS[@]+"${DERIV_ARGS[@]}"} \
     --fs-license-file /fs-license.txt \
     -w /tmp/wkdir \
     --level "$LEVEL" \
