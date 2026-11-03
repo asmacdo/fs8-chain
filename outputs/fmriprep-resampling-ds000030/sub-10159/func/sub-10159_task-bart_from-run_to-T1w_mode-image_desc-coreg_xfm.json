@@ -1,0 +1,12 @@
+{
+  "FinalCost": 0.525554,
+  "GeneratedBy": [
+    {
+      "Name": "bbregister",
+      "Version": "7.3.2"
+    }
+  ],
+  "Sources": [
+    "bids::sub-10159/func/sub-10159_task-bart_space-run_boldref.nii.gz"
+  ]
+}

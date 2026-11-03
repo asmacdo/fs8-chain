@@ -79,3 +79,50 @@ Mon Nov  2 03:43:07 PM EST 2026
 #@# BA_exvivo Labels lh Mon Nov  2 05:10:59 PM EST 2026
 #@# BA_exvivo Labels rh Mon Nov  2 05:12:59 PM EST 2026
 recon-all -s sub-10159 finished without error at Mon Nov  2 05:14:55 PM EST 2026
+
+
+
+#New# invocation of recon-all 
+
+
+
+status file for recon-all
+Mon Nov  2 17:43:01 EST 2026
+#@# Talairach Mon Nov  2 17:43:01 EST 2026
+#@# Talairach Failure Detection Mon Nov  2 17:46:37 EST 2026
+#@# white curv lh Mon Nov  2 17:46:37 EST 2026
+#@# white area lh Mon Nov  2 17:46:37 EST 2026
+#@# pial curv lh Mon Nov  2 17:46:37 EST 2026
+#@# pial area lh Mon Nov  2 17:46:37 EST 2026
+#@# thickness lh Mon Nov  2 17:46:37 EST 2026
+#@# area and vertex vol lh Mon Nov  2 17:46:37 EST 2026
+#@# white curv rh Mon Nov  2 17:46:37 EST 2026
+#@# white area rh Mon Nov  2 17:46:37 EST 2026
+#@# pial curv rh Mon Nov  2 17:46:37 EST 2026
+#@# pial area rh Mon Nov  2 17:46:38 EST 2026
+#@# thickness rh Mon Nov  2 17:46:38 EST 2026
+#@# area and vertex vol rh Mon Nov  2 17:46:38 EST 2026
+recon-all -s sub-10159 finished without error at Mon Nov  2 17:46:38 EST 2026
+
+
+
+#New# invocation of recon-all 
+
+
+
+status file for recon-all
+Mon Nov  2 17:55:58 EST 2026
+#@# CA Reg Mon Nov  2 17:55:58 EST 2026
+#@# white curv lh Mon Nov  2 18:33:04 EST 2026
+#@# white area lh Mon Nov  2 18:33:04 EST 2026
+#@# pial curv lh Mon Nov  2 18:33:04 EST 2026
+#@# pial area lh Mon Nov  2 18:33:04 EST 2026
+#@# thickness lh Mon Nov  2 18:33:04 EST 2026
+#@# area and vertex vol lh Mon Nov  2 18:33:04 EST 2026
+#@# white curv rh Mon Nov  2 18:33:04 EST 2026
+#@# white area rh Mon Nov  2 18:33:04 EST 2026
+#@# pial curv rh Mon Nov  2 18:33:04 EST 2026
+#@# pial area rh Mon Nov  2 18:33:04 EST 2026
+#@# thickness rh Mon Nov  2 18:33:04 EST 2026
+#@# area and vertex vol rh Mon Nov  2 18:33:04 EST 2026
+recon-all -s sub-10159 finished without error at Mon Nov  2 18:33:04 EST 2026

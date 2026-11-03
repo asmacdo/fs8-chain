@@ -748,3 +748,139 @@ cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
 
  mris_anatomical_stats -no-th3 -mgz -f ../stats/rh.BA_exvivo.thresh.stats -b -a ./rh.BA_exvivo.thresh.annot -c ./BA_exvivo.thresh.ctab sub-10159 rh white 
 
+
+
+#---------------------------------
+# New invocation of recon-all Mon Nov  2 17:43:00 EST 2026 
+#--------------------------------------------
+#@# Talairach Mon Nov  2 17:43:01 EST 2026
+
+ mri_nu_correct.mni --no-rescale --i orig.mgz --o orig_nu.mgz --ants-n4 --n 1 --proto-iters 1000 --distance 50 
+
+
+ talairach_avi --i orig_nu.mgz --xfm transforms/talairach.auto.xfm 
+
+talairach_avi log file is transforms/talairach_avi.log...
+
+INFO: transforms/talairach.xfm already exists!
+The new transforms/talairach.auto.xfm will not be copied to transforms/talairach.xfm
+This is done to retain any edits made to transforms/talairach.xfm
+Add the -clean-tal flag to recon-all to overwrite transforms/talairach.xfm
+
+lta_convert --src orig.mgz --trg /opt/freesurfer/average/mni305.cor.mgz --inxfm transforms/talairach.xfm --outlta transforms/talairach.xfm.lta --subject fsaverage --ltavox2vox
+#--------------------------------------------
+#@# Talairach Failure Detection Mon Nov  2 17:46:37 EST 2026
+
+ talairach_afd -T 0.005 -xfm transforms/talairach.xfm 
+
+
+ awk -f /opt/freesurfer/bin/extract_talairach_avi_QA.awk /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/talairach_avi.log 
+
+
+ tal_QC_AZS /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/transforms/talairach_avi.log 
+
+#@# white curv lh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/lh.white 2 10 ../surf/lh.curv
+   Update not needed
+#@# white area lh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/lh.white ../surf/lh.area
+   Update not needed
+#@# pial curv lh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/lh.pial 2 10 ../surf/lh.curv.pial
+   Update not needed
+#@# pial area lh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/lh.pial ../surf/lh.area.pial
+   Update not needed
+#@# thickness lh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/lh.white ../surf/lh.pial 20 5 ../surf/lh.thickness
+   Update not needed
+#@# area and vertex vol lh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/lh.white ../surf/lh.pial 20 5 ../surf/lh.thickness
+   Update not needed
+#@# white curv rh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/rh.white 2 10 ../surf/rh.curv
+   Update not needed
+#@# white area rh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/rh.white ../surf/rh.area
+   Update not needed
+#@# pial curv rh Mon Nov  2 17:46:37 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/rh.pial 2 10 ../surf/rh.curv.pial
+   Update not needed
+#@# pial area rh Mon Nov  2 17:46:38 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/rh.pial ../surf/rh.area.pial
+   Update not needed
+#@# thickness rh Mon Nov  2 17:46:38 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/rh.white ../surf/rh.pial 20 5 ../surf/rh.thickness
+   Update not needed
+#@# area and vertex vol rh Mon Nov  2 17:46:38 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/rh.white ../surf/rh.pial 20 5 ../surf/rh.thickness
+   Update not needed
+
+
+#---------------------------------
+# New invocation of recon-all Mon Nov  2 17:55:57 EST 2026 
+#--------------------------------------
+#@# CA Reg Mon Nov  2 17:55:58 EST 2026
+
+ mri_ca_register -nobigventricles -T transforms/talairach.lta -align-after -mask brainmask.mgz norm.mgz /opt/freesurfer/average/RB_all_2020-01-02.gca transforms/talairach.m3z 
+
+#@# white curv lh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/lh.white 2 10 ../surf/lh.curv
+   Update not needed
+#@# white area lh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/lh.white ../surf/lh.area
+   Update not needed
+#@# pial curv lh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/lh.pial 2 10 ../surf/lh.curv.pial
+   Update not needed
+#@# pial area lh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/lh.pial ../surf/lh.area.pial
+   Update not needed
+#@# thickness lh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/lh.white ../surf/lh.pial 20 5 ../surf/lh.thickness
+   Update not needed
+#@# area and vertex vol lh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/lh.white ../surf/lh.pial 20 5 ../surf/lh.thickness
+   Update not needed
+#@# white curv rh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/rh.white 2 10 ../surf/rh.curv
+   Update not needed
+#@# white area rh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/rh.white ../surf/rh.area
+   Update not needed
+#@# pial curv rh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --curv-map ../surf/rh.pial 2 10 ../surf/rh.curv.pial
+   Update not needed
+#@# pial area rh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --area-map ../surf/rh.pial ../surf/rh.area.pial
+   Update not needed
+#@# thickness rh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/rh.white ../surf/rh.pial 20 5 ../surf/rh.thickness
+   Update not needed
+#@# area and vertex vol rh Mon Nov  2 18:33:04 EST 2026
+cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri
+mris_place_surface --thickness ../surf/rh.white ../surf/rh.pial 20 5 ../surf/rh.thickness
+   Update not needed
