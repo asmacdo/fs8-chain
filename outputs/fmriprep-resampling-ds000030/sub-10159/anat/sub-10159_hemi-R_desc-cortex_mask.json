@@ -1,7 +1,0 @@
-{
-  "Sources": [
-    "/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_midthickness.surf.gii",
-    "/data/asmacdo/fs8-chain/outputs/fmriprep-resampling-ds000030/sub-10159/anat/sub-10159_hemi-R_thickness.shape.gii"
-  ],
-  "Type": "ROI"
-}

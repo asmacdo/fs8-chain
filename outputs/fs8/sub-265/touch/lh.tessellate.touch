@@ -1,1 +1,0 @@
-mris_remesh --desired-face-area 0.5 --input ../surf/lh.orig.nofix.predec --output ../surf/lh.orig.nofix

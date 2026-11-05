@@ -1,1 +1,0 @@
-mri_convert /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/rawavg.mgz /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/mri/orig.mgz --conform

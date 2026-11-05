@@ -1,1 +1,0 @@
-mri_segstats --seed 1234 --seg mri/wmparc.mgz --sum stats/wmparc.stats --pv mri/norm.mgz --excludeid 0 --brainmask mri/brainmask.mgz --in mri/norm.mgz --in-intensity-name norm --in-intensity-units MR --subject sub-10159 --surf-wm-vol --ctab /usr/local/freesurfer/8.2.0/WMParcStatsLUT.txt --etiv --stiv /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/stats/synthseg.tiv.dat

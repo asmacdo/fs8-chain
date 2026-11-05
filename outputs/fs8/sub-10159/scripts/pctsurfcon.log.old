@@ -1,9 +1,0 @@
-Logfile for pctsurfcon
-Mon Nov  2 05:03:43 PM EST 2026
-setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/outputs/fs8
-cd /data/asmacdo/fs8-chain/outputs/fs8/sub-10159/scripts
-/usr/local/freesurfer/8.2.0/bin/pctsurfcon
-pctsurfcon 8.2.0
-Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
-FREESURFER_HOME /usr/local/freesurfer/8.2.0
-Cleaning up
