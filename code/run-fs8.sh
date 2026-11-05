@@ -15,8 +15,8 @@ DATASET="$1"
 SUB="$2"
 SIF=containers/images/bids/bids-freesurfer--8.2.0-unstable.sif
 RAW=inputs/$DATASET
-# One FreeSurfer subjects dir shared across datasets; refuse a label clash.
-OUT=outputs/fs8
+# One FreeSurfer subjects dir per dataset.
+OUT=outputs/$DATASET/freesurfer
 : "${FS_LICENSE:?set FS_LICENSE to a FreeSurfer license file}"
 
 # Scratch for the container's /tmp, outside the dataset.
@@ -34,3 +34,16 @@ con-duct run -p "logs/fs8_${DATASET}_sub-${SUB}_{datetime}_" \
     --participant_label "$SUB" \
     --3T false --refine_pial T2 --hires_mode auto \
     --skip_bids_validator --n_cpus 2 --license_file /fs-license.txt
+
+# The bids-app symlinks these from the container's subjects dir into the output,
+# so they dangle outside it (bids-apps/freesurfer#103). Replace each with a copy
+# of what it points at, taken from the same image. A later subject of this
+# dataset finds the copy, not a link, and skips.
+for fst in fsaverage lh.EC_average rh.EC_average; do
+  if [ -L "$OUT/$fst" ]; then
+    target="$(readlink "$OUT/$fst")"
+    /usr/bin/rm "$OUT/$fst"
+    singularity exec --containall -B "$PWD:$PWD" "$SIF" \
+      cp -r "$target" "$PWD/$OUT/$fst"
+  fi
+done

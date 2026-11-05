@@ -53,7 +53,7 @@ run-fs8: venv preflight
 	$(DL) run \
 	  -m "FreeSurfer 8 on $(DATASET) sub-$(SUBJECT)" \
 	  -i inputs/$(DATASET)/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
-	  -o outputs/fs8 -o logs \
+	  -o outputs/$(DATASET)/freesurfer -o logs \
 	  code/run-fs8.sh $(DATASET) $(SUBJECT)
 
 # Already recorded in this dataset: fetch it. Otherwise build it.
