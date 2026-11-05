@@ -17,6 +17,8 @@ VENV := .venv
 DL := PATH=$(CURDIR)/$(VENV)/bin:$$PATH datalad
 
 FS8_SIF := containers/images/bids/bids-freesurfer--8.2.0-unstable.sif
+# Per dataset: outputs/<dataset>/{freesurfer,fmriprep-resampling,fmriprep-full}
+FS_DIR := outputs/$(DATASET)/freesurfer
 
 # fMRIPrep image from a Docker Hub digest (tags like `unstable` move), named
 # <tag>-<push date>-<digest prefix> so several builds can sit side by side.
@@ -53,7 +55,7 @@ run-fs8: venv preflight
 	$(DL) run \
 	  -m "FreeSurfer 8 on $(DATASET) sub-$(SUBJECT)" \
 	  -i inputs/$(DATASET)/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
-	  -o outputs/$(DATASET)/freesurfer -o logs \
+	  -o $(FS_DIR) -o logs \
 	  code/run-fs8.sh $(DATASET) $(SUBJECT)
 
 # Already recorded in this dataset: fetch it. Otherwise build it.
@@ -69,15 +71,15 @@ image-fmriprep: venv preflight
 run-resampling: preflight image-fmriprep
 	$(DL) run \
 	  -m "fMRIPrep $(FMRIPREP_NAME) --level resampling on $(DATASET) sub-$(SUBJECT), reusing FS8" \
-	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i outputs/fs8/sub-$(SUBJECT) -i $(FMRIPREP_SIF) $(TEMPLATES) \
-	  -o outputs/fmriprep-resampling-$(DATASET) -o outputs/fs8 -o logs \
-	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) outputs/fmriprep-resampling-$(DATASET)
+	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i $(FMRIPREP_SIF) $(TEMPLATES) \
+	  -o outputs/$(DATASET)/fmriprep-resampling -o $(FS_DIR) -o logs \
+	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) outputs/$(DATASET)/fmriprep-resampling
 
 # One upstream only (the resampling output, which carries the anat outputs too),
 # plus FS8 via --fs-subjects-dir: no multi-derivative clobber.
 run-full: preflight image-fmriprep
 	$(DL) run \
 	  -m "fMRIPrep $(FMRIPREP_NAME) --level full on $(DATASET) sub-$(SUBJECT), reusing FS8 + resampling" \
-	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i outputs/fs8/sub-$(SUBJECT) -i outputs/fmriprep-resampling-$(DATASET) -i $(FMRIPREP_SIF) $(TEMPLATES) \
-	  -o outputs/fmriprep-full-$(DATASET) -o outputs/fs8 -o logs \
-	  code/run-fmriprep.sh $(FMRIPREP_SIF) full $(DATASET) $(SUBJECT) outputs/fmriprep-full-$(DATASET) outputs/fmriprep-resampling-$(DATASET)
+	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i outputs/$(DATASET)/fmriprep-resampling -i $(FMRIPREP_SIF) $(TEMPLATES) \
+	  -o outputs/$(DATASET)/fmriprep-full -o $(FS_DIR) -o logs \
+	  code/run-fmriprep.sh $(FMRIPREP_SIF) full $(DATASET) $(SUBJECT) outputs/$(DATASET)/fmriprep-full outputs/$(DATASET)/fmriprep-resampling
