@@ -1,0 +1,7 @@
+{
+  "Name": "fs8-chain: FreeSurfer 8 -> fMRIPrep resampling -> full, run straight",
+  "BIDSVersion": "1.10.0",
+  "DatasetType": "study",
+  "Authors": ["Austin Macdonald"],
+  "HowToAcknowledge": "Experiment record for con/mechababs#88; see README.md."
+}

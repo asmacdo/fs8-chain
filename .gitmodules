@@ -3,18 +3,18 @@
 	url = git@github.com:ReproNim/containers.git
 	datalad-id = b02e63c2-62c1-11e9-82b0-52540040489c
 	datalad-url = https://github.com/ReproNim/containers.git
-[submodule "inputs/ds000030"]
-	path = inputs/ds000030
+[submodule "sourcedata/ds000030"]
+	path = sourcedata/ds000030
 	url = git@github.com:OpenNeuroDatasets/ds000030.git
 	datalad-id = 865f2374-8a15-11e8-bc84-0242ac120022
 	datalad-url = https://github.com/OpenNeuroDatasets/ds000030.git
-[submodule "inputs/templateflow"]
-	path = inputs/templateflow
+[submodule "sourcedata/templateflow"]
+	path = sourcedata/templateflow
 	url = git@github.com:templateflow/templateflow.git
 	datalad-id = c79c47b6-d0fb-11e8-aa11-64006a8a730f
 	datalad-url = https://github.com/templateflow/templateflow.git
-[submodule "inputs/ds002345"]
-	path = inputs/ds002345
+[submodule "sourcedata/ds002345"]
+	path = sourcedata/ds002345
 	url = git@github.com:OpenNeuroDatasets/ds002345.git
 	datalad-id = aa66d230-1b85-11ea-a3cd-6a1dcdd77ee9
 	datalad-url = https://github.com/OpenNeuroDatasets/ds002345.git

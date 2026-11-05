@@ -14,9 +14,9 @@ set -eu
 DATASET="$1"
 SUB="$2"
 SIF=containers/images/bids/bids-freesurfer--8.2.0-unstable.sif
-RAW=inputs/$DATASET
+RAW=sourcedata/$DATASET
 # One FreeSurfer subjects dir per dataset.
-OUT=outputs/$DATASET/freesurfer
+OUT=derivatives/$DATASET/freesurfer
 : "${FS_LICENSE:?set FS_LICENSE to a FreeSurfer license file}"
 
 # Scratch for the container's /tmp, outside the dataset.

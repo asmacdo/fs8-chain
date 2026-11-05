@@ -1,5 +1,5 @@
 #!/bin/bash
-# fMRIPrep on one subject, reusing the FreeSurfer 8 recon in outputs/<dataset>/freesurfer,
+# fMRIPrep on one subject, reusing the FreeSurfer 8 recon in derivatives/<dataset>/freesurfer,
 # straight singularity run, no babs. Run under `datalad run` (see the Makefile).
 # Flags follow unity-campaign bids-app-configs/fMRIPrep-25.2.5+full.yaml,
 # except --level, the scheduler-sized resources, and the FreeSurfer reuse.
@@ -18,8 +18,8 @@ DATASET="$3"
 SUB="$4"
 OUT="$5"
 DERIVS="${6:-}"
-RAW=inputs/$DATASET
-FS=outputs/$DATASET/freesurfer
+RAW=sourcedata/$DATASET
+FS=derivatives/$DATASET/freesurfer
 : "${FS_LICENSE:?set FS_LICENSE to a FreeSurfer license file}"
 
 # Scratch for the container's /tmp (the nipype workdir goes there; a short path,
@@ -29,7 +29,7 @@ trap 'case "$TMP" in */fmriprep-???????) /usr/bin/rm -rf "$TMP" ;; esac' EXIT
 
 DERIV_ARGS=()
 if [ -n "$DERIVS" ]; then
-  # outputs/ds000030/fmriprep-resampling -> resampling
+  # derivatives/ds000030/fmriprep-resampling -> resampling
   name="${DERIVS##*/fmriprep-}"
   DERIV_ARGS=(--derivatives "$name=$PWD/$DERIVS")
 fi
@@ -45,8 +45,8 @@ mkdir -p "$OUT" logs
 con-duct run -p "logs/fmriprep-${LEVEL}_${DATASET}_sub-${SUB}_{datetime}_" \
   singularity run --containall \
     -B "$PWD:$PWD" --pwd "$PWD" -B "$TMP:/tmp" \
-    -B "$PWD/inputs/templateflow:$PWD/inputs/templateflow:ro" \
-    --env "TEMPLATEFLOW_HOME=$PWD/inputs/templateflow" \
+    -B "$PWD/sourcedata/templateflow:$PWD/sourcedata/templateflow:ro" \
+    --env "TEMPLATEFLOW_HOME=$PWD/sourcedata/templateflow" \
     -B "$FS_LICENSE:/fs-license.txt:ro" \
     "$SIF" "$PWD/$RAW" "$PWD/$OUT" participant \
     --participant-label "$SUB" \

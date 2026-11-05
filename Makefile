@@ -2,8 +2,8 @@
 #   make venv              pinned tools (code/requirements.txt) in .venv
 #   make run-fs8           FS8 on $(DATASET) $(SUBJECT)
 #   make image-fmriprep    fetch the fMRIPrep image named below, or build it if new
-#   make run-resampling    fMRIPrep --level resampling on $(DATASET) $(SUBJECT), reusing outputs/fs8
-#   make run-full          fMRIPrep --level full, reusing outputs/fs8 and the resampling output
+#   make run-resampling    fMRIPrep --level resampling on $(DATASET) $(SUBJECT), reusing the FS8 recon
+#   make run-full          fMRIPrep --level full, reusing the FS8 recon and the resampling output
 # e.g. make run-fs8 DATASET=ds002345 SUBJECT=265
 # Every run and build is a `datalad run` record.
 # Host needs: python3, git, git-annex, singularity/apptainer, FS_LICENSE set,
@@ -17,8 +17,8 @@ VENV := .venv
 DL := PATH=$(CURDIR)/$(VENV)/bin:$$PATH datalad
 
 FS8_SIF := containers/images/bids/bids-freesurfer--8.2.0-unstable.sif
-# Per dataset: outputs/<dataset>/{freesurfer,fmriprep-resampling,fmriprep-full}
-FS_DIR := outputs/$(DATASET)/freesurfer
+# Per dataset: derivatives/<dataset>/{freesurfer,fmriprep-resampling,fmriprep-full}
+FS_DIR := derivatives/$(DATASET)/freesurfer
 
 # fMRIPrep image from a Docker Hub digest (tags like `unstable` move), named
 # <tag>-<push date>-<digest prefix> so several builds can sit side by side.
@@ -31,8 +31,8 @@ FMRIPREP_SHORT ?= b6d4843c
 FMRIPREP_NAME := fmriprep-$(FMRIPREP_TAG)-$(FMRIPREP_DATE)-$(FMRIPREP_SHORT)
 FMRIPREP_SIF := images/$(FMRIPREP_NAME).sif
 
-# Templates the fMRIPrep runs read (subdatasets of inputs/templateflow).
-TEMPLATES := $(addprefix -i inputs/templateflow/tpl-,MNI152NLin2009cAsym MNI152NLin6Asym OASIS30ANTs fsLR fsaverage)
+# Templates the fMRIPrep runs read (subdatasets of sourcedata/templateflow).
+TEMPLATES := $(addprefix -i sourcedata/templateflow/tpl-,MNI152NLin2009cAsym MNI152NLin6Asym OASIS30ANTs fsLR fsaverage)
 
 .PHONY: venv preflight run-fs8 image-fmriprep run-resampling run-full
 
@@ -54,7 +54,7 @@ $(VENV)/.done: code/requirements.txt
 run-fs8: venv preflight
 	$(DL) run \
 	  -m "FreeSurfer 8 on $(DATASET) sub-$(SUBJECT)" \
-	  -i inputs/$(DATASET)/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
+	  -i sourcedata/$(DATASET)/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
 	  -o $(FS_DIR) -o logs \
 	  code/run-fs8.sh $(DATASET) $(SUBJECT)
 
@@ -71,15 +71,15 @@ image-fmriprep: venv preflight
 run-resampling: preflight image-fmriprep
 	$(DL) run \
 	  -m "fMRIPrep $(FMRIPREP_NAME) --level resampling on $(DATASET) sub-$(SUBJECT), reusing FS8" \
-	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i $(FMRIPREP_SIF) $(TEMPLATES) \
-	  -o outputs/$(DATASET)/fmriprep-resampling -o $(FS_DIR) -o logs \
-	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) outputs/$(DATASET)/fmriprep-resampling
+	  -i sourcedata/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i $(FMRIPREP_SIF) $(TEMPLATES) \
+	  -o derivatives/$(DATASET)/fmriprep-resampling -o $(FS_DIR) -o logs \
+	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) derivatives/$(DATASET)/fmriprep-resampling
 
 # One upstream only (the resampling output, which carries the anat outputs too),
 # plus FS8 via --fs-subjects-dir: no multi-derivative clobber.
 run-full: preflight image-fmriprep
 	$(DL) run \
 	  -m "fMRIPrep $(FMRIPREP_NAME) --level full on $(DATASET) sub-$(SUBJECT), reusing FS8 + resampling" \
-	  -i inputs/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i outputs/$(DATASET)/fmriprep-resampling -i $(FMRIPREP_SIF) $(TEMPLATES) \
-	  -o outputs/$(DATASET)/fmriprep-full -o $(FS_DIR) -o logs \
-	  code/run-fmriprep.sh $(FMRIPREP_SIF) full $(DATASET) $(SUBJECT) outputs/$(DATASET)/fmriprep-full outputs/$(DATASET)/fmriprep-resampling
+	  -i sourcedata/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i derivatives/$(DATASET)/fmriprep-resampling -i $(FMRIPREP_SIF) $(TEMPLATES) \
+	  -o derivatives/$(DATASET)/fmriprep-full -o $(FS_DIR) -o logs \
+	  code/run-fmriprep.sh $(FMRIPREP_SIF) full $(DATASET) $(SUBJECT) derivatives/$(DATASET)/fmriprep-full derivatives/$(DATASET)/fmriprep-resampling

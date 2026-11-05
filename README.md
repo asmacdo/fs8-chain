@@ -3,14 +3,14 @@
 Dev loop for FreeSurfer 8 → fMRIPrep `--level resampling` → `--level full`, run straight with singularity before it goes into babs.
 Tracked in the hub as `fs8-chain`; the babs app configs live in `unity-campaign` (`bids-app-configs/fs8-chain/`).
 
-A datalad dataset, so a later reader can check what actually ran rather than trusting notes:
+A BIDS study and a datalad dataset, so a later reader can check what actually ran rather than trusting notes:
 
 - `containers/` — ReproNim/containers, pinned by commit; the image used is its `bids-freesurfer` (8.2.0-unstable).
-- `inputs/ds000030/`, `inputs/ds002345/` — OpenNeuroDatasets, pinned (tags 1.0.0, 1.1.4); pick with `DATASET=`/`SUBJECT=`.
-- `inputs/templateflow/` — templateflow, pinned; bound read-only, so an undeclared template fails instead of being fetched unpinned.
+- `sourcedata/ds000030/`, `sourcedata/ds002345/` — OpenNeuroDatasets, pinned (tags 1.0.0, 1.1.4); pick with `DATASET=`/`SUBJECT=`.
+- `sourcedata/templateflow/` — templateflow, pinned; bound read-only, so an undeclared template fails instead of being fetched unpinned.
 - `images/` — fMRIPrep images built here from a Docker Hub digest (`make image-fmriprep`), named `fmriprep-<tag>-<push date>-<digest prefix>.sif`; each build is a `datalad run` record. Drop old ones with `datalad drop`.
 - `code/` — the run scripts, the pinned tool list (`requirements.txt`), and `inspect-fs-reuse.sh` (read-only: what an fMRIPrep run did to the FreeSurfer dir).
-- `outputs/<dataset>/` — results per dataset: `freesurfer/` (the FS8 subjects dir), `fmriprep-resampling/`, `fmriprep-full/`. Each is written by a `datalad run` whose record (command, inputs, outputs) is in `git log`.
+- `derivatives/<dataset>/` — results per dataset: `freesurfer/` (the FS8 subjects dir), `fmriprep-resampling/`, `fmriprep-full/`. Each is written by a `datalad run` whose record (command, inputs, outputs) is in `git log`.
   The FS8 run replaces the bids-app's links into its container (`fsaverage`, `lh/rh.EC_average`; bids-apps/freesurfer#103) with copies from the same image. fMRIPrep, run with `--fs-no-resume`, adds only `lh/rh.midthickness` to `freesurfer/`.
 - `logs/` — con-duct records of each run: resource usage, stdout/stderr, host.
 

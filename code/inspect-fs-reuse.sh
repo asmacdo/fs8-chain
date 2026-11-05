@@ -7,7 +7,7 @@ set -u
 DATASET="$1"
 SUB="$2"
 REV="${3:-$(git log -1 --format=%h --grep='^\[DATALAD RUNCMD\]')}"
-FS=outputs/$DATASET/freesurfer
+FS=derivatives/$DATASET/freesurfer
 
 echo "== recon-all steps logged by the subject (a fresh '#@# MotionCor' means a rerun)"
 tail -n 5 "$FS/sub-$SUB/scripts/recon-all-status.log"
