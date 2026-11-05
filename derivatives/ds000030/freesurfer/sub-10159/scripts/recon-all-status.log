@@ -1,0 +1,81 @@
+status file for recon-all
+Thu Nov  5 01:54:09 PM EST 2026
+#@# MotionCor Thu Nov  5 01:54:14 PM EST 2026
+#@# Nu Intensity Correction Thu Nov  5 02:04:40 PM EST 2026
+#@# Intensity Normalization Thu Nov  5 02:08:10 PM EST 2026
+
+#@# MCADura Segmentation Thu Nov  5 02:09:19 PM EST 2026
+
+#@# VSinus Segmentation Thu Nov  5 02:09:37 PM EST 2026
+#@# EM Registration Thu Nov  5 02:10:00 PM EST 2026
+#@# CA Normalize Thu Nov  5 02:13:42 PM EST 2026
+
+#@# EntoWM Segmentation Thu Nov  5 02:14:34 PM EST 2026
+#@# CC Seg Thu Nov  5 02:14:45 PM EST 2026
+#@# Merge ASeg Thu Nov  5 02:15:31 PM EST 2026
+#@# Intensity Normalization2 Thu Nov  5 02:15:31 PM EST 2026
+#@# Mask BFS Thu Nov  5 02:17:14 PM EST 2026
+#@# WM Segmentation Thu Nov  5 02:17:21 PM EST 2026
+#@# Fill Thu Nov  5 02:19:16 PM EST 2026
+#@# Tessellate lh Thu Nov  5 02:20:05 PM EST 2026
+#@# Tessellate rh Thu Nov  5 02:20:08 PM EST 2026
+#@# Smooth1 lh Thu Nov  5 02:20:11 PM EST 2026
+#@# Smooth1 rh Thu Nov  5 02:20:13 PM EST 2026
+#@# Inflation1 lh Thu Nov  5 02:20:14 PM EST 2026
+#@# Inflation1 rh Thu Nov  5 02:20:24 PM EST 2026
+#@# QSphere lh Thu Nov  5 02:20:34 PM EST 2026
+#@# QSphere rh Thu Nov  5 02:21:32 PM EST 2026
+#@# Fix Topology lh Thu Nov  5 02:22:28 PM EST 2026
+#@# Fix Topology rh Thu Nov  5 02:26:54 PM EST 2026
+#@# Smooth2 lh Thu Nov  5 02:39:15 PM EST 2026
+#@# Smooth2 rh Thu Nov  5 02:39:17 PM EST 2026
+#@# Inflation2 lh Thu Nov  5 02:39:19 PM EST 2026
+#@# Inflation2 rh Thu Nov  5 02:39:29 PM EST 2026
+#@# Curv .H and .K lh Thu Nov  5 02:39:38 PM EST 2026
+#@# Curv .H and .K rh Thu Nov  5 02:40:12 PM EST 2026
+#@# Sphere lh Thu Nov  5 02:40:45 PM EST 2026
+#@# Sphere rh Thu Nov  5 02:46:01 PM EST 2026
+#@# Surf Reg  Thu Nov  5 02:52:49 PM EST 2026
+#@# Jacobian white lh Thu Nov  5 03:01:53 PM EST 2026
+#@# Jacobian white rh Thu Nov  5 03:01:54 PM EST 2026
+#@# AvgCurv lh Thu Nov  5 03:01:54 PM EST 2026
+#@# AvgCurv rh Thu Nov  5 03:01:55 PM EST 2026
+#@# Cortical Parc lh Thu Nov  5 03:01:55 PM EST 2026
+#@# Cortical Parc rh Thu Nov  5 03:02:02 PM EST 2026
+#@# white curv lh Thu Nov  5 03:10:45 PM EST 2026
+#@# white area lh Thu Nov  5 03:10:46 PM EST 2026
+#@# pial curv lh Thu Nov  5 03:10:47 PM EST 2026
+#@# pial area lh Thu Nov  5 03:10:48 PM EST 2026
+#@# thickness lh Thu Nov  5 03:10:49 PM EST 2026
+#@# area and vertex vol lh Thu Nov  5 03:11:09 PM EST 2026
+#@# white curv rh Thu Nov  5 03:11:11 PM EST 2026
+#@# white area rh Thu Nov  5 03:11:12 PM EST 2026
+#@# pial curv rh Thu Nov  5 03:11:13 PM EST 2026
+#@# pial area rh Thu Nov  5 03:11:14 PM EST 2026
+#@# thickness rh Thu Nov  5 03:11:15 PM EST 2026
+#@# area and vertex vol rh Thu Nov  5 03:11:34 PM EST 2026
+#@# Curvature Stats lh Thu Nov  5 03:11:36 PM EST 2026
+#@# Curvature Stats rh Thu Nov  5 03:11:37 PM EST 2026
+#@# Cortical ribbon mask Thu Nov  5 03:11:39 PM EST 2026
+#@# Cortical Parc 2 lh Thu Nov  5 03:13:04 PM EST 2026
+#@# Cortical Parc 2 rh Thu Nov  5 03:13:13 PM EST 2026
+#@# Cortical Parc 3 lh Thu Nov  5 03:13:22 PM EST 2026
+#@# Cortical Parc 3 rh Thu Nov  5 03:13:28 PM EST 2026
+#@# WM/GM Contrast lh Thu Nov  5 03:13:35 PM EST 2026
+#@# WM/GM Contrast rh Thu Nov  5 03:13:37 PM EST 2026
+#@# Relabel Hypointensities Thu Nov  5 03:13:39 PM EST 2026
+#@# APas-to-ASeg Thu Nov  5 03:13:51 PM EST 2026
+#@# AParc-to-ASeg aparc Thu Nov  5 03:13:59 PM EST 2026
+#@# AParc-to-ASeg aparc.a2009s Thu Nov  5 03:15:05 PM EST 2026
+#@# AParc-to-ASeg aparc.DKTatlas Thu Nov  5 03:16:11 PM EST 2026
+#@# WMParc Thu Nov  5 03:17:19 PM EST 2026
+#@# Parcellation Stats lh Thu Nov  5 03:19:55 PM EST 2026
+#@# Parcellation Stats rh Thu Nov  5 03:19:58 PM EST 2026
+#@# Parcellation Stats 2 lh Thu Nov  5 03:20:02 PM EST 2026
+#@# Parcellation Stats 2 rh Thu Nov  5 03:20:04 PM EST 2026
+#@# Parcellation Stats 3 lh Thu Nov  5 03:20:05 PM EST 2026
+#@# Parcellation Stats 3 rh Thu Nov  5 03:20:07 PM EST 2026
+#@# ASeg Stats Thu Nov  5 03:20:09 PM EST 2026
+#@# BA_exvivo Labels lh Thu Nov  5 03:21:01 PM EST 2026
+#@# BA_exvivo Labels rh Thu Nov  5 03:23:00 PM EST 2026
+recon-all -s sub-10159 finished without error at Thu Nov  5 03:24:55 PM EST 2026

@@ -1,0 +1,233 @@
+Log file for label-cortex
+Thu Nov  5 02:38:49 PM EST 2026
+
+setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer
+cd /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri
+/usr/local/freesurfer/8.2.0/bin/label-cortex --s sub-10159 --rh --fix-ga
+-rwxr-xr-x 1 root root 14265 Mar 14  2026 /usr/local/freesurfer/8.2.0/bin/label-cortex
+
+freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45
+$Id$
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+pid 3077
+mri_label2label --label-cortex /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/aseg.presurf.mgz 0 /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.cortex-no-ga.label
+
+ Generating cortex label... RemoveHipAmgy=0
+ NucAccIsMedialWall=0
+ mris->useRealRAS=0
+4 non-cortical segments detected
+only using segment with 7635 vertices
+erasing segment 1 (vno[0] = 53030)
+erasing segment 2 (vno[0] = 60633)
+erasing segment 3 (vno[0] = 85945)
+mri_binarize --match 4201 --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/entowm.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/gyrus-ambiens.rh.mgz
+
+8.2.0
+cwd /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri
+cmdline mri_binarize --match 4201 --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/entowm.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/gyrus-ambiens.rh.mgz 
+sysname  Linux
+hostname typhon
+machine  x86_64
+user     asmacdo
+
+input      /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/entowm.mgz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/gyrus-ambiens.rh.mgz
+Binarizing based on matching values
+nMatch 1
+ 0  4201
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 263 values in range
+Counting number of voxels in first frame
+Found 263 voxels in final mask
+Writing output to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/gyrus-ambiens.rh.mgz
+Count: 263 263.000000 16777216 0.001568
+mri_binarize done
+mri_vol2surf --regheader sub-10159 --hemi rh --surf white.preaparc --mov /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/gyrus-ambiens.rh.mgz --projdist-max -1 0 .1 --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz
+
+INFO: Delta=0.1 > Max=0, may be ok, maybe not
+
+srcvol = /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/gyrus-ambiens.rh.mgz
+srcreg unspecified
+srcregold = 0
+srcwarp unspecified
+surf = white.preaparc
+hemi = rh
+ProjDist = 0.5
+reshape = 0
+interp = nearest
+float2int = round
+GetProjMax = 1
+INFO: float2int code = 0
+INFO: changing type to float
+Done loading volume
+Computing registration from header.
+  Using /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/orig.mgz as target reference.
+-------- original matrix -----------
+ 1.00000   0.00000   0.00000   0.00000;
+ 0.00000   1.00000   0.00000   0.00000;
+ 0.00000   0.00000   1.00000   0.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Reading surface /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc
+Done reading source surface
+Mapping Source Volume onto Source Subject Surface
+Projecting -1 0 0.1
+ 1 -1 -1 0
+using old
+ 2 -0.9 -1 0
+using old
+ 3 -0.8 -1 0
+using old
+ 4 -0.7 -1 0
+using old
+ 5 -0.6 -1 0
+using old
+ 6 -0.5 -1 0
+using old
+ 7 -0.4 -1 0
+using old
+ 8 -0.3 -1 0
+using old
+ 9 -0.2 -1 0
+using old
+10 -0.0999999 -1 0
+using old
+Done mapping volume to surface
+Number of source voxels hit = 73926
+Writing to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz
+Dim: 105317 1 1
+Copying color table to the output
+mri_vol2surf done
+mris_convert --to-scanner -n /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz
+mris_convert --to-scanner -n /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz 
+Reading in /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc
+Converting surface XYZ coordinates from tkr to scanner space.
+Outputting normals /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz
+mri_binarize --frame 0 --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz --mask /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz --max -0.01
+
+8.2.0
+cwd /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri
+cmdline mri_binarize --frame 0 --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz --mask /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz --max -0.01 
+sysname  Linux
+hostname typhon
+machine  x86_64
+user     asmacdo
+
+input      /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz
+Binarizing based on threshold
+min        -infinity
+max        -0.01
+binval        1
+binvalnot     0
+mask       /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz
+maskthresh 0.500000
+Loading mask /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz
+fstart = 0, fend = 0, nframes = 1
+Found 320 values in range
+Counting number of voxels in first frame
+Found 320 voxels in final mask
+Writing output to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz
+Count: 320 320.000000 105317 0.303845
+mri_binarize done
+mri_binarize --frame 2 --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz --mask /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nz.mask.mgz --max -0.01
+
+8.2.0
+cwd /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri
+cmdline mri_binarize --frame 2 --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz --mask /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nz.mask.mgz --max -0.01 
+sysname  Linux
+hostname typhon
+machine  x86_64
+user     asmacdo
+
+input      /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.white.preaparc.nxyz.mgz
+frame      2
+nErode3d   0
+nErode2d   0
+output     /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nz.mask.mgz
+Binarizing based on threshold
+min        -infinity
+max        -0.01
+binval        1
+binvalnot     0
+mask       /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz
+maskthresh 0.500000
+Loading mask /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.mgz
+fstart = 2, fend = 2, nframes = 1
+Found 266 values in range
+Counting number of voxels in first frame
+Found 266 voxels in final mask
+Writing output to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nz.mask.mgz
+Count: 266 266.000000 105317 0.252571
+mri_binarize done
+fscalc /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz and /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nz.mask.mgz -o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.lat.mask.mgz
+Thu Nov  5 02:39:04 PM EST 2026
+
+cd /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri
+/usr/local/freesurfer/8.2.0/bin/fscalc /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz and /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nz.mask.mgz -o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.lat.mask.mgz
+
+freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+mri_convert /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh
+mri_convert /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh 
+reading from /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nx.mask.mgz...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+writing to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh...
+----------------------
+mris_calc -o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh and /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.nz.mask.mgz
+Packing
+Done packing
+Packing
+Done packing
+Unpacking
+Saving result to '/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh' (type = MGH )                       [ ok ]
+#VMPC# mris_calc VmPeak  26440
+----------------------
+mri_convert /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.lat.mask.mgz
+mri_convert /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.lat.mask.mgz 
+reading from /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/tmp.eAqan3/tmp.mgh...
+TR=0.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 0, 0)
+j_ras = (0, 0, -1)
+k_ras = (0, 1, 0)
+writing to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.lat.mask.mgz...
+mri_cor2label --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.lat.mask.mgz --l /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.med.label --surf-path /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc --id 1 --thresh 0.5
+Loading mri /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.lat.mask.mgz
+8.2.0
+------- Vox2RAS of input volume -----------
+-1.00000   0.00000   0.00000   52658.50000;
+ 0.00000   0.00000   1.00000  -0.50000;
+ 0.00000  -1.00000   0.00000   0.50000;
+ 0.00000   0.00000   0.00000   1.00000;
+Scanning the volume
+mri_cor2label completed SUCCESSFULLY
+Loading surf /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc
+Found 234 label voxels
+Writing label file /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.med.label
+Centroid:  14.70   23.86  -25.27 
+mri_mergelabels -i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.cortex-no-ga.label -i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/tmpdir.label-cortex.3077/rh.gyrus-ambiens.med.label -o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/rh.cortex.label
+Done
+
+To view results, run
+fsvglrun freeview -f /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/surf/rh.white.preaparc:label=/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/label/rh.cortex.label
+
+
+ 
+Started at Thu Nov 5 02:38:49 PM EST 2026 
+Ended   at Thu Nov  5 02:39:05 PM EST 2026
+Label-Cortex-Run-Time-Sec 16
+Label-Cortex-Run-Time-Min 0.27
+Label-Cortex-Run-Time-Hours 0.00
+ 
+label-cortex Done

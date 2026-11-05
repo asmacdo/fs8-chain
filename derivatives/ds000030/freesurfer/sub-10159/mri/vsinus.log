@@ -1,0 +1,199 @@
+Log file for mri_vsinus_seg
+Thu Nov  5 02:09:38 PM EST 2026
+
+setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer
+cd /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri
+/usr/local/freesurfer/8.2.0/bin/mri_vsinus_seg --s sub-10159 --rca-synthseg --threads 2 --synthmorphdir /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/transforms/synthmorph.1.0mm.1.0mm
+-rwxr-xr-x 1 root root 20960 Mar 14  2026 /usr/local/freesurfer/8.2.0/bin/mri_vsinus_seg
+
+freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45
+$Id$
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+pid 1381
+mri_vol2vol --mov /usr/local/freesurfer/8.2.0/average/vsinus.no-sp.prior.mni152.1.0mm.mgz --lta /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/transforms/synthmorph.1.0mm.1.0mm/reg.targ_to_invol.lta --targ /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mgz
+
+Matrix from LTA:
+-1.07752  -0.11784  -0.01309  -0.17896;
+ 0.01540  -0.19787   1.21934  -11.42262;
+ 0.09785  -1.06754  -0.15234   9.79030;
+ 0.00000   0.00000   0.00000   1.00000;
+
+/usr/local/freesurfer/8.2.0/average/vsinus.no-sp.prior.mni152.1.0mm.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz
+movvol /usr/local/freesurfer/8.2.0/average/vsinus.no-sp.prior.mni152.1.0mm.mgz
+targvol /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz
+outvol /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mgz
+regfile /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/transforms/synthmorph.1.0mm.1.0mm/reg.targ_to_invol.lta
+invert 0
+tal    0
+talres 2
+regheader 0
+noresample 0
+interp  trilinear (1)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1794037728
+
+Final tkRAS-to-tkRAS Matrix is:
+-1.07752  -0.11784  -0.01309  -0.17896;
+ 0.01540  -0.19787   1.21934  -11.42264;
+ 0.09785  -1.06754  -0.15234   9.79031;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+-1.07752  -0.01309   0.11784   221.19345;
+ 0.09785  -0.15234   1.06754  -24.96150;
+-0.01540  -1.21934  -0.19787   268.45197;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_mask -T .001 -crop 0 /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mincrop.mgz
+threshold mask volume at 0.001
+cropping npad = 0
+DoAbs = 0
+Found 83247 voxels in mask (pct=  0.50)
+Computing bounding box, npad = 0, 0, 0, 0, 0, 0
+62 54 52  127 120 87
+maskval=0, outval=0
+Writing masked volume to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mincrop.mgz...done.
+mri_binarize --crop-around-ras /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/invol.crop-to-prior.norev.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz nolta cras /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mincrop.mgz 0 144 144 144
+Getting cras from /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/native.avg12567.prior.mincrop.mgz
+final ras2vox matrix
+-1.00000  -0.00000  -0.00000   122.07413;
+-0.00000  -0.00000  -1.00000   125.27164;
+-0.00000   1.00000  -0.00000   134.39767;
+-0.00000  -0.00000  -0.00000   1.00000;
+--------------------------
+ostr LIA (144 144 144) (144 144 144)
+rasCenter -3.42587 -38.8977 11.2716
+crsCenter 125.5 114 95.5
+MRIcropAroundCRS()
+vol size 256 256 256
+center 125.5 114 95.5
+fov 144 144 144
+limits 55 198   43 186   25 168
+  using MRIextractRegion()
+mri_sclimbic_seg --model /usr/local/freesurfer/8.2.0/models/vsinus.no-sp.m.all.nstd10-070.h5 --ctab /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.no-sp.ctab --keep_ac --conform --percentile 99.9 --vmp --output-base vsinus --logfile mri_vsinus_seg.log --fov 144 --threads 2 --no-cite-sclimbic --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/invol.crop-to-prior.norev.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.crop-to-prior.norev.mgz
+/usr/local/freesurfer/8.2.0/python/scripts/mri_sclimbic_seg --model /usr/local/freesurfer/8.2.0/models/vsinus.no-sp.m.all.nstd10-070.h5 --ctab /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.no-sp.ctab --keep_ac --conform --percentile 99.9 --vmp --output-base vsinus --logfile mri_vsinus_seg.log --fov 144 --threads 2 --no-cite-sclimbic --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/invol.crop-to-prior.norev.mgz --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.crop-to-prior.norev.mgz
+Keeping anterior commissure in vols and stats
+Using CPU
+Using 2 thread(s)
+Loaded lookup table /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.no-sp.ctab
+Loaded population stats /usr/local/freesurfer/8.2.0/models/sclimbic.volstats.csv
+nb_labels 6
+inshape (144, 144, 144) features 24
+  (None, 144, 144, 144, 1)
+Loading weights from /usr/local/freesurfer/8.2.0/models/vsinus.no-sp.m.all.nstd10-070.h5 -----------------------
+Done loading weights -----------------------
+Loaded model weights /usr/local/freesurfer/8.2.0/models/vsinus.no-sp.m.all.nstd10-070.h5
+
+Segmenting image 1/1
+Loaded input image from /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/invol.crop-to-prior.norev.mgz
+1/1 [==============================] - ETA: 0s1/1 [==============================] - 5s 5s/step
+Wrote segmentation to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.crop-to-prior.norev.mgz
+vmpcma: 8985252
+done
+mri_binarize --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/synthseg.rca.mgz --match 3 42 --inv --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/ctxsegmask.mgz
+
+8.2.0
+cwd /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri
+cmdline mri_binarize --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/synthseg.rca.mgz --match 3 42 --inv --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/ctxsegmask.mgz 
+sysname  Linux
+hostname typhon
+machine  x86_64
+user     asmacdo
+
+input      /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/synthseg.rca.mgz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/ctxsegmask.mgz
+Binarizing based on matching values
+nMatch 2
+ 0     3
+ 1    42
+binval        0
+binvalnot     1
+fstart = 0, fend = 0, nframes = 1
+Found 501980 values in range
+Counting number of voxels in first frame
+Found 501980 voxels in final mask
+Writing output to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/ctxsegmask.mgz
+Count: 501980 501980.000000 16777216 2.992034
+mri_binarize done
+mri_vol2vol --mov /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.crop-to-prior.norev.mgz --targ /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz --interp nearest --o /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz --regheader
+movvol /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/vsinus.crop-to-prior.norev.mgz
+targvol /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz
+outvol /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz
+invert 0
+tal    0
+talres 2
+regheader 1
+noresample 0
+interp  nearest (0)
+precision  float (3)
+Gdiag_no  -1
+Synth      0
+SynthSeed  1794219021
+
+Computing registration based on scanner-to-scanner
+
+Final tkRAS-to-tkRAS Matrix is:
+ 1.00000   0.00000   0.00000  -1.00000;
+ 0.00000   1.00000   0.00000   31.00000;
+ 0.00000   0.00000   1.00000  -13.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+
+
+Vox2Vox Matrix is:
+ 1.00000   0.00000   0.00000  -55.00000;
+ 0.00000   1.00000   0.00000  -43.00000;
+ 0.00000   0.00000   1.00000  -25.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+
+Resampling
+Output registration matrix is identity
+
+mri_vol2vol done
+mri_mask /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/tmp.vsinus/ctxsegmask.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz
+DoAbs = 0
+maskval=0, outval=0
+Writing masked volume to /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz...done.
+mri_segstats --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz --seg /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz --sum /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/stats/vsinus.stats --subject sub-10159 --etiv
+
+8.2.0
+cwd 
+cmdline mri_segstats --i /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz --seg /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz --sum /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/stats/vsinus.stats --subject sub-10159 --etiv 
+sysname  Linux
+hostname typhon
+machine  x86_64
+user     asmacdo
+whitesurfname  white
+UseRobust  0
+atlas_icv (eTIV) = 1535546 mm^3    (det: 1.268673 )
+Loading /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz
+Using embedded color table (and excluding seg 0)
+Loading /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz
+Voxel Volume is 1 mm^3
+Generating list of segmentation ids
+Found   6 segmentations
+Computing statistics for each segmentation
+
+Reporting on   5 segmentations
+Using PrintSegStat
+mri_segstats done
+
+fsvglrun freeview --hide-3d-slices --view coronal -neuro-view /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/nu.mgz:lock=1 /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/vsinus.mgz:isosurface=1:outline=1
+
+ 
+Started at Thu Nov 5 02:09:38 PM EST 2026 
+Ended   at Thu Nov  5 02:09:59 PM EST 2026
+Mri_Vsinus_Seg-Run-Time-Sec 21
+Mri_Vsinus_Seg-Run-Time-Min 0.35
+Mri_Vsinus_Seg-Run-Time-Hours 0.01
+ 
+mri_vsinus_seg Done

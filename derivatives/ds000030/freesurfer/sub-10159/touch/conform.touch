@@ -1,0 +1,1 @@
+mri_convert /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/rawavg.mgz /data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer/sub-10159/mri/orig.mgz --conform
