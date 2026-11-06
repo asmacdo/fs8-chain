@@ -35,6 +35,10 @@ if [ -n "$DERIVS" ]; then
 fi
 
 mkdir -p "$OUT" logs
+# In a git worktree the annex objects are under the main checkout's .git,
+# outside $PWD; bind it read-only so annexed inputs (an earlier stage's
+# derivatives) resolve. In a plain clone it is $PWD/.git, already bound.
+GIT_COMMON="$(cd "$(git rev-parse --git-common-dir)" && pwd)"
 # The whole dataset is bound so annex symlinks resolve. templateflow is a pinned
 # subdataset, bound read-only: a template the run needs but did not declare
 # fails loudly instead of being fetched unpinned from S3.
@@ -45,6 +49,7 @@ mkdir -p "$OUT" logs
 con-duct run -p "logs/fmriprep-${LEVEL}_${DATASET}_sub-${SUB}_{datetime}_" \
   singularity run --containall \
     -B "$PWD:$PWD" --pwd "$PWD" -B "$TMP:/tmp" \
+    -B "$GIT_COMMON:$GIT_COMMON:ro" \
     -B "$PWD/sourcedata/templateflow:$PWD/sourcedata/templateflow:ro" \
     --env "TEMPLATEFLOW_HOME=$PWD/sourcedata/templateflow" \
     -B "$FS_LICENSE:/fs-license.txt:ro" \
