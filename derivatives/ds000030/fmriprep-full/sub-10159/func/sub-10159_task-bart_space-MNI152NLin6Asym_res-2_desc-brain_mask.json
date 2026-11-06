@@ -1,0 +1,12 @@
+{
+  "Resolution": "Template MNI152NLin6Asym (2.0x2.0x2.0 mm^3), curated by TemplateFlow 25.0.4",
+  "Sources": [
+    "bids:raw:sub-10159/func/sub-10159_task-bart_bold.nii.gz",
+    "bids:resampling:sub-10159/func/sub-10159_task-bart_space-run_boldref.nii.gz",
+    "bids:resampling:sub-10159/func/sub-10159_task-bart_from-orig_to-run_mode-image_desc-hmc_xfm.txt",
+    "bids:resampling:sub-10159/func/sub-10159_task-bart_from-run_to-auto00000_mode-image_desc-fmap_xfm.txt",
+    "bids:resampling:sub-10159/func/sub-10159_task-bart_from-run_to-T1w_mode-image_desc-coreg_xfm.txt",
+    "bids:resampling:sub-10159/anat/sub-10159_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5",
+    "bids:templateflow:tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-02_T1w.nii.gz"
+  ]
+}

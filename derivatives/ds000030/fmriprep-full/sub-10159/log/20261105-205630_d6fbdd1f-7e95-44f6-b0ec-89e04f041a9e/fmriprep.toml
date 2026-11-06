@@ -1,0 +1,103 @@
+[environment]
+cpu_count = 32
+exec_env = "singularity"
+free_mem = 976.1
+overcommit_policy = "heuristic"
+overcommit_limit = "50%"
+nipype_version = "1.12.0"
+templateflow_version = "25.0.4"
+version = "26.0.0.dev119+g1728db2fd"
+
+[execution]
+bids_dir = "/data/asmacdo/fs8-chain/.worktrees/v2/sourcedata/ds000030"
+bids_database_dir = "/tmp/wkdir/20261105-205630_d6fbdd1f-7e95-44f6-b0ec-89e04f041a9e/bids_db"
+bids_description_hash = "9a360b4bbce9ae7af40eee3f7965c52be42b0369ae43cf8923788587ecab35fd"
+boilerplate_only = false
+sloppy = false
+debug = []
+fmriprep_dir = "/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/fmriprep-full"
+fs_license_file = "/fs-license.txt"
+fs_subjects_dir = "/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/freesurfer"
+layout = "BIDS Layout: ...rktrees/v2/sourcedata/ds000030 | Subjects: 1 | Sessions: 0 | Runs: 0"
+log_dir = "/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/fmriprep-full/logs"
+log_level = 25
+low_mem = false
+md_only_boilerplate = true
+notrack = true
+track_carbon = false
+country_code = "CAN"
+output_dir = "/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/fmriprep-full"
+me_output_echos = true
+aggr_ses_reports = 4
+output_layout = "bids"
+output_spaces = "MNI152NLin2009cAsym:res-2 MNI152NLin2009cAsym:res-native MNI152NLin6Asym:res-2 MNI152NLin6Asym:res-native fsaverage:den-164k"
+reports_only = false
+run_uuid = "20261105-205630_d6fbdd1f-7e95-44f6-b0ec-89e04f041a9e"
+processing_groups = [ "sub-10159",]
+participant_label = [ "10159",]
+templateflow_home = "/data/asmacdo/fs8-chain/.worktrees/v2/sourcedata/templateflow"
+work_dir = "/tmp/wkdir"
+write_graph = false
+
+[workflow]
+anat_only = false
+bold2anat_dof = 6
+bold2anat_init = "auto"
+bold_coreg_level = "run"
+bold_coreg_upsample = true
+cifti_output = "91k"
+fmap_bspline = false
+force_syn = false
+hires = true
+fs_no_resume = true
+ignore = []
+force = []
+level = "full"
+run_msmsulc = true
+medial_surface_nan = false
+project_goodvoxels = false
+regressors_all_comps = false
+regressors_dvars_th = 1.5
+regressors_fd_th = 0.5
+run_reconall = true
+skull_strip_fixed_seed = true
+skull_strip_template = "OASIS30ANTs"
+skull_strip_t1w = "force"
+slice_time_ref = 0.5
+spaces = "MNI152NLin2009cAsym:res-2 MNI152NLin2009cAsym:res-native MNI152NLin6Asym:res-2 MNI152NLin6Asym:res-native fsaverage:den-164k"
+subject_anatomical_reference = "first-lex"
+use_syn_sdc = "warn"
+me_t2s_fit_method = "curvefit"
+
+[nipype]
+crashfile_format = "txt"
+get_linked_libs = false
+memory_gb = 32.0
+nprocs = 8
+omp_nthreads = 8
+plugin = "MultiProc"
+remove_unnecessary_outputs = true
+resource_monitor = false
+stop_on_first_crash = true
+
+[seeds]
+master = 12345
+ants = 54608
+numpy = 1333
+
+[execution.derivatives]
+resampling = "/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/fmriprep-resampling"
+
+[execution.dataset_links]
+raw = "/data/asmacdo/fs8-chain/.worktrees/v2/sourcedata/ds000030"
+templateflow = "/data/asmacdo/fs8-chain/.worktrees/v2/sourcedata/templateflow"
+resampling = "/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds000030/fmriprep-resampling"
+
+[nipype.plugin_args]
+maxtasksperchild = 1
+raise_insufficient = false
+
+[execution.bids_filters.bold]
+datatype = "func"
+suffix = "bold"
+task = "bart"
