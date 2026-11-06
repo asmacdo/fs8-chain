@@ -1,0 +1,11 @@
+{
+  "Sources": [
+    "bids:raw:sub-265/func/sub-265_task-black_bold.nii.gz",
+    "bids:resampling:sub-265/func/sub-265_task-black_space-run_boldref.nii.gz",
+    "bids:resampling:sub-265/func/sub-265_task-black_from-orig_to-run_mode-image_desc-hmc_xfm.txt",
+    "bids:resampling:sub-265/func/sub-265_task-black_from-run_to-auto00001_mode-image_desc-fmap_xfm.txt",
+    "bids:resampling:sub-265/func/sub-265_task-black_from-run_to-T1w_mode-image_desc-coreg_xfm.txt",
+    "bids:resampling:sub-265/anat/sub-265_from-T1w_to-MNI152NLin6Asym_mode-image_xfm.h5",
+    "bids:templateflow:tpl-MNI152NLin6Asym/tpl-MNI152NLin6Asym_res-01_T1w.nii.gz"
+  ]
+}
