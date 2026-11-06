@@ -1,0 +1,13 @@
+-subjid
+sub-265
+-sd
+/data/asmacdo/fs8-chain/.worktrees/v2/derivatives/ds002345/freesurfer
+-hires
+-i
+/data/asmacdo/fs8-chain/.worktrees/v2/sourcedata/ds002345/sub-265/anat/sub-265_T1w.nii.gz
+-T2
+/data/asmacdo/fs8-chain/.worktrees/v2/sourcedata/ds002345/sub-265/anat/sub-265_T2w.nii.gz
+-T2pial
+-autorecon-all
+-openmp
+2
