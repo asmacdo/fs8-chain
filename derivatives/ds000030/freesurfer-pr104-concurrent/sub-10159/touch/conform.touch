@@ -1,0 +1,1 @@
+mri_convert /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10159/mri/rawavg.mgz /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10159/mri/orig.mgz --conform

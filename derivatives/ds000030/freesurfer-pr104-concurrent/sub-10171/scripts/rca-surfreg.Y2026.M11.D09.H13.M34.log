@@ -1,0 +1,240 @@
+Log file for rca-surfreg
+Mon Nov  9 01:34:42 PM EST 2026
+
+setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent
+cd /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/scripts
+/usr/local/freesurfer/8.2.0/bin/rca-surfreg --s sub-10171 --threads 2 --tif-path /usr/local/freesurfer/8.2.0/average --tif-name folding.atlas.acfb40.noaparc.i12.2016-08-02.tif
+-rwxr-xr-x 1 root root 9825 Mar 14  2026 /usr/local/freesurfer/8.2.0/bin/rca-surfreg
+
+freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45
+$Id$
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+pid 3622
+#--------------------------------------------
+#@# Surf Reg lh Mon Nov  9 01:34:42 PM EST 2026
+
+ mris_register -curv -threads 2 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.sphere /usr/local/freesurfer/8.2.0/average/lh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.sphere.reg 
+
+using smoothwm curvature for final alignment
+
+cwd /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/scripts
+cmdline mris_register -curv -threads 2 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.sphere /usr/local/freesurfer/8.2.0/average/lh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.sphere.reg 
+
+0 inflated.H
+1 sulc
+2 smoothwm (computed)
+8.2.0
+  8.2.0
+reading surface from /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.sphere...
+reading template parameterization from /usr/local/freesurfer/8.2.0/average/lh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif...
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+MRISregister() -------
+max_passes = 4 
+min_degrees = 0.500000 
+max_degrees = 64.000000 
+nangles = 8 
+tol=5.0e-01, sigma=0.0, host=typho, nav=1024, nbrs=1, l_extern=10000.000, l_parea=0.200, l_nlarea=1.000, l_corr=1.000, l_dist=5.000
+using quadratic fit line minimization
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 0.000000
+desired_rms_height -1.000000
+momentum 0.950000
+nbhd_size -10
+max_nbrs 10
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 16 (10)
+use curv 16
+no sulc 0
+no rigid align 0
+mris->nsize 1
+mris->hemisphere 0
+randomSeed 0
+
+tol=5.0e-01, sigma=0.0, host=typho, nav=1024, nbrs=1, l_extern=10000.000, l_parea=0.200, l_nlarea=1.000, l_corr=1.000, l_dist=5.000
+using quadratic fit line minimization
+--------------------
+1 Reading lh.sulc
+tol=1.0e+00, sigma=0.5, host=typho, nav=1024, nbrs=1, l_extern=10000.000, l_parea=0.200, l_nlarea=1.000, l_corr=0.050, l_spring=0.500, l_dist=5.000
+using quadratic fit line minimization
+curvature mean = 0.000, std = 5.615
+curvature mean = 0.030, std = 0.813
+curvature mean = 0.012, std = 0.871
+Starting MRISrigidBodyAlignGlobal()
+Starting new MRISrigidBodyAlignGlobal_findMinSSE()
+  new MRISrigidBodyAlignGlobal_findMinSSE min @ (1.00, -6.00, 12.00) sse = 195245.6, elapsed since starting=0.1956 min
+MRISrigidBodyAlignGlobal() done   0.20 min
+curvature mean = 0.020, std = 0.838
+curvature mean = 0.007, std = 0.951
+curvature mean = 0.018, std = 0.848
+curvature mean = 0.003, std = 0.980
+curvature mean = 0.017, std = 0.851
+curvature mean = 0.001, std = 0.993
+2 Reading smoothwm
+curvature mean = -0.015, std = 0.273
+curvature mean = 0.044, std = 0.247
+curvature mean = 0.063, std = 0.346
+curvature mean = 0.042, std = 0.305
+curvature mean = 0.032, std = 0.549
+curvature mean = 0.042, std = 0.331
+curvature mean = 0.017, std = 0.693
+curvature mean = 0.042, std = 0.343
+curvature mean = 0.005, std = 0.804
+MRISregister() return, current seed 0
+writing registered surface to /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.sphere.reg...
+-01: dt=0.0000,   0 negative triangles  VmPeak 575108
+registration took 0.07 hours
+#VMPC# mris_register VmPeak  575108
+FSRUNTIME@ mris_register  0.0705 hours 2 threads
+
+ ln -sf lh.sphere.reg lh.fsaverage.sphere.reg 
+
+#--------------------------------------------
+#@# Surf Reg rh Mon Nov  9 01:38:56 PM EST 2026
+
+ mris_register -curv -threads 2 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.sphere /usr/local/freesurfer/8.2.0/average/rh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.sphere.reg 
+
+using smoothwm curvature for final alignment
+
+cwd /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/scripts
+cmdline mris_register -curv -threads 2 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.sphere /usr/local/freesurfer/8.2.0/average/rh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.sphere.reg 
+
+0 inflated.H
+1 sulc
+2 smoothwm (computed)
+8.2.0
+  8.2.0
+reading surface from /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.sphere...
+reading template parameterization from /usr/local/freesurfer/8.2.0/average/rh.folding.atlas.acfb40.noaparc.i12.2016-08-02.tif...
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+TiffReadStrippedImage(): read strip image 256 x 512, nsamples = 1, bits_per_sample = 32
+MRISregister() -------
+max_passes = 4 
+min_degrees = 0.500000 
+max_degrees = 64.000000 
+nangles = 8 
+tol=5.0e-01, sigma=0.0, host=typho, nav=1024, nbrs=1, l_extern=10000.000, l_parea=0.200, l_nlarea=1.000, l_corr=1.000, l_dist=5.000
+using quadratic fit line minimization
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 0.000000
+desired_rms_height -1.000000
+momentum 0.950000
+nbhd_size -10
+max_nbrs 10
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 16 (10)
+use curv 16
+no sulc 0
+no rigid align 0
+mris->nsize 1
+mris->hemisphere 1
+randomSeed 0
+
+tol=5.0e-01, sigma=0.0, host=typho, nav=1024, nbrs=1, l_extern=10000.000, l_parea=0.200, l_nlarea=1.000, l_corr=1.000, l_dist=5.000
+using quadratic fit line minimization
+--------------------
+1 Reading rh.sulc
+tol=1.0e+00, sigma=0.5, host=typho, nav=1024, nbrs=1, l_extern=10000.000, l_parea=0.200, l_nlarea=1.000, l_corr=0.050, l_spring=0.500, l_dist=5.000
+using quadratic fit line minimization
+curvature mean = 0.000, std = 5.582
+curvature mean = 0.023, std = 0.804
+curvature mean = 0.014, std = 0.871
+Starting MRISrigidBodyAlignGlobal()
+Starting new MRISrigidBodyAlignGlobal_findMinSSE()
+  new MRISrigidBodyAlignGlobal_findMinSSE min @ (6.00, -5.50, 11.50) sse = 204711.8, elapsed since starting=0.1934 min
+MRISrigidBodyAlignGlobal() done   0.19 min
+curvature mean = 0.014, std = 0.832
+curvature mean = 0.007, std = 0.953
+curvature mean = 0.013, std = 0.843
+curvature mean = 0.003, std = 0.982
+curvature mean = 0.012, std = 0.845
+curvature mean = 0.000, std = 0.993
+2 Reading smoothwm
+curvature mean = -0.018, std = 0.281
+curvature mean = 0.038, std = 0.242
+curvature mean = 0.063, std = 0.343
+curvature mean = 0.035, std = 0.301
+curvature mean = 0.032, std = 0.538
+curvature mean = 0.034, std = 0.329
+curvature mean = 0.017, std = 0.677
+curvature mean = 0.033, std = 0.341
+curvature mean = 0.004, std = 0.788
+MRISregister() return, current seed 0
+-01: dt=0.0000,   8 negative triangles  VmPeak 576600
+103: dt=0.9900,   8 negative triangles
+expanding nbhd size to 1
+104: dt=0.9900,  11 negative triangles
+105: dt=0.9900,   7 negative triangles
+106: dt=0.9900,   8 negative triangles
+107: dt=0.9900,   8 negative triangles
+108: dt=0.9900,   7 negative triangles
+109: dt=0.9900,   7 negative triangles
+110: dt=0.9900,   8 negative triangles
+111: dt=0.9900,   8 negative triangles
+112: dt=0.9900,   7 negative triangles
+113: dt=0.9900,   7 negative triangles
+114: dt=0.9900,   8 negative triangles
+115: dt=0.9405,   8 negative triangles
+116: dt=0.9405,   7 negative triangles
+117: dt=0.9405,   6 negative triangles
+118: dt=0.9405,   6 negative triangles
+119: dt=0.9405,   7 negative triangles
+120: dt=0.9405,   5 negative triangles
+121: dt=0.9405,   4 negative triangles
+122: dt=0.9405,   7 negative triangles
+123: dt=0.9405,   4 negative triangles
+124: dt=0.9405,   5 negative triangles
+125: dt=0.9405,   4 negative triangles
+126: dt=0.9405,   4 negative triangles
+127: dt=0.9405,   5 negative triangles
+128: dt=0.9405,   3 negative triangles
+129: dt=0.9405,   3 negative triangles
+130: dt=0.9405,   3 negative triangles
+131: dt=0.9405,   2 negative triangles
+writing registered surface to /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.sphere.reg...
+registration took 0.07 hours
+#VMPC# mris_register VmPeak  576600
+FSRUNTIME@ mris_register  0.0725 hours 2 threads
+
+ ln -sf rh.sphere.reg rh.fsaverage.sphere.reg 
+
+ 
+Started at Mon Nov 9 01:34:42 PM EST 2026 
+Ended   at Mon Nov  9 01:43:17 PM EST 2026
+Rca-Surfreg-Run-Time-Sec 515
+Rca-Surfreg-Run-Time-Min 8.58
+Rca-Surfreg-Run-Time-Hours 0.14
+ 
+rca-surfreg Done

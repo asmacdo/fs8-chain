@@ -1,0 +1,74 @@
+Log file for defect2seg
+Mon Nov  9 01:17:27 PM EST 2026
+
+setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent
+cd /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/scripts
+/usr/local/freesurfer/8.2.0/bin/defect2seg --s sub-10171 --cortex
+
+freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45
+defect2seg 8.2.0
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+pid 2503
+mri_label2label --label-cortex /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.orig.nofix /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/aseg.presurf.mgz 0 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/lh.nofix.cortex.label
+
+ Generating cortex label... RemoveHipAmgy=0
+ NucAccIsMedialWall=0
+ mris->useRealRAS=0
+13 non-cortical segments detected
+only using segment with 7970 vertices
+erasing segment 1 (vno[0] = 65512)
+erasing segment 2 (vno[0] = 74768)
+erasing segment 3 (vno[0] = 75713)
+erasing segment 4 (vno[0] = 79731)
+erasing segment 5 (vno[0] = 79982)
+erasing segment 6 (vno[0] = 85872)
+erasing segment 7 (vno[0] = 86939)
+erasing segment 8 (vno[0] = 87031)
+erasing segment 9 (vno[0] = 89208)
+erasing segment 10 (vno[0] = 89231)
+erasing segment 11 (vno[0] = 89277)
+erasing segment 12 (vno[0] = 89360)
+mri_label2vol --defects /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.orig.nofix /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.defect_labels /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/orig.mgz 1000 0 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/surface.defects.mgz /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/lh.nofix.cortex.label
+mri_label2vol supposed to be reproducible but seed not set
+Contraining to label /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/lh.nofix.cortex.label
+Changing input type 0 to MRI_INT
+Converting defects to volume: offset=1000, merge=0
+Writing to /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/surface.defects.mgz
+mris_defects_pointset -s /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.orig.nofix -d /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.defect_labels -o /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.defects.pointset --label /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/lh.nofix.cortex.label
+Reading in surface /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.orig.nofix
+Reading in defect segmentation /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/lh.defect_labels
+Reading in label /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/lh.nofix.cortex.label
+#VMPC# mris_defects_pointset 261596
+mris_defects_pointset done
+mri_label2label --label-cortex /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.orig.nofix /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/aseg.presurf.mgz 0 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/rh.nofix.cortex.label
+
+ Generating cortex label... RemoveHipAmgy=0
+ NucAccIsMedialWall=0
+ mris->useRealRAS=0
+7 non-cortical segments detected
+only using segment with 7791 vertices
+erasing segment 1 (vno[0] = 74858)
+erasing segment 2 (vno[0] = 88179)
+erasing segment 3 (vno[0] = 89247)
+erasing segment 4 (vno[0] = 89261)
+erasing segment 5 (vno[0] = 91505)
+erasing segment 6 (vno[0] = 92502)
+mri_label2vol --defects /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.orig.nofix /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.defect_labels /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/surface.defects.mgz 2000 1 /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/surface.defects.mgz /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/rh.nofix.cortex.label
+mri_label2vol supposed to be reproducible but seed not set
+Contraining to label /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/rh.nofix.cortex.label
+Converting defects to volume: offset=2000, merge=1
+Writing to /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/mri/surface.defects.mgz
+mris_defects_pointset -s /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.orig.nofix -d /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.defect_labels -o /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.defects.pointset --label /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/rh.nofix.cortex.label
+Reading in surface /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.orig.nofix
+Reading in defect segmentation /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/surf/rh.defect_labels
+Reading in label /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/label/rh.nofix.cortex.label
+#VMPC# mris_defects_pointset 261800
+mris_defects_pointset done
+ 
+Started at Mon Nov 9 01:17:27 PM EST 2026 
+Ended   at Mon Nov  9 01:17:52 PM EST 2026
+Defect2seg-Run-Time-Sec 25
+Defect2seg-Run-Time-Min 0.50
+Defect2seg-Run-Time-Hours 0.01
+ 
+defect2seg Done

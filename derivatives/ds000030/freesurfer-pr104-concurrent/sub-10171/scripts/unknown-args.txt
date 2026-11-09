@@ -1,0 +1,9 @@
+-subjid
+sub-10171
+-sd
+/data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent
+-i
+/data/asmacdo/fs8-chain/.worktrees/karl104/sourcedata/ds000030/sub-10171/anat/sub-10171_T1w.nii.gz
+-autorecon-all
+-openmp
+2

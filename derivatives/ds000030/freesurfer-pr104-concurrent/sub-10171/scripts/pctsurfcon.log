@@ -1,0 +1,9 @@
+Logfile for pctsurfcon
+Mon Nov  9 01:58:01 PM EST 2026
+setenv SUBJECTS_DIR /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent
+cd /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent/sub-10171/scripts
+/usr/local/freesurfer/8.2.0/bin/pctsurfcon
+pctsurfcon 8.2.0
+Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+FREESURFER_HOME /usr/local/freesurfer/8.2.0
+Cleaning up

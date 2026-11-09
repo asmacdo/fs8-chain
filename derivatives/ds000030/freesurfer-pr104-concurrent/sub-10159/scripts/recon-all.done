@@ -1,0 +1,13 @@
+------------------------------
+SUBJECT sub-10159
+START_TIME Mon Nov 9 12:42:28 PM EST 2026
+END_TIME Mon Nov 9 02:17:47 PM EST 2026
+RUNTIME_HOURS 1.589
+USER asmacdo
+HOST typhon
+PROCESSOR x86_64
+OS Linux
+UNAME Linux typhon 6.12.57+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.57-1 (2025-11-05) x86_64 x86_64 x86_64 GNU/Linux
+VERSION 8.2.0 (freesurfer-linux-ubuntu22_x86_64-8.2.0-20260314-d932c45)
+CMDPATH /usr/local/freesurfer/8.2.0/bin/recon-all
+CMDARGS -subjid sub-10159 -sd /data/asmacdo/fs8-chain/.worktrees/karl104/derivatives/ds000030/freesurfer-pr104-concurrent -i /data/asmacdo/fs8-chain/.worktrees/karl104/sourcedata/ds000030/sub-10159/anat/sub-10159_T1w.nii.gz -autorecon-all -openmp 2
