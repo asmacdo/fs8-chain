@@ -34,7 +34,7 @@ FMRIPREP_SIF := images/$(FMRIPREP_NAME).sif
 # Templates the fMRIPrep runs read (subdatasets of sourcedata/templateflow).
 TEMPLATES := $(addprefix -i sourcedata/templateflow/tpl-,MNI152NLin2009cAsym MNI152NLin6Asym OASIS30ANTs fsLR fsaverage)
 
-.PHONY: venv preflight run-fs8 image-fmriprep run-resampling run-full
+.PHONY: venv preflight run-fs8 run-fs8-concurrent image-fmriprep run-resampling run-full
 
 venv: $(VENV)/.done
 
@@ -57,6 +57,16 @@ run-fs8: venv preflight
 	  -i sourcedata/$(DATASET)/sub-$(SUBJECT)/anat -i $(FS8_SIF) \
 	  -o $(FS_DIR) -o logs \
 	  code/run-fs8.sh $(DATASET) $(SUBJECT)
+
+# bids-apps/freesurfer#104 (copy fsaverage + EC_average, not link) with two
+# participant runs at once into one output dir, the case it guards against.
+SUBJECT2 ?= 10171
+run-fs8-concurrent: venv preflight
+	$(DL) run \
+	  -m "FreeSurfer 8 with bids-apps/freesurfer#104's run.py, $(DATASET) sub-$(SUBJECT) + sub-$(SUBJECT2) at once" \
+	  -i sourcedata/$(DATASET)/sub-$(SUBJECT)/anat -i sourcedata/$(DATASET)/sub-$(SUBJECT2)/anat -i $(FS8_SIF) \
+	  -o derivatives/$(DATASET)/freesurfer-pr104-concurrent -o logs \
+	  code/run-fs8-concurrent.sh $(DATASET) $(SUBJECT) $(SUBJECT2)
 
 # Already recorded in this dataset: fetch it. Otherwise build it.
 image-fmriprep: venv preflight
