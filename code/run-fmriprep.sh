@@ -7,6 +7,8 @@
 # usage: code/run-fmriprep.sh <image path> <level> <dataset> <subject label> <output dir> [<derivatives dir>]
 # The optional derivatives dir (an earlier stage's output) is passed as
 # --derivatives <stage>=<dir>, its name taken from the dir's level.
+# NPROCS (default 8) sets both --nprocs and --omp-nthreads; put it in the
+# recorded command (`NPROCS=1 code/run-fmriprep.sh …`) so `datalad rerun` replays it.
 # host needs: singularity/apptainer, FS_LICENSE=<FreeSurfer license file>
 export PS4='> '
 set -x
@@ -21,6 +23,7 @@ DERIVS="${6:-}"
 RAW=sourcedata/$DATASET
 FS=derivatives/$DATASET/freesurfer
 : "${FS_LICENSE:?set FS_LICENSE to a FreeSurfer license file}"
+NPROCS="${NPROCS:-8}"
 
 # Scratch for the container's /tmp (the nipype workdir goes there; a short path,
 # con/mechababs#150), outside the dataset.
@@ -66,4 +69,4 @@ con-duct run -p "logs/fmriprep-${LEVEL}_${DATASET}_sub-${SUB}_{datetime}_" \
     --random-seed 12345 --skull-strip-fixed-seed --skull-strip-t1w force \
     --use-syn-sdc warn --me-output-echos \
     --notrack --md-only-boilerplate --skip-bids-validation --stop-on-first-crash \
-    --nprocs 8 --omp-nthreads 8 --mem-mb 32000
+    --nprocs "$NPROCS" --omp-nthreads "$NPROCS" --mem-mb 32000

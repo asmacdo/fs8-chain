@@ -34,7 +34,7 @@ FMRIPREP_SIF := images/$(FMRIPREP_NAME).sif
 # Templates the fMRIPrep runs read (subdatasets of sourcedata/templateflow).
 TEMPLATES := $(addprefix -i sourcedata/templateflow/tpl-,MNI152NLin2009cAsym MNI152NLin6Asym OASIS30ANTs fsLR fsaverage)
 
-.PHONY: venv preflight run-fs8 image-fmriprep run-resampling run-full
+.PHONY: venv preflight run-fs8 image-fmriprep run-resampling run-resampling-nprocs run-full
 
 venv: $(VENV)/.done
 
@@ -74,6 +74,16 @@ run-resampling: preflight image-fmriprep
 	  -i sourcedata/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i $(FMRIPREP_SIF) $(TEMPLATES) \
 	  -o derivatives/$(DATASET)/fmriprep-resampling -o $(FS_DIR) -o logs \
 	  code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) derivatives/$(DATASET)/fmriprep-resampling
+
+# resampling at $(NPROCS) threads into its own output dir: is multithreaded
+# template registration what makes reruns differ? Run it twice and diff the xfms.
+NPROCS ?= 1
+run-resampling-nprocs: preflight image-fmriprep
+	$(DL) run \
+	  -m "fMRIPrep $(FMRIPREP_NAME) --level resampling at --nprocs $(NPROCS) on $(DATASET) sub-$(SUBJECT), reusing FS8" \
+	  -i sourcedata/$(DATASET)/sub-$(SUBJECT) -i $(FS_DIR)/sub-$(SUBJECT) -i $(FS_DIR)/fsaverage -i $(FMRIPREP_SIF) $(TEMPLATES) \
+	  -o derivatives/$(DATASET)/fmriprep-resampling-nprocs$(NPROCS) -o $(FS_DIR) -o logs \
+	  NPROCS=$(NPROCS) code/run-fmriprep.sh $(FMRIPREP_SIF) resampling $(DATASET) $(SUBJECT) derivatives/$(DATASET)/fmriprep-resampling-nprocs$(NPROCS)
 
 # One upstream only (the resampling output, which carries the anat outputs too),
 # plus FS8 via --fs-subjects-dir: no multi-derivative clobber.
